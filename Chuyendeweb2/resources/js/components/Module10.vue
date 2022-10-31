@@ -75,9 +75,10 @@
 </template>
 <script>
 export default {
-
+    
 }
 </script>
+
 <style>
 body {
     background-image: url("https://cdn.wallpapersafari.com/17/62/Mw5A6y.jpg");
