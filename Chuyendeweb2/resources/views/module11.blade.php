@@ -24,10 +24,9 @@
 
         </style>
     </head>
-    <body class="antialiased">
-        <div> Cái này là của laravel</div>
-        <div id="vuevue"></div>
-
+    <body>
+        
+        <div id="module11"></div>
         <script src="{{ mix('js/app.js') }}"></script> 
     </body>
 </html>
