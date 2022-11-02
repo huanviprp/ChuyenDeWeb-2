@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
 
-import Maindemo from './components/Maindemo.vue';
+import Module13 from './components/Module13.vue';
 
-createApp(Maindemo).mount("#vuevue");
+createApp(Module13).mount("#module13");
