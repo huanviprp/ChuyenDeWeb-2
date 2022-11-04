@@ -45,9 +45,11 @@
     </div>
 </template>
 <script>
+
 export default {
 
 }
+
 </script>
 <style>
 body {
@@ -138,11 +140,16 @@ label {
     left: 13px;
     transition: .4s;
 }
-
+.login-facebook:hover{
+    transition: .2s;
+    color: black;
+    font-weight: 600;
+}
 .login-google:hover {
     background: rgb(205, 8, 0);
     background: linear-gradient(328deg, rgba(205, 8, 0, 1) 2%, rgba(213, 9, 0, 1) 42%, rgba(199, 50, 0, 0.8606793059020483) 100%);
     transition: .2s;
-    color: white;
+    color: black;
+    font-weight: 600;
 }
 </style>
