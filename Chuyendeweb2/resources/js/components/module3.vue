@@ -163,7 +163,7 @@ export default {
     padding-left: 5.5cm;
 }
 
-.container {
+.container.home {
     background: #dedede;
 }
 </style>
