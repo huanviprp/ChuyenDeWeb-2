@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Module10');
+    return view('home');
 });
 Route::get('/module14', function () {
 
