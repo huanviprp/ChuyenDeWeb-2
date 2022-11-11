@@ -17,8 +17,9 @@
 <body class="antialiased">
     <div class="module1" id="module1"></div>
     <div class="module2" id="module2"></div>
-    <div class="bread-crump "></div>
+
     <div class="container">
+        <div class="bread-crump "></div>
         <div class="row">
             <div class="col-9">
                 <div id="module7"></div>
