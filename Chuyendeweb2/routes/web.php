@@ -17,5 +17,10 @@ Route::get('/', function () {
     return view('Module10');
 });
 Route::get('/module14', function () {
+
     return view('module14');
+});
+Route::get('/module15', function () {
+
+    return view('module15');
 });
