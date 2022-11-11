@@ -9,6 +9,7 @@ import Module15 from './components/Module15.vue';
 import Module1 from './components/Module1.vue';
 import Module2 from './components/Module2.vue';
 import Module3 from './components/Module3.vue';
+import Module4 from './components/Module4.vue';
 createApp(Module10).mount(".module10");
 createApp(Module11).mount("#module11");
 createApp(Module12).mount("#module12");
@@ -18,4 +19,5 @@ createApp(Module15).mount("#module15");
 createApp(Module1).mount("#module1");
 createApp(Module3).mount("#module3");
 createApp(Module2).mount("#module2");
+createApp(Module4).mount("#module4");
 
