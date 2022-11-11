@@ -25,13 +25,10 @@
         </style>
     </head>
     <body>
-<<<<<<<< HEAD:Chuyendeweb2/resources/views/Module10.blade.php
         <div class="module10"></div>
 
-========
         
         <div id="module11"></div>
->>>>>>>> PhanThanhAn/Module-11:Chuyendeweb2/resources/views/module11.blade.php
         <script src="{{ mix('js/app.js') }}"></script> 
     </body>
 </html>
