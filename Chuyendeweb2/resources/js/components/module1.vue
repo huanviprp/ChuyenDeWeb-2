@@ -19,7 +19,7 @@ export default {
   
 <style>
 .logo {
-    padding-left: 6.6em;
+    padding-left: 18.6em;
     background-image: url('https://wall.vn/wp-content/uploads/2019/11/hinh-anh-hoa-hong-xanh-8.jpg');
     display: flex;
 }

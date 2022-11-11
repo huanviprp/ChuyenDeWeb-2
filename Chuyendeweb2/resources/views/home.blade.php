@@ -12,6 +12,9 @@
         body {
             background-image: url('https://cdn.wallpapersafari.com/17/62/Mw5A6y.jpg');
         }
+        .module6{
+            padding-top:4em;
+        }
     </style>
 </head>
 
@@ -27,7 +30,7 @@
                 <div class=" module4" id="module4"></div>
             </div>
             <div class="col-md-3">
-                <div class=" module4" id="module6"></div>
+                <div class="module6" id="module6"></div>
             </div>
         </div>
     </div>
