@@ -25,9 +25,7 @@
         </style>
     </head>
     <body>
-        <div class="module10"></div>
-
-        
+        <div class="module10"></div>      
         <div id="module11"></div>
         <script src="{{ mix('js/app.js') }}"></script> 
     </body>
