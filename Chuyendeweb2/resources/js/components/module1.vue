@@ -1,6 +1,6 @@
 <template>
     <div class="logo">
-        <img style="background:#3f3567;" src="https://tse4.mm.bing.net/th?id=OIP.EpFbiXAEMD9FP_azgKtxDQHaE8&pid=Api&P=0"
+        <img src="../../images/logo2.png"
             alt="" width="150px" height="45px">
         <form class="d-flex search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
