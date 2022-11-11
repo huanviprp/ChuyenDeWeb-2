@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('Module10');
+=======
+    return view('module11');
+>>>>>>> PhanThanhAn/Module-11
 });
