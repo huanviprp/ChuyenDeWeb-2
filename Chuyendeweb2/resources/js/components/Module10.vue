@@ -4,28 +4,28 @@
             <div class="top">
                 <ul class="breadcrumb">
                     <li itemprop="itemListElement">
-                        <a href="" class="crumb">
+                        <a href="/" class="crumb">
                             <span>
                                 Trang chủ
                             </span>
                         </a>
                     </li>
                     <li itemprop="itemListElement">
-                        <a href="" class="crumb">
+                        <a href="/" class="crumb">
                             <span>
                                 Thể loại
                             </span>
                         </a>
                     </li>
                     <li itemprop="itemListElement">
-                        <a href="" class="crumb">
+                        <a href="/detail/ten-truyen-chapter" class="crumb">
                             <span>
                                 Tên truyện
                             </span>
                         </a>
                     </li>
                     <li itemprop="itemListElement">
-                        <a href="" class="crumb">
+                        <a href="/detail" class="crumb">
                             <span>
                                 Chapter number
                             </span>
