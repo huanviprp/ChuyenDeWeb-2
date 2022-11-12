@@ -1,61 +1,75 @@
 <template>
     <div class="logo">
-        <img src="../../images/logo2.png"
-            alt="" width="150px" height="45px">
-        <form class="d-flex search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </button>
-        </form>
-        <form action="/login" method="get">
-            <button class="login" type="submit">Đăng Nhập</button>
-        </form>
+            <div class="container hd">
+                <div class="row header1">
+                    <div class="col-md-3 img-logo">
+                        <a class="" href="/">
+                            <img src="../../images/logo2.png" alt="" width="152px" height="84px">
+                        </a>
+                    </div>
+                    <div class="col-md-6 search">
+                        <form class="d-flex search1">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-md-3 login">
+                        <form action="/module14" method="get">
+                            <button class="btn btn-outline-success" type="submit">Đăng Nhập</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
     </div>
 </template>
-  
+
 <script>
 export default {
-
+    
 }
 </script>
-  
+
 <style>
-.logo {
-    padding-left: 18.6em;
-    background-image: url('https://wall.vn/wp-content/uploads/2019/11/hinh-anh-hoa-hong-xanh-8.jpg');
-    display: flex;
+.header1 .img-logo img{
+    width: 152px;
+    height: 84px;
 }
-
-.search {
-    margin-top: 3px;
-    padding-left: 5.6cm;
-    width: 50%;
-    height: 1cm;
+.header1 .img-logo{
+    background-color:#2b3dab;
 }
-
-.btn-outline-success {
-    color: #198754;
-    border-color: #198754;
-    background-color: #f3efea;
-}
-.me-2 {
+.header1 .search .me-2{
     margin-right: -0.3rem!important;
 }
-.btn-outline-success {
+.header1 .search{
+    padding-top:1.5em;
+}
+.header1 .search .btn-outline-success{
     color: #198754;
     border-color: #ffffff;
     background-color: #ffffff;
 }
-.login{
-    margin-left:16em;
-    height:1cm;
-    margin-top:3px;
-    background-color: #54284b;
+.header1 .search .btn-outline-success:hover{
+    border-color: #ffffff;
+    color:white;
+    background-color:  #198754;;
+}
+.container .header1{
+    background-image: url('https://wall.vn/wp-content/uploads/2019/11/hinh-anh-hoa-hong-xanh-8.jpg');
+}
+.logo{
+    background-image: url('https://wall.vn/wp-content/uploads/2019/11/hinh-anh-hoa-hong-xanh-8.jpg');
+}
+.header1 .login .btn-outline-success{
+    margin-top:1.7em;
+    margin-left:12.5em;
+    background-color: none;
     border: none;
     color: white;
 }
-.login:hover{
+.header1 .login .btn-outline-success:hover{
     color:#fd7e14;
+    background-color: #421f3f;
 }
 </style>
