@@ -16,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('detail');
 });
+Route::get('/module11', function () {
+    return view('module11');
+});
+Route::get('/module12', function () {
+    return view('module12');
+});
+Route::get('/module13', function () {
+    return view('module13');
+});
 Route::get('/module14', function () {
 
     return view('module14');
