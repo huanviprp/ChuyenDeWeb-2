@@ -158,7 +158,7 @@ export default {
     margin-bottom: 1px;
     padding-left: 10px; 
 }
-a{
+#module3 a{
     text-decoration: none;
     color:black;
 }
