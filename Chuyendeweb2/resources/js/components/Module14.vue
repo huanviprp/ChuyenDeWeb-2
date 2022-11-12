@@ -28,7 +28,7 @@
                             <i class="fas fa-lock" aria-hidden="true"></i>
                         </div>
                         <div class="dangnhap text-right my-3">
-                            <a href="/">Trờ về trang đăng nhập</a>
+                            <a href="/login">Trờ về trang đăng nhập</a>
                         </div>
                         <div class="login-button mb-2">
                             <input type="submit" class="btn btn-warning" value="Đăng Ký">

@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="dangky text-right mb-2">
-                        <a href="/module14">Đăng ký mới</a>
+                        <a href="/register">Đăng ký mới</a>
                     </div>
 
                     <div class="login-button mb-2">
