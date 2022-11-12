@@ -1,6 +1,6 @@
 <template>
     <div class="admin-panel clearfix">
-        <div class="slidebar">
+        <div class="module15 slidebar">
             <div class="logo">
                 <a href=""></a>
             </div>
@@ -514,23 +514,23 @@ body {
     background-color: rgb(247, 247, 247);
 }
 
-.slidebar .logo {
+.module15.slidebar .logo {
     height: 145px;
     border-bottom: 1px solid rgb(235, 235, 235);
 }
 
-.slidebar ul {
+.module15.slidebar ul {
     padding: 0;
     margin: 0;
 }
 
-.slidebar li {
+.module15.slidebar li {
     list-style-type: none;
     margin: 0;
     position: relative;
 }
 
-.slidebar ul a {
+.module15.slidebar ul a {
     color: rgb(140, 140, 140);
     text-decoration: none;
     font: 16px/40px helvetica, verdana, sans-serif;
@@ -542,7 +542,7 @@ body {
     text-transform: capitalize;
 }
 
-.slidebar li:hover a {
+.module15.slidebar li:hover a {
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 0 0 rgb(255, 255, 255), inset 5px 0 0 -1px rgb(234, 83, 63);
 }
