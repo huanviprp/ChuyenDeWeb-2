@@ -13362,11 +13362,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* binding */ render)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _images_logo2_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../images/logo2.png */ "./resources/images/logo2.png");
+
 
 var _hoisted_1 = {
   "class": "logo"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<img style=\"background:#3f3567;\" src=\"https://tse4.mm.bing.net/th?id=OIP.EpFbiXAEMD9FP_azgKtxDQHaE8&amp;pid=Api&amp;P=0\" alt=\"\" width=\"150px\" height=\"45px\"><form class=\"d-flex search\"><input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\"><button class=\"btn btn-outline-success\" type=\"submit\">Search</button></form><button class=\"btn btn-outline-success\" type=\"submit\" style=\"margin-left:8cm;height:1cm;margin-top:3px;\">Login</button>", 3);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<img src=\"" + _images_logo2_png__WEBPACK_IMPORTED_MODULE_1__["default"] + "\" alt=\"\" width=\"150px\" height=\"45px\"><form class=\"d-flex search\"><input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\"><button class=\"btn btn-outline-success\" type=\"submit\">Search</button></form><button class=\"btn btn-outline-success\" type=\"submit\" style=\"margin-left:8cm;height:1cm;margin-top:3px;\">Login</button>", 3);
 var _hoisted_5 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_5);
@@ -14530,6 +14532,20 @@ module.exports = function (cssWithMappingToString) {
 
   return list;
 };
+
+/***/ }),
+
+/***/ "./resources/images/logo2.png":
+/*!************************************!*\
+  !*** ./resources/images/logo2.png ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/logo2.png?9a8b1890ce387913abba9b3ec7c017b3");
 
 /***/ }),
 
