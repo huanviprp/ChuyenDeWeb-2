@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('detail');
+    return view('home');
 });
 Route::get('/module11', function () {
     return view('module11');
@@ -32,4 +32,7 @@ Route::get('/module14', function () {
 Route::get('/module15', function () {
 
     return view('module15');
+});
+Route::get('/detail', function () {
+    return view('detail');
 });

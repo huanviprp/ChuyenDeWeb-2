@@ -14,11 +14,11 @@
                 </ul>
             </div>
             <div class="new-chapter">
-                <p class="name-comic"><b>Tên truyện</b></p>
+                <a class="name-comic" href="/detail"><b>Tên truyện</b></a>
                 <ul>
-                    <li>Chapter 3</li>
-                    <li>Chapter 2</li>
-                    <li>Chapter 1</li>
+                    <li><a href="">Chapter 3</a></li>
+                    <li><a href="">Chapter 2</a></li>
+                    <li><a href="">Chapter 1</a></li>
                 </ul>
             </div>
         </div>
@@ -32,11 +32,11 @@
                 </ul>
             </div>
             <div class="new-chapter">
-                <p class="name-comic"><b>Tên truyện</b></p>
+                <a class="name-comic" href="/detail"><b>Tên truyện</b></a>
                 <ul>
-                    <li>Chapter 3</li>
-                    <li>Chapter 2</li>
-                    <li>Chapter 1</li>
+                    <li><a href="">Chapter 3</a></li>
+                    <li><a href="">Chapter 2</a></li>
+                    <li><a href="">Chapter 1</a></li>
                 </ul>
             </div>
         </div>
@@ -50,11 +50,11 @@
                 </ul>
             </div>
             <div class="new-chapter">
-                <p class="name-comic"><b>Tên truyện</b></p>
+                <a class="name-comic" href="/detail"><b>Tên truyện</b></a>
                 <ul>
-                    <li>Chapter 3</li>
-                    <li>Chapter 2</li>
-                    <li>Chapter 1</li>
+                    <li><a href="">Chapter 3</a></li>
+                    <li><a href="">Chapter 2</a></li>
+                    <li><a href="">Chapter 1</a></li>
                 </ul>
             </div>
         </div>
@@ -68,11 +68,11 @@
                 </ul>
             </div>
             <div class="new-chapter">
-                <p class="name-comic"><b>Tên truyện</b></p>
+                <a class="name-comic" href="/detail"><b>Tên truyện</b></a>
                 <ul>
-                    <li>Chapter 3</li>
-                    <li>Chapter 2</li>
-                    <li>Chapter 1</li>
+                    <li><a href="">Chapter 3</a></li>
+                    <li><a href="">Chapter 2</a></li>
+                    <li><a href="">Chapter 1</a></li>
                 </ul>
             </div>
         </div>
@@ -86,11 +86,11 @@
                 </ul>
             </div>
             <div class="new-chapter">
-                <p class="name-comic"><b>Tên truyện</b></p>
+                <a class="name-comic" href="/detail"><b>Tên truyện</b></a>
                 <ul>
-                    <li>Chapter 3</li>
-                    <li>Chapter 2</li>
-                    <li>Chapter 1</li>
+                    <li><a href="">Chapter 3</a></li>
+                    <li><a href="">Chapter 2</a></li>
+                    <li><a href="">Chapter 1</a></li>
                 </ul>
             </div>
         </div>
@@ -156,7 +156,11 @@ export default {
 
 .name-comic {
     margin-bottom: 1px;
-    padding-left: 10px;
+    padding-left: 10px; 
+}
+a{
+    text-decoration: none;
+    color:black;
 }
 
 .comic-hot {
