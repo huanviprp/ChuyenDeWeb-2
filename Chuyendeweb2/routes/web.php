@@ -46,4 +46,6 @@ Route::get('/register', function () {
 Route::get('/dashboard', function () {
     return view('admin/dashboard');
 });
-
+Route::get('/follow', function () {
+    return view('wishlist');
+});
