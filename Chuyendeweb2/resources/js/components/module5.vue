@@ -1,10 +1,12 @@
 <template>
     <footer>
-          <div class="container-ft">
+          <div class="container">
               <div class="row">
                   <div class="col-md-4 logo-cp">
-                      <img src="https://tse4.mm.bing.net/th?id=OIP.EpFbiXAEMD9FP_azgKtxDQHaE8&pid=Api&P=0" alt="" width="150px"
-                  height="45px">
+                      <a href="/">
+                          <img src="../../images/logo2.png" alt="" width="154px"
+                          height="86px">
+                      </a>
                   <p>Copyright © 2022</p>
                   </div>
                   <div class="col-md-4 contact">
@@ -32,14 +34,17 @@
   
   <style>
   footer {
+      padding-top:1em;
       background:#222;
-      height:5cm;
   }
   .logo-cp{
       color:white;
-      padding-left:8.05cm;
   }
   .contact{
-      color:white;
+      font-style: italic;
+        color:white;
+  }
+  footer .container{
+      background:#222;
   }
   </style>
