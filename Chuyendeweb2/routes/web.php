@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/module11', function () {
-    return view('module11');
-});
+
 Route::get('/module12', function () {
     return view('module12');
 });
@@ -36,3 +34,16 @@ Route::get('/module15', function () {
 Route::get('/detail', function () {
     return view('detail');
 });
+Route::get('/ten-truyen-chapter', function () {
+    return view('readComic');
+});
+Route::get('/login', function () {
+    return view('login');
+});
+Route::get('/register', function () {
+    return view('register');
+});
+Route::get('/dashboard', function () {
+    return view('admin/dashboard');
+});
+

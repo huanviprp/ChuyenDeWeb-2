@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="dangky text-right mb-2">
-                        <a href="/module14">Đăng ký mới</a>
+                        <a href="/register">Đăng ký mới</a>
                     </div>
 
                     <div class="login-button mb-2">
@@ -123,6 +123,7 @@ label {
 }
 
 .login-google {
+    width: 100%;
     background: rgb(218, 64, 13);
     background: linear-gradient(90deg, rgba(218, 64, 13, 1) 0%, rgba(237, 11, 0, 1) 3%, rgba(255, 63, 0, 0.8606793059020483) 100%);
     color: white;

@@ -8,7 +8,7 @@
                 <i class="fa fa-search" aria-hidden="true"></i>
             </button>
         </form>
-        <form action="/module14" method="get">
+        <form action="/login" method="get">
             <button class="login" type="submit">Đăng Nhập</button>
         </form>
     </div>
