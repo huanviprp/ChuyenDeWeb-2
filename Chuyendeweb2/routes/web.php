@@ -34,7 +34,7 @@ Route::get('/module15', function () {
 Route::get('/detail', function () {
     return view('detail');
 });
-Route::get('/ten-truyen-chapter', function () {
+Route::get('detail/ten-truyen-chapter', function () {
     return view('readComic');
 });
 Route::get('/login', function () {

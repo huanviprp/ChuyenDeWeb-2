@@ -17,7 +17,7 @@
                         <div class="row chapter-name">
                             <div class="col-8 chapter-container">
                                 <div class="chapter-name">
-                                    <a href="">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
+                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
                                 </div>
                             </div>
                             <div class="col-4 date-chapter-container">
@@ -27,7 +27,7 @@
                         <div class="row chapter-name">
                             <div class="col-8 chapter-container">
                                 <div class="chapter-name">
-                                    <a href="">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
+                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
                                 </div>
                             </div>
                             <div class="col-4 date-chapter-container">
@@ -37,7 +37,7 @@
                         <div class="row chapter-name">
                             <div class="col-8 chapter-container">
                                 <div class="chapter-name">
-                                    <a href="">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
+                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
                                 </div>
                             </div>
                             <div class="col-4 date-chapter-container">
@@ -47,7 +47,7 @@
                         <div class="row chapter-name">
                             <div class="col-8 chapter-container">
                                 <div class="chapter-name">
-                                    <a href="">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
+                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
                                 </div>
                             </div>
                             <div class="col-4 date-chapter-container">
@@ -57,7 +57,7 @@
                         <div class="row chapter-name">
                             <div class="col-8 chapter-container">
                                 <div class="chapter-name">
-                                    <a href="">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
+                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
                                 </div>
                             </div>
                             <div class="col-4 date-chapter-container">
@@ -67,7 +67,7 @@
                         <div class="row chapter-name">
                             <div class="col-8 chapter-container">
                                 <div class="chapter-name">
-                                    <a href="">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
+                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
                                 </div>
                             </div>
                             <div class="col-4 date-chapter-container">
@@ -77,13 +77,54 @@
                         <div class="row chapter-name">
                             <div class="col-8 chapter-container">
                                 <div class="chapter-name">
-                                    <a href="">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
+                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
                                 </div>
                             </div>
                             <div class="col-4 date-chapter-container">
                                 <div class="ngaydang">17/09/2022 18:38</div>
                             </div>
                         </div>
+                        <div class="row chapter-name">
+                            <div class="col-8 chapter-container">
+                                <div class="chapter-name">
+                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
+                                </div>
+                            </div>
+                            <div class="col-4 date-chapter-container">
+                                <div class="ngaydang">17/09/2022 18:38</div>
+                            </div>
+                        </div>
+                        <div class="row chapter-name">
+                            <div class="col-8 chapter-container">
+                                <div class="chapter-name">
+                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
+                                </div>
+                            </div>
+                            <div class="col-4 date-chapter-container">
+                                <div class="ngaydang">17/09/2022 18:38</div>
+                            </div>
+                        </div>
+                        <div class="row chapter-name">
+                            <div class="col-8 chapter-container">
+                                <div class="chapter-name">
+                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
+                                </div>
+                            </div>
+                            <div class="col-4 date-chapter-container">
+                                <div class="ngaydang">17/09/2022 18:38</div>
+                            </div>
+                        </div>
+                        <div class="row chapter-name">
+                            <div class="col-8 chapter-container">
+                                <div class="chapter-name">
+                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
+                                </div>
+                            </div>
+                            <div class="col-4 date-chapter-container">
+                                <div class="ngaydang">17/09/2022 18:38</div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
