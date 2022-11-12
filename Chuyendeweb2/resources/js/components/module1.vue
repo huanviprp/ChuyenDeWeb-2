@@ -16,7 +16,7 @@
                         </form>
                     </div>
                     <div class="col-md-3 login">
-                        <form action="/module14" method="get">
+                        <form action="/login" method="get">
                             <button class="btn btn-outline-success" type="submit">Đăng Nhập</button>
                         </form>
                     </div>
