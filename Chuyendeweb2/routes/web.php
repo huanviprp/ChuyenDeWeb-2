@@ -24,3 +24,6 @@ Route::get('/module15', function () {
 
     return view('module15');
 });
+Route::get('/detail', function () {
+    return view('detail');
+});
