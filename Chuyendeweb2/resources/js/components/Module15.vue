@@ -1,7 +1,7 @@
 <template>
     <div class="admin-panel clearfix">
         <div class="module15 slidebar">
-            <div class="logo">
+            <div class="dashboard logo">
                 <a href=""></a>
             </div>
             <ul>
@@ -517,6 +517,7 @@ body {
 .module15.slidebar .logo {
     height: 145px;
     border-bottom: 1px solid rgb(235, 235, 235);
+    padding-left: 0 !important;
 }
 
 .module15.slidebar ul {
@@ -596,7 +597,7 @@ body {
     margin-right: 30px;
 }
 /*logo*/
-.logo a {
+.dashboard.logo a {
     width: 88px;
     height: 88px;
     display: inline-block;
@@ -609,7 +610,7 @@ body {
     background-color: rgb(214, 214, 214);
 }
 
-.logo a:before {
+.dashboard.logo a:before {
     content: "A";
     width: 70px;
     height: 70px;
