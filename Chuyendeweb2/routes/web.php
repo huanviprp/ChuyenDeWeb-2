@@ -49,3 +49,9 @@ Route::get('/dashboard', function () {
 Route::get('/follow', function () {
     return view('wishlist');
 });
+Route::get('/category', function () {
+    return view('category');
+});
+Route::get('/resultsearch', function () {
+    return view('resultsearch');
+});
