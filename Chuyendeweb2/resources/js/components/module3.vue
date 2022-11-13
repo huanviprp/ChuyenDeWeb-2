@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="col-md-3 comic">
-            <a href="/detail"><img class="img-comic" src="https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&pid=Api&P=0"></a>
+            <a href="/detail"><img class="img-comic" src="//st.ntcdntempv3.com/data/comics/162/lookism.jpg"></a>
             <div class=" infor-comic">
                 <ul>
                     <li><i class="fa fa-eye" aria-hidden="true"></i>123</li>
@@ -59,7 +59,7 @@
             </div>
         </div>
         <div class="col-md-3 comic">
-            <a href="/detail"><img class="img-comic" src="https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&pid=Api&P=0"></a>
+            <a href="/detail"><img class="img-comic" src="//st.ntcdntempv3.com/data/comics/10/chainsawman-phan-2.jpg"></a>
             <div class=" infor-comic">
                 <ul>
                     <li><i class="fa fa-eye" aria-hidden="true"></i>123</li>
@@ -68,7 +68,7 @@
                 </ul>
             </div>
             <div class="new-chapter">
-                <a class="name-comic" href="/detail"><b>Tên truyện</b></a>
+                <a class="name-comic" href="/detail"><b>Chainsawman Phần 2</b></a>
                 <ul>
                     <li><a href="">Chapter 3</a></li>
                     <li><a href="">Chapter 2</a></li>
@@ -77,7 +77,7 @@
             </div>
         </div>
         <div class="col-md-3 comic">
-            <a href="/detail"><img class="img-comic" src="https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&pid=Api&P=0"></a>
+            <a href="/detail"><img class="img-comic" src="//st.ntcdntempv3.com/data/comics/118/fatetype-redline-truyen-ky-ve-chen-thanh-3330.jpg"></a>
             <div class=" infor-comic">
                 <ul>
                     <li><i class="fa fa-eye" aria-hidden="true"></i>123</li>
@@ -86,7 +86,7 @@
                 </ul>
             </div>
             <div class="new-chapter">
-                <a class="name-comic" href="/detail"><b>Tên truyện</b></a>
+                <a class="name-comic" href="/detail"><b>Fate/type Redline - Truyền Kỳ về Chén Thánh Đế Đô</b></a>
                 <ul>
                     <li><a href="">Chapter 3</a></li>
                     <li><a href="">Chapter 2</a></li>
@@ -123,15 +123,14 @@ export default {
   
 <style>
 .img-comic {
-    width: 165px;
+    width: 100%;
     height: 200px;
 }
 
 .comic {
-    width: 170px;
-    padding-bottom: 10px;
+    width: 200px;
+    padding: 0%;
     border: 2px solid black;
-    padding-left: 0px;
     margin-right: 10px;
     background: #f5f2f2;
     margin-bottom: 0.3cm;
@@ -142,9 +141,8 @@ export default {
 }
 
 .infor-comic {
-    width: 165px;
     background: black;
-    left: 0;
+
 }
 
 .infor-comic ul {
@@ -174,7 +172,7 @@ export default {
 
 .name-comic {
     margin-bottom: 1px;
-    padding-left: 10px; 
+    padding-left: 3px; 
 }
 #module3 a{
     text-decoration: none;
@@ -182,7 +180,7 @@ export default {
 }
 
 .comic-hot {
-    padding-left: 5.5cm;
+    justify-content: center;
 }
 
 .container.home {

@@ -30,8 +30,8 @@
             <div id="module13"></div>
         </div>
     </div>
-    <div id="module5"></div>
     
+    <div id="module5"></div>
     <script src="{{ mix('js/app.js') }}"></script>
 
 

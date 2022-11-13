@@ -1,4 +1,5 @@
 <template>
+    <h3 class="top-rank">Bảng xếp hạng</h3>
     <div class="tab">
         <button class="tablinks" :class="[b1Active ? 'active' : 'notacitve']" @click="showBlock(1, $event)"
             id="tabngay">
@@ -233,10 +234,20 @@ export default {
 </script>
   
 <style>
+*{
+    padding: 0;
+}
+#module6{
+    position: sticky;
+    top: 0;
+}
 .icon-eyes {
     margin-left: 36px;
 }
-
+h3.top-rank{
+    color:#de6e98;
+    font-weight: bolder;
+}
 .rank {
     padding-top: 25px;
 }
@@ -302,7 +313,7 @@ body {
 .tab-container {
     /* display: none; */
     padding: 6px 12px;
-    border: 1px solid #ccc;
+    border: 4px solid #ccc;
     border-top: none;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container module8-top">
         <div class="chapter-list-container">
             <h3 class="chapter-list-title chapter-list">Danh Sách Chương</h3>
             <div class="all-chapter-container">
@@ -140,7 +140,9 @@ export default {};
 * {
     font-family: Tahoma, sans-serif, Helvetica, Arial;
 }
-
+.module8-top{
+    padding: 0;
+}
 .chapter-name {
     margin-left: 0px;
 }

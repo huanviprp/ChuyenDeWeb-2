@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container module9-top">
         <div class="comment-container">
             <h3 class="comment-title">Bình Luận</h3>
             <form action="" method="post" class="comment-form">
@@ -93,6 +93,9 @@ export default {};
 </script>
   
 <style>
+.module9-top{
+    padding:0;
+}
 .submit-comment {
     padding: 4px 25px;
     margin-top: 20px;

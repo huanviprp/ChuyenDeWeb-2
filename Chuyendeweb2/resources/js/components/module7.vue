@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container container-module7">
         <div class="header-title" :class="[isActive ? 'show' : 'hidden']">
             <div class="col-12 title-container">
                 <div class="title1">
@@ -86,6 +86,7 @@
 </template>
   
 <script>
+
 export default {
     data() {
         return {
@@ -103,6 +104,15 @@ export default {
 </script>
   
 <style>
+#Breadcrumb{
+    padding-left: 15px;
+    height: 45px;
+    padding-top: 10px;
+    background-color: #dedede;
+}
+.container-module7{
+    padding: 0;
+}
 .title-container {
     margin-bottom: 20px;
 }
