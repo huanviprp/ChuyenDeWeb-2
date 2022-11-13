@@ -26,7 +26,7 @@
     <div class="form-lg-regis">
         <div id="module1"></div>
         <div id="module2"></div>
-        <div class="container mb-5">
+        <div class="container" style="margin-bottom: 10rem;">
             <div id="module14"></div>
         </div>
     </div>
