@@ -8,7 +8,7 @@
                         </a>
                     </div>
                     <div class="col-md-6 search">
-                        <form class="d-flex search1">
+                        <form class="d-flex search1" action="/resultsearch">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">
                             <i class="fa fa-search" aria-hidden="true"></i>

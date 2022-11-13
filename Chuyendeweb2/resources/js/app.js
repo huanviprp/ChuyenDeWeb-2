@@ -16,6 +16,7 @@ import Module7 from './components/Module7.vue';
 import Module8 from './components/Module8.vue';
 import Module9 from './components/Module9.vue';
 import Breadcrumb from './components/Breadcrumb.vue';
+import Module16 from './components/module16.vue';
 createApp(Module10).mount("#module10");
 createApp(Module11).mount("#module11");
 createApp(Module12).mount("#module12");
@@ -32,5 +33,4 @@ createApp(Module7).mount("#module7");
 createApp(Module8).mount("#module8");
 createApp(Module9).mount("#module9");
 createApp(Breadcrumb).mount("#Breadcrumb");
-
-
+createApp(Module16).mount("#module16");
