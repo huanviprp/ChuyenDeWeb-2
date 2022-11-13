@@ -18,14 +18,14 @@
                         </a>
                     </li>
                     <li itemprop="itemListElement">
-                        <a href="/detail/ten-truyen-chapter" class="crumb">
+                        <a href="/detail" class="crumb">
                             <span>
                                 Tên truyện
                             </span>
                         </a>
                     </li>
                     <li itemprop="itemListElement">
-                        <a href="/detail" class="crumb">
+                        <a href="/detail/ten-truyen-chapter" class="crumb">
                             <span>
                                 Chapter number
                             </span>

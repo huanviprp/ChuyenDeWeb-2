@@ -26,7 +26,7 @@
                         </a>
                     </li>
                     <li itemprop="itemListElement">
-                        <a href="" class="crumb">
+                        <a href="/detail" class="crumb">
                             <span>
                                 Tên truyện
                             </span>
