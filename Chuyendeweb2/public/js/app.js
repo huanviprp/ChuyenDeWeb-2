@@ -13294,22 +13294,8 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "fas fa-envelope",
   "aria-hidden": "true"
 })])], -1 /* HOISTED */);
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-group\"><label for=\"\">Mật khẩu:</label><div class=\"input-password\"><input type=\"password\" class=\"form-control password\" name=\"password\" placeholder=\"Password\" required><i class=\"fas fa-lock\" aria-hidden=\"true\"></i></div></div>", 1);
-var _hoisted_7 = {
-  "class": "form-group"
-};
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<label for=\"\">Nhập lại mật khẩu:</label><div class=\"input-password\"><input type=\"password\" class=\"form-control password\" name=\"password\" placeholder=\"Nhập lại Password\" required><i class=\"fas fa-lock\" aria-hidden=\"true\"></i></div><div class=\"dangnhap text-right my-3\"><a href=\"/login\">Trờ về trang đăng nhập</a></div>", 3);
-var _hoisted_11 = {
-  "class": "login-button mb-2"
-};
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "submit",
-  "class": "btn btn-warning",
-  value: "Đăng Ký"
-}, null, -1 /* HOISTED */);
-var _hoisted_13 = {
-  "class": "label label-success"
-};
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-group\"><label for=\"\">Mật khẩu:</label><div class=\"input-password\"><input type=\"password\" class=\"form-control password\" name=\"password\" placeholder=\"Password\" required><i class=\"fas fa-lock\" aria-hidden=\"true\"></i></div></div><div class=\"form-group\"><label for=\"\">Nhập lại mật khẩu:</label><div class=\"input-password\"><input type=\"password\" class=\"form-control password\" name=\"password\" placeholder=\"Nhập lại Password\" required><i class=\"fas fa-lock\" aria-hidden=\"true\"></i></div><div class=\"dangnhap text-right my-3\"><a href=\"/login\">Trờ về trang đăng nhập</a></div><div class=\"login-button mb-2\"><input type=\"submit\" class=\"btn btn-warning\" value=\"Đăng Ký\"></div></div>", 2);
+var _hoisted_8 = [_hoisted_5, _hoisted_6];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     action: "",
@@ -13317,7 +13303,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.register && $options.register.apply($options, arguments);
     }, ["prevent"]))
-  }, [_hoisted_5, _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.message), 1 /* TEXT */)])])], 32 /* HYDRATE_EVENTS */)])])]);
+  }, _hoisted_8, 32 /* HYDRATE_EVENTS */)])])]);
 }
 
 /***/ }),
