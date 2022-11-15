@@ -32,7 +32,6 @@
                         </div>
                         <div class="login-button mb-2">
                             <input type="submit" class="btn btn-warning" value="Đăng Ký">
-                            <label class="label label-success">{{message}}</label>
                         </div>
                     </div>
                 </form>
