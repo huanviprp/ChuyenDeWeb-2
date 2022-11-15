@@ -3,7 +3,7 @@
         <div class="offset-md-3 col-md-6 signout-detail">
             <h1 class="signout-title">ĐĂNG KÝ</h1>
             <div class="signout-form">
-                <form action="" method="post">
+                <form action="" method="post" v-on:submit.prevent="register">
                     <div class="form-group">
                         <label for="">UserName/Email:</label>
                         <div class="input-email">
@@ -32,6 +32,7 @@
                         </div>
                         <div class="login-button mb-2">
                             <input type="submit" class="btn btn-warning" value="Đăng Ký">
+                            <label class="label label-success">{{message}}</label>
                         </div>
                     </div>
                 </form>
@@ -44,12 +45,34 @@
     </div>
 </template>
 <script>
-export default {
-    data() {
-        return {
+export default{
+        data(){
+            return{
+                title:"Form Register",
+                formdata:{},
+                message:"",
+                success:0,
+            }
+        },
+        methods:{
+           register(){
+                this.axios.post("http://localhost:8888/form-register",this.user).then((response) => {
+                       console.log(response);
+                       if(response.data.success>0){
+                           this.message="You register success";
+                           this.success=response.data.success;
+                       }
+                       else{
+                           this.message="Register to failed";
+                           this.success=response.data.success;
+                       }
+                  });
+                    
+            },
+ 
         }
-    },
-}
+    }
+
 </script>
 <style>
 body {
