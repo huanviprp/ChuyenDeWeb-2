@@ -87,7 +87,7 @@
                                                 <tbody>
                                                     <tr data-userid="1">
                                                         <td></td>
-                                                        <td>1</td>
+                                                        <td v-model="user.user_id" >1</td>
                                                         <td>John Doe</td>
                                                         <td>*****************</td>
                                                         <td><a href="#comment" style="font-size:14px">Xem comment</a>
@@ -490,6 +490,19 @@
     </div>
 </template>
 <script>
+export default{
+    data() {
+        return {
+            'user':{
+                'user_id':'',
+                'userName':'',
+                'email':'',
+                'Password':'',
+                'role_id':''
+            }
+        };
+    },
+}
 </script>
 <style>
 body {

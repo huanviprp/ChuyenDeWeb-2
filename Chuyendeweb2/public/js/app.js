@@ -13112,6 +13112,32 @@ function genPropsAccessExp(name) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=script&lang=js":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=script&lang=js ***!
+  \**************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      'user': {
+        'user_id': '',
+        'userName': '',
+        'email': '',
+        'Password': '',
+        'role_id': ''
+      }
+    };
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=template&id=28778efb":
 /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=template&id=28778efb ***!
@@ -13154,51 +13180,135 @@ var _hoisted_11 = {
 var _hoisted_12 = {
   "class": "clearfix"
 };
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row\"><table><thead><tr><th></th><th>ID</th><th>Username</th><th>Password</th><th>Comment</th><th></th></tr></thead><tbody><tr data-userid=\"1\"><td></td><td>1</td><td>John Doe</td><td>*****************</td><td><a href=\"#comment\" style=\"font-size:14px;\">Xem comment</a></td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-userid=\"2\"><td></td><td>2</td><td>John Doe</td><td>*****************</td><td><a href=\"#comment\" style=\"font-size:14px;\">Xem comment</a></td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-userid=\"3\"><td></td><td>3</td><td>John Doe</td><td>*****************</td><td><a href=\"#comment\" style=\"font-size:14px;\">Xem comment</a></td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-userid=\"4\"><td></td><td>4</td><td>John Doe</td><td>*****************</td><td><a href=\"#comment\" style=\"font-size:14px;\">Xem comment</a></td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr></tbody></table></div>", 1);
-var _hoisted_14 = {
+var _hoisted_13 = {
+  "class": "row"
+};
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "ID"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Username"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Password"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Comment"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th")])], -1 /* HOISTED */);
+var _hoisted_15 = {
+  "data-userid": "1"
+};
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, null, -1 /* HOISTED */);
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "John Doe", -1 /* HOISTED */);
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "*****************", -1 /* HOISTED */);
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#comment",
+  style: {
+    "font-size": "14px"
+  }
+}, "Xem comment")], -1 /* HOISTED */);
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "data-action": "edit"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-regular fa-pen-to-square"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "data-action": "delete"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-solid fa-ban"
+})])], -1 /* HOISTED */);
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", {
+  "data-userid": "2"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "2"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "John Doe"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "*****************"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#comment",
+  style: {
+    "font-size": "14px"
+  }
+}, "Xem comment")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "data-action": "edit"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-regular fa-pen-to-square"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "data-action": "delete"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-solid fa-ban"
+})])])], -1 /* HOISTED */);
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", {
+  "data-userid": "3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "3"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "John Doe"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "*****************"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#comment",
+  style: {
+    "font-size": "14px"
+  }
+}, "Xem comment")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "data-action": "edit"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-regular fa-pen-to-square"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "data-action": "delete"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-solid fa-ban"
+})])])], -1 /* HOISTED */);
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", {
+  "data-userid": "4"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "4"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "John Doe"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "*****************"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#comment",
+  style: {
+    "font-size": "14px"
+  }
+}, "Xem comment")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "data-action": "edit"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-regular fa-pen-to-square"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  type: "button",
+  "data-action": "delete"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-solid fa-ban"
+})])])], -1 /* HOISTED */);
+var _hoisted_24 = {
   id: "comic"
 };
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"topmain\" style=\"display:flex;align-items:center;justify-content:space-between;\"><h2 class=\"header\"><span class=\"icon\"></span>Comic</h2><a href=\"/\" title=\"Trang chủ\"><i class=\"fa-solid fa-house\"></i></a></div>", 1);
-var _hoisted_16 = {
-  "class": "container"
-};
-var _hoisted_17 = {
-  "class": "row scroll-main"
-};
-var _hoisted_18 = {
-  "class": "col-md-12"
-};
-var _hoisted_19 = {
-  "class": "monitor"
-};
-var _hoisted_20 = {
-  "class": "clearfix"
-};
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row\"><table><thead><tr><th>ID</th><th>Tên truyện</th><th class=\"main-descr\">Description</th><th>Thể loại</th><th>Chapter</th><th>Ảnh nổi bật</th><th>Ngày tạo</th><th>View</th><th>Status</th><th>Tác giả</th><th>Feature</th><th></th></tr></thead><tbody><tr data-comicid=\"1\"><td>1</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân điện quang long lanh lung linh....... helloo every numbrere one heloooooooooooooooooo</td><td>Action</td><td><a href=\"#chapter\">123</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"2\"><td>2</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Action</td><td><a href=\"#chapter\">123</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"3\"><td>3</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Fantasy</td><td><a href=\"#chapter\">20</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">2</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">5</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">123</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">21</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">4</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">32</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">123</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">123</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">32</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">12</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">21</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr></tbody></table></div>", 1);
-var _hoisted_22 = {
-  id: "category"
-};
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"topmain\" style=\"display:flex;align-items:center;justify-content:space-between;\"><h2 class=\"header\"><span class=\"icon\"></span>category</h2><a href=\"/\" title=\"Trang chủ\"><i class=\"fa-solid fa-house\"></i></a></div>", 1);
-var _hoisted_24 = {
-  "class": "container"
-};
-var _hoisted_25 = {
-  "class": "row scroll-main"
-};
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"topmain\" style=\"display:flex;align-items:center;justify-content:space-between;\"><h2 class=\"header\"><span class=\"icon\"></span>Comic</h2><a href=\"/\" title=\"Trang chủ\"><i class=\"fa-solid fa-house\"></i></a></div>", 1);
 var _hoisted_26 = {
-  "class": "col-md-12"
+  "class": "container"
 };
 var _hoisted_27 = {
-  "class": "monitor"
+  "class": "row scroll-main"
 };
 var _hoisted_28 = {
+  "class": "col-md-12"
+};
+var _hoisted_29 = {
+  "class": "monitor"
+};
+var _hoisted_30 = {
   "class": "clearfix"
 };
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row\"><table><thead><tr><th></th><th>ID</th><th>Thể loại</th><th>Comic-id</th><th></th></tr></thead><tbody><tr data-comicid=\"1\"><td></td><td>1</td><td>action</td><td>2</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr></tbody></table></div>", 1);
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div id=\"author\"><div class=\"topmain\" style=\"display:flex;align-items:center;justify-content:space-between;\"><h2 class=\"header\"><span class=\"icon\"></span>Tác giả</h2><a href=\"/\" title=\"Trang chủ\"><i class=\"fa-solid fa-house\"></i></a></div></div><div id=\"chapter\"><div class=\"topmain\" style=\"display:flex;align-items:center;justify-content:space-between;\"><h2 class=\"header\"><span class=\"icon\"></span>chapter</h2><a href=\"/\" title=\"Trang chủ\"><i class=\"fa-solid fa-house\"></i></a></div></div><div id=\"comment\"><div class=\"topmain\" style=\"display:flex;align-items:center;justify-content:space-between;\"><h2 class=\"header\"><span class=\"icon\"></span>comment</h2><a href=\"/\" title=\"Trang chủ\"><i class=\"fa-solid fa-house\"></i></a></div></div>", 3);
-function render(_ctx, _cache) {
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row\"><table><thead><tr><th>ID</th><th>Tên truyện</th><th class=\"main-descr\">Description</th><th>Thể loại</th><th>Chapter</th><th>Ảnh nổi bật</th><th>Ngày tạo</th><th>View</th><th>Status</th><th>Tác giả</th><th>Feature</th><th></th></tr></thead><tbody><tr data-comicid=\"1\"><td>1</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân điện quang long lanh lung linh....... helloo every numbrere one heloooooooooooooooooo</td><td>Action</td><td><a href=\"#chapter\">123</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"2\"><td>2</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Action</td><td><a href=\"#chapter\">123</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"3\"><td>3</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Fantasy</td><td><a href=\"#chapter\">20</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">2</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">5</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">123</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">21</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">4</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">32</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">123</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">123</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">32</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">12</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr><tr data-comicid=\"4\"><td>4</td><td>Siêu nhân gao</td><td class=\"descr\">Ở đây có 5 siêu nhân</td><td>Horror</td><td><a href=\"#chapter\">21</a></td><td>img-link</td><td>12/11/2022</td><td>12.455</td><td>Đang hoàn thành</td><td>Ân Phan</td><td>Feature</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr></tbody></table></div>", 1);
+var _hoisted_32 = {
+  id: "category"
+};
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"topmain\" style=\"display:flex;align-items:center;justify-content:space-between;\"><h2 class=\"header\"><span class=\"icon\"></span>category</h2><a href=\"/\" title=\"Trang chủ\"><i class=\"fa-solid fa-house\"></i></a></div>", 1);
+var _hoisted_34 = {
+  "class": "container"
+};
+var _hoisted_35 = {
+  "class": "row scroll-main"
+};
+var _hoisted_36 = {
+  "class": "col-md-12"
+};
+var _hoisted_37 = {
+  "class": "monitor"
+};
+var _hoisted_38 = {
+  "class": "clearfix"
+};
+var _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row\"><table><thead><tr><th></th><th>ID</th><th>Thể loại</th><th>Comic-id</th><th></th></tr></thead><tbody><tr data-comicid=\"1\"><td></td><td>1</td><td>action</td><td>2</td><td><button type=\"button\" data-action=\"edit\"><i class=\"fa-regular fa-pen-to-square\"></i></button><button type=\"button\" data-action=\"delete\"><i class=\"fa-solid fa-ban\"></i></button></td></tr></tbody></table></div>", 1);
+var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div id=\"author\"><div class=\"topmain\" style=\"display:flex;align-items:center;justify-content:space-between;\"><h2 class=\"header\"><span class=\"icon\"></span>Tác giả</h2><a href=\"/\" title=\"Trang chủ\"><i class=\"fa-solid fa-house\"></i></a></div></div><div id=\"chapter\"><div class=\"topmain\" style=\"display:flex;align-items:center;justify-content:space-between;\"><h2 class=\"header\"><span class=\"icon\"></span>chapter</h2><a href=\"/\" title=\"Trang chủ\"><i class=\"fa-solid fa-house\"></i></a></div></div><div id=\"comment\"><div class=\"topmain\" style=\"display:flex;align-items:center;justify-content:space-between;\"><h2 class=\"header\"><span class=\"icon\"></span>comment</h2><a href=\"/\" title=\"Trang chủ\"><i class=\"fa-solid fa-house\"></i></a></div></div>", 3);
+function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Search = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Search");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Search), _hoisted_13])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Search), _hoisted_21])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Search), _hoisted_29])])])])])]), _hoisted_30])])]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Search), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", null, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.user.user_id = $event;
+    })
+  }, "1"), _hoisted_17, _hoisted_18, _hoisted_19, _hoisted_20]), _hoisted_21, _hoisted_22, _hoisted_23])])])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Search), _hoisted_31])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [_hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Search), _hoisted_39])])])])])]), _hoisted_40])])]);
 }
 
 /***/ }),
@@ -13667,20 +13777,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Module15_vue_vue_type_template_id_28778efb__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Module15.vue?vue&type=template&id=28778efb */ "./resources/js/components/Module15.vue?vue&type=template&id=28778efb");
-/* harmony import */ var _Module15_vue_vue_type_style_index_0_id_28778efb_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Module15.vue?vue&type=style&index=0&id=28778efb&lang=css */ "./resources/js/components/Module15.vue?vue&type=style&index=0&id=28778efb&lang=css");
-/* harmony import */ var C_wamp64_www_ChuyenDeWeb_2_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Module15_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Module15.vue?vue&type=script&lang=js */ "./resources/js/components/Module15.vue?vue&type=script&lang=js");
+/* harmony import */ var _Module15_vue_vue_type_style_index_0_id_28778efb_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Module15.vue?vue&type=style&index=0&id=28778efb&lang=css */ "./resources/js/components/Module15.vue?vue&type=style&index=0&id=28778efb&lang=css");
+/* harmony import */ var C_wamp64_www_ChuyenDeWeb_2_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
-const script = {}
+
+
 
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,C_wamp64_www_ChuyenDeWeb_2_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(script, [['render',_Module15_vue_vue_type_template_id_28778efb__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Module15.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_wamp64_www_ChuyenDeWeb_2_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Module15_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Module15_vue_vue_type_template_id_28778efb__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Module15.vue"]])
 /* hot reload */
 if (false) {}
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/Module15.vue?vue&type=script&lang=js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/Module15.vue?vue&type=script&lang=js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Module15_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Module15_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Module15.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=script&lang=js");
+ 
 
 /***/ }),
 
