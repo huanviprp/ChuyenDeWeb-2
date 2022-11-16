@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DangkyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/module14', function () {
     return view('module14');
 });
+
+Route::resource('dangky', 'DangkyController');
+Route::post('/', [DangkyController::class, 'loginUser']);

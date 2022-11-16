@@ -3,12 +3,22 @@
         <div class="offset-md-3 col-md-6 signout-detail">
             <h1 class="signout-title">ĐĂNG KÝ</h1>
             <div class="signout-form">
-                <form action="" method="post" v-on:submit.prevent="register">
+                <form action="" method="post" v-on:submit.prevent="register()">
+                    <div class="form-group">
+                        <label for="">UserName</label>
+                        <div class="input-username">
+                            <input type="text" class="form-control email" name="email" v-model="user.userName"
+                                placeholder="Nhập Username" autofocus="" required
+                                oninvalid="this.setCustomValidity('Enter User Name Here')"
+                                oninput="this.setCustomValidity('')">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="">UserName/Email:</label>
                         <div class="input-email">
-                            <input type="email" class="form-control email" name="email"
-                                placeholder="Nhập Username hoặc Email" autofocus="" required oninvalid="this.setCustomValidity('Enter User Name Here')" oninput="this.setCustomValidity('')">
+                            <input type="email" class="form-control email" name="email" v-model="user.email"
+                                placeholder="Nhập Email" autofocus="" :rules="validateEmail">
                             <i class="fas fa-envelope" aria-hidden="true"></i>
                         </div>
                     </div>
@@ -16,14 +26,14 @@
                         <label for="">Mật khẩu:</label>
                         <div class="input-password">
                             <input type="password" class="form-control password" name="password" placeholder="Password"
-                                required>
+                                v-model="user.Password" required>
                             <i class="fas fa-lock" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="">Nhập lại mật khẩu:</label>
                         <div class="input-password">
-                            <input type="password" class="form-control password" name="password"
+                            <input type="password" class="form-control password" name="password" v-model="user.Password"
                                 placeholder="Nhập lại Password" required>
                             <i class="fas fa-lock" aria-hidden="true"></i>
                         </div>
@@ -32,46 +42,42 @@
                         </div>
                         <div class="login-button mb-2">
                             <input type="submit" class="btn btn-warning" value="Đăng Ký">
+                            <label class="label label-success check-value" v-if="check">Đăng ký thành công</label><br />
                         </div>
                     </div>
                 </form>
             </div>
-
-
-
         </div>
 
     </div>
 </template>
 <script>
-export default{
-        data(){
-            return{
-                title:"Form Register",
-                formdata:{},
-                message:"",
-                success:0,
-            }
+import axios from 'axios';
+export default {
+    data() {
+        return {
+            user: {},
+            check: false
+        };
+    },
+    methods: {
+        register() {
+            axios.post("/dangky", this.user).then((response) => {
+                this.check = true;
+            });
         },
-        methods:{
-           register(){
-                this.axios.post("http://localhost:8888/form-register",this.user).then((response) => {
-                       console.log(response);
-                       if(response.data.success>0){
-                           this.message="You register success";
-                           this.success=response.data.success;
-                       }
-                       else{
-                           this.message="Register to failed";
-                           this.success=response.data.success;
-                       }
-                  });
-                    
-            },
- 
+        validateEmail(value) {
+            if (!value) {
+                return 'Bạn chưa nhập vào ô này';
+            }
+            const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+            if (!regex.test(value)) {
+                return 'Ô này phải có giá trị Email';
+            }
+            return true;
         }
     }
-
+}
 </script>
 <style>
 body {
@@ -101,6 +107,7 @@ label {
     border: 1px solid rgba(255, 255, 219, 0.18);
 }
 
+.input-username,
 .input-email,
 .input-password {
     color: #212529;
@@ -112,6 +119,7 @@ label {
     position: relative;
 }
 
+.input-username i,
 .input-email i,
 .input-password i {
     position: absolute;
@@ -121,6 +129,7 @@ label {
     color: #aaa;
 }
 
+.input-username input,
 .input-email input,
 .input-password input {
     border-radius: 4px;
@@ -150,12 +159,14 @@ label {
     color: white;
 }
 
+.input-username>input:focus,
 .input-email>input:focus,
 .input-pass>input:focus {
     border-color: #1e90ff;
     box-shadow: 0 0 8px 0 #1e90ff;
 }
 
+.input-username>input:focus+i,
 .input-email>input:focus+i,
 .input-password>input:focus+i {
     color: #1e90ff;
@@ -168,5 +179,19 @@ label {
     background: linear-gradient(328deg, rgba(205, 8, 0, 1) 2%, rgba(213, 9, 0, 1) 42%, rgba(199, 50, 0, 0.8606793059020483) 100%);
     transition: .2s;
     color: white;
+}
+
+.check-value {
+    position: absolute;
+    width: 45%;
+    text-align: center;
+    top: 18px;
+    right: 34px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    transition: .3s;
+    background-color: rgb(9, 199, 9);
 }
 </style>
