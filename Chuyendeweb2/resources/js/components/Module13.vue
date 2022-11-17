@@ -3,20 +3,20 @@
         <div class="offset-md-3 col-md-6 login-detail">
             <h1 class="login-title">ĐĂNG NHẬP</h1>
             <div class="login-form">
-                <form action="" method="post" v-on:submit.prevent="onSubmit">
+                <form action="" method="post">
                     <div class="form-group">
                         <label for="">UserName/Email:</label>
                         <div class="input-email">
-                            <input type="email" class="form-control email" v-model="user.email" name="email"
-                                placeholder="Email" autofocus="" required>
+                            <input type="email" class="form-control email" name="email" placeholder="Email" autofocus=""
+                                required>
                             <i class="fas fa-envelope" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="">Mật khẩu:</label>
                         <div class="input-password">
-                            <input type="password" class="form-control password" v-model="user.Password" name="password"
-                                placeholder="Password" required>
+                            <input type="password" class="form-control password" name="password" placeholder="Password"
+                                required>
                             <i class="fas fa-lock" aria-hidden="true"></i>
                         </div>
                     </div>
@@ -26,9 +26,6 @@
 
                     <div class="login-button mb-2">
                         <input type="submit" class="btn btn-warning" value="Đăng nhập">
-                        <label class="label label-success" v-if="check_a">Login thanh cong</label><br />
-                        <label class="label label-success" v-if="check_b">Login Khong thanh cong</label><br />
-
                     </div>
                 </form>
             </div>
@@ -48,31 +45,8 @@
     </div>
 </template>
 <script>
-import axios from 'axios';
-export default {
-    data() {
-        return {
-            user: {},
-            check_a: false,
-            check_b: false
-        }
-    },
-    methods: {
-        onSubmit() {
-            axios.post("/login", this.user).then((response) => {
-                var data = response.data.success;
-                if (data > 0) {
-                    this.check_a = true;
-                    this.check_b = false;
-                }
-                else {
-                    this.check_a = false;
-                    this.check_b = true;
-                }
 
-            });
-        }
-    }
+export default {
 
 }
 
@@ -166,13 +140,11 @@ label {
     left: 13px;
     transition: .4s;
 }
-
-.login-facebook:hover {
+.login-facebook:hover{
     transition: .2s;
     color: black;
     font-weight: 600;
 }
-
 .login-google:hover {
     background: rgb(205, 8, 0);
     background: linear-gradient(328deg, rgba(205, 8, 0, 1) 2%, rgba(213, 9, 0, 1) 42%, rgba(199, 50, 0, 0.8606793059020483) 100%);

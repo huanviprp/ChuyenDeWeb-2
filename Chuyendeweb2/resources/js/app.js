@@ -1,8 +1,4 @@
 import { createApp } from 'vue';
-// import VueRouter from 'vue-router';
-// import { createRouter, createWebHistory } from 'vue-router'
-import VueAxios from 'vue-axios';//gọi thư viện axios
-import axios from 'axios';
 
 
 import Module15 from './components/Module15.vue';

@@ -20,8 +20,6 @@
     },
     "dependencies": {
         "cors": "^2.8.5",
-        "mysql": "^2.18.1",
-        "vue-axios": "^3.5.2",
-        "vue-router": "^4.1.6"
+        "mysql": "^2.18.1"
     }
 }
