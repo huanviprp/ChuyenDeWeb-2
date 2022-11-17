@@ -20,5 +20,5 @@ Route::get('/module14', function () {
     return view('module14');
 });
 
-Route::resource('dangky', 'DangkyController');
-Route::post('/', [DangkyController::class, 'loginUser']);
+Route::resource('dangky', 'DangkyController@index');
+Route::post('/dangky', [DangkyController::class, 'store']);
