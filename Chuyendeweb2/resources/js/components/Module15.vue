@@ -87,7 +87,7 @@
                                                 <tbody>
                                                     <tr data-userid="1">
                                                         <td></td>
-                                                        <td v-model="user.user_id" >1</td>
+                                                        <td >1</td>
                                                         <td>John Doe</td>
                                                         <td>*****************</td>
                                                         <td><a href="#comment" style="font-size:14px">Xem comment</a>
