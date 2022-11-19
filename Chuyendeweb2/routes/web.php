@@ -24,4 +24,4 @@ Route::get('/dashboard', function () {
 });
 
 Route::resource('dangky', 'DangkyController');
-Route::post('/', [DangkyController::class, 'loginUser']);
+// Route::post('/', [DangkyController::class, 'loginUser']);
