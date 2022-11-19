@@ -27,9 +27,9 @@ Route::get('/module14', function () {
 
     return view('module14');
 });
-Route::get('/module15', function () {
+Route::get('/dashboard', function () {
 
-    return view('module15');
+    return view('dashboard');
 });
 Route::get('/detail', function () {
     return view('detail');

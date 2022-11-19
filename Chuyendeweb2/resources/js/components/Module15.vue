@@ -97,7 +97,7 @@
                                                             <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
                                                         </td>
                                                     </tr>
-                                                    <tr data-userid="2">
+                                                    <!-- <tr data-userid="2">
                                                         <td></td>
                                                         <td>2</td>
                                                         <td>John Doe</td>
@@ -132,7 +132,7 @@
                                                             <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
                                                             <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
                                                         </td>
-                                                    </tr>
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </div>
@@ -173,24 +173,24 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr data-comicid="1">
-                                                        <td>1</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân điện quang long lanh lung linh....... helloo every numbrere one heloooooooooooooooooo</td>
+                                                    <tr v-for="comic in Comics" data-comicid="1">
+                                                        <td>{{comic.Comic_id}}</td>
+                                                        <td>{{comic.Name}}</td>
+                                                        <td class="descr">{{comic.Descripsion}}</td>
                                                         <td>Action</td>
                                                         <td><a href="#chapter">123</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
+                                                        <td>{{comic.Img_feature}}</td>
+                                                        <td>{{comic.Date}}</td>
+                                                        <td>{{comic.View}}</td>
+                                                        <td>{{comic.Status}}</td>
+                                                        <td>{{comic.author_id}}</td>
                                                         <td>Feature</td>
                                                         <td>
                                                             <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
                                                             <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
                                                         </td>
                                                     </tr>
-                                                    <tr data-comicid="2">
+                                                    <!-- <tr data-comicid="2">
                                                         <td>2</td>
                                                         <td>Siêu nhân gao</td>
                                                         <td class="descr">Ở đây có 5 siêu nhân</td>
@@ -410,7 +410,7 @@
                                                             <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
                                                             <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
                                                         </td>
-                                                    </tr>
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </div>
@@ -490,6 +490,21 @@
     </div>
 </template>
 <script>
+import axios from 'axios';
+export default {
+    data() {
+       return{
+        Comics:[]
+       }
+    },
+    created() {
+        axios.get('api/').then(
+            res =>{
+                this.Comics = res.data;
+            }
+        )
+    },
+}
 </script>
 <style>
 body {
