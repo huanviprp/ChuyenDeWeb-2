@@ -493,15 +493,18 @@
 export default{
     data() {
         return {
-            'user':{
-                'user_id':'',
-                'userName':'',
-                'email':'',
-                'Password':'',
-                'role_id':''
-            }
-        };
+            user: [],
+            check_a: false,
+            check_b: false
+        }
     },
+    methods: {
+        created() {
+            axios.get("/login", this.user).then((response) => {
+                var data = response.data.success;
+            });
+        }
+    }
 }
 </script>
 <style>
