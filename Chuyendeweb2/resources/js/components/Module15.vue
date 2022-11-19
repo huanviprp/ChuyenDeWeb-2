@@ -179,7 +179,7 @@
                                                         <td class="descr">{{comic.Descripsion}}</td>
                                                         <td>Action</td>
                                                         <td><a href="#chapter">123</a> </td>
-                                                        <td>{{comic.Img_feature}}</td>
+                                                        <td><img v-bind:src="{{comic.Img_feature}}" alt=""></td>
                                                         <td>{{comic.Date}}</td>
                                                         <td>{{comic.View}}</td>
                                                         <td>{{comic.Status}}</td>
@@ -499,7 +499,12 @@ export default {
        }
     },
     created() {
-        axios.get('api/').then(
+        axios.get('api/dataComic').then(
+            res =>{
+                this.Comics = res.data;
+            }
+        )
+        axios.get('api/user').then(
             res =>{
                 this.Comics = res.data;
             }
