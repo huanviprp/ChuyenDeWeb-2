@@ -1,7 +1,7 @@
 <template>
     <div class="admin-panel clearfix">
         <div class="module15 slidebar">
-            <div class="logo">
+            <div class="dashboard logo">
                 <a href=""></a>
             </div>
             <ul>
@@ -87,7 +87,7 @@
                                                 <tbody>
                                                     <tr data-userid="1">
                                                         <td></td>
-                                                        <td >1</td>
+                                                        <td>1</td>
                                                         <td>John Doe</td>
                                                         <td>*****************</td>
                                                         <td><a href="#comment" style="font-size:14px">Xem comment</a>
@@ -97,7 +97,7 @@
                                                             <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
                                                         </td>
                                                     </tr>
-                                                    <tr data-userid="2">
+                                                    <!-- <tr data-userid="2">
                                                         <td></td>
                                                         <td>2</td>
                                                         <td>John Doe</td>
@@ -132,7 +132,7 @@
                                                             <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
                                                             <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
                                                         </td>
-                                                    </tr>
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </div>
@@ -173,24 +173,24 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr data-comicid="1">
-                                                        <td>1</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân điện quang long lanh lung linh....... helloo every numbrere one heloooooooooooooooooo</td>
+                                                    <tr v-for="comic in Comics" data-comicid="1">
+                                                        <td>{{comic.Comic_id}}</td>
+                                                        <td>{{comic.Name}}</td>
+                                                        <td class="descr">{{comic.Descripsion}}</td>
                                                         <td>Action</td>
                                                         <td><a href="#chapter">123</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
+                                                        <td>{{comic.Img_feature}}</td>
+                                                        <td>{{comic.Date}}</td>
+                                                        <td>{{comic.View}}</td>
+                                                        <td>{{comic.Status}}</td>
+                                                        <td>{{comic.author_id}}</td>
                                                         <td>Feature</td>
                                                         <td>
                                                             <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
                                                             <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
                                                         </td>
                                                     </tr>
-                                                    <tr data-comicid="2">
+                                                    <!-- <tr data-comicid="2">
                                                         <td>2</td>
                                                         <td>Siêu nhân gao</td>
                                                         <td class="descr">Ở đây có 5 siêu nhân</td>
@@ -410,7 +410,7 @@
                                                             <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
                                                             <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
                                                         </td>
-                                                    </tr>
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </div>
@@ -490,10 +490,12 @@
     </div>
 </template>
 <script>
-export default{
+import axios from 'axios';
+export default {
     data() {
        return{
-        Comics:[]
+        Comics:[],
+        Users:[]
        }
     },
     created() {
@@ -531,6 +533,7 @@ body {
 .module15.slidebar .logo {
     height: 145px;
     border-bottom: 1px solid rgb(235, 235, 235);
+    padding-left: 0 !important;
 }
 
 .module15.slidebar ul {
@@ -610,7 +613,7 @@ body {
     margin-right: 30px;
 }
 /*logo*/
-.logo a {
+.dashboard.logo a {
     width: 88px;
     height: 88px;
     display: inline-block;
@@ -623,7 +626,7 @@ body {
     background-color: rgb(214, 214, 214);
 }
 
-.logo a:before {
+.dashboard.logo a:before {
     content: "A";
     width: 70px;
     height: 70px;
