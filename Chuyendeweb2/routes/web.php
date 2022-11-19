@@ -13,12 +13,14 @@ use App\Http\Controllers\DangkyController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/module13', function () {
     return view('module13');
 });
+
 Route::get('/module14', function () {
     return view('module14');
 });
 
 Route::resource('dangky', 'DangkyController@index');
 Route::post('/dangky', [DangkyController::class, 'store']);
+Route::post('/dangky/loginUser','DangkyController@loginUser');

@@ -3,7 +3,7 @@
         <div class="offset-md-3 col-md-6 login-detail">
             <h1 class="login-title">ĐĂNG NHẬP</h1>
             <div class="login-form">
-                <form action="" method="post" v-on:submit.prevent="onSubmit">
+                <form action="" method="post" v-on:submit.prevent="onSubmit()">
                     <div class="form-group">
                         <label for="">UserName/Email:</label>
                         <div class="input-email">
@@ -52,14 +52,14 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            user: {},
+            user: [],
             check_a: false,
             check_b: false
         }
     },
     methods: {
         onSubmit() {
-            axios.post("/login", this.user).then((response) => {
+            axios.get("/login", this.user).then((response) => {
                 var data = response.data.success;
                 if (data > 0) {
                     this.check_a = true;

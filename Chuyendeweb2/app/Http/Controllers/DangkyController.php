@@ -17,6 +17,7 @@ class DangkyController extends Controller
         //
         $lists = User::all();
         return response()->json($lists);
+        dd($request->all());
     }
 
     /**
