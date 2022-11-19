@@ -19,8 +19,8 @@ Route::get('/module13', function () {
 Route::get('/module14', function () {
     return view('module14');
 });
-Route::get('/module15', function () {
-    return view('module15');
+Route::get('/dashboard', function () {
+    return view('dashboard');
 });
 
 Route::resource('dangky', 'DangkyController');
