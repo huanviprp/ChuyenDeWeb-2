@@ -17631,17 +17631,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      user: [],
-      check_a: false,
-      check_b: false
+      Comics: []
     };
   },
-  methods: {
-    created: function created() {
-      axios.get("/login", this.user).then(function (response) {
-        var data = response.data.success;
-      });
-    }
+  created: function created() {
+    var _this = this;
+    axios.get('api/').then(function (res) {
+      _this.Comics = res.data;
+    });
   }
 });
 

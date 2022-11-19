@@ -492,19 +492,17 @@
 <script>
 export default{
     data() {
-        return {
-            user: [],
-            check_a: false,
-            check_b: false
-        }
+       return{
+        Comics:[]
+       }
     },
-    methods: {
-        created() {
-            axios.get("/login", this.user).then((response) => {
-                var data = response.data.success;
-            });
-        }
-    }
+    created() {
+        axios.get('api/').then(
+            res =>{
+                this.Comics = res.data;
+            }
+        )
+    },
 }
 </script>
 <style>
