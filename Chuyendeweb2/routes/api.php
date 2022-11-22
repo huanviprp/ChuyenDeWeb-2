@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('/dataComic', [ComicController::class, 'index']);
-Route::get('/dataUser', [UserController::class, 'index']);
+Route::get('/datauser', [UserController::class, 'index']);
