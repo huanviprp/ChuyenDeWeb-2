@@ -15196,28 +15196,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      title: "Form Register",
-      formdata: {},
-      message: "",
-      success: 0
+      user: {},
+      check: false
     };
   },
   methods: {
     register: function register() {
       var _this = this;
-      this.axios.post("http://localhost:8888/form-register", this.user).then(function (response) {
-        console.log(response);
-        if (response.data.success > 0) {
-          _this.message = "You register success";
-          _this.success = response.data.success;
-        } else {
-          _this.message = "Register to failed";
-          _this.success = response.data.success;
-        }
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post("/dangky", this.user).then(function (response) {
+        _this.check = true;
       });
+    },
+    validateEmail: function validateEmail(value) {
+      if (!value) {
+        return 'Bạn chưa nhập vào ô này';
+      }
+      var regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+      if (!regex.test(value)) {
+        return 'Ô này phải có giá trị Email';
+      }
+      return true;
     }
   }
 });
@@ -15400,35 +15404,126 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 var _hoisted_4 = {
   "class": "signout-form"
 };
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_5 = {
   "class": "form-group"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+};
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": ""
-}, "UserName/Email:"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "input-email"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "email",
-  "class": "form-control email",
-  name: "email",
-  placeholder: "Nhập Username hoặc Email",
-  autofocus: "",
-  required: "",
-  oninvalid: "this.setCustomValidity('Enter User Name Here')",
-  oninput: "this.setCustomValidity('')"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+}, "UserName", -1 /* HOISTED */);
+var _hoisted_7 = {
+  "class": "input-username"
+};
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fas fa-envelope",
   "aria-hidden": "true"
-})])], -1 /* HOISTED */);
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-group\"><label for=\"\">Mật khẩu:</label><div class=\"input-password\"><input type=\"password\" class=\"form-control password\" name=\"password\" placeholder=\"Password\" required><i class=\"fas fa-lock\" aria-hidden=\"true\"></i></div></div><div class=\"form-group\"><label for=\"\">Nhập lại mật khẩu:</label><div class=\"input-password\"><input type=\"password\" class=\"form-control password\" name=\"password\" placeholder=\"Nhập lại Password\" required><i class=\"fas fa-lock\" aria-hidden=\"true\"></i></div><div class=\"dangnhap text-right my-3\"><a href=\"/login\">Trờ về trang đăng nhập</a></div><div class=\"login-button mb-2\"><input type=\"submit\" class=\"btn btn-warning\" value=\"Đăng Ký\"></div></div>", 2);
-var _hoisted_8 = [_hoisted_5, _hoisted_6];
+}, null, -1 /* HOISTED */);
+var _hoisted_9 = {
+  "class": "form-group"
+};
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": ""
+}, "UserName/Email:", -1 /* HOISTED */);
+var _hoisted_11 = {
+  "class": "input-email"
+};
+var _hoisted_12 = ["rules"];
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fas fa-envelope",
+  "aria-hidden": "true"
+}, null, -1 /* HOISTED */);
+var _hoisted_14 = {
+  "class": "form-group"
+};
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": ""
+}, "Mật khẩu:", -1 /* HOISTED */);
+var _hoisted_16 = {
+  "class": "input-password"
+};
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fas fa-lock",
+  "aria-hidden": "true"
+}, null, -1 /* HOISTED */);
+var _hoisted_18 = {
+  "class": "form-group"
+};
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": ""
+}, "Nhập lại mật khẩu:", -1 /* HOISTED */);
+var _hoisted_20 = {
+  "class": "input-password"
+};
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fas fa-lock",
+  "aria-hidden": "true"
+}, null, -1 /* HOISTED */);
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "dangnhap text-right my-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "/login"
+}, "Trờ về trang đăng nhập")], -1 /* HOISTED */);
+var _hoisted_23 = {
+  "class": "login-button mb-2"
+};
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "submit",
+  "class": "btn btn-warning",
+  value: "Đăng Ký"
+}, null, -1 /* HOISTED */);
+var _hoisted_25 = {
+  key: 0,
+  "class": "label label-success check-value"
+};
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     action: "",
     method: "post",
-    onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
-      return $options.register && $options.register.apply($options, arguments);
+    onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+      return $options.register();
     }, ["prevent"]))
-  }, _hoisted_8, 32 /* HYDRATE_EVENTS */)])])]);
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    "class": "form-control email",
+    name: "email",
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.user.userName = $event;
+    }),
+    placeholder: "Nhập Username",
+    autofocus: "",
+    required: "",
+    oninvalid: "this.setCustomValidity('Enter User Name Here')",
+    oninput: "this.setCustomValidity('')"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.user.userName]]), _hoisted_8])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "email",
+    "class": "form-control email",
+    name: "email",
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $data.user.email = $event;
+    }),
+    placeholder: "Nhập Email",
+    autofocus: "",
+    rules: $options.validateEmail
+  }, null, 8 /* PROPS */, _hoisted_12), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.user.email]]), _hoisted_13])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "password",
+    "class": "form-control password",
+    name: "password",
+    placeholder: "Password",
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+      return $data.user.Password = $event;
+    }),
+    required: ""
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.user.Password]]), _hoisted_17])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "password",
+    "class": "form-control password",
+    name: "password",
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+      return $data.user.Password = $event;
+    }),
+    placeholder: "Nhập lại Password",
+    required: ""
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.user.Password]]), _hoisted_21]), _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [_hoisted_24, $data.check ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("label", _hoisted_25, "Đăng ký thành công")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_26])])], 32 /* HYDRATE_EVENTS */)])])]);
 }
 
 /***/ }),
@@ -15640,7 +15735,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\r\n    background-image: url(\"https://cdn.wallpapersafari.com/17/62/Mw5A6y.jpg\");\n}\nh1.signout-title {\r\n    font-size: 2rem;\r\n    font-weight: 700;\r\n    text-shadow: 0px -2px 25px #ededed;\r\n    /* border-bottom: 3px solid red; */\r\n    margin-right: 57%;\n}\nlabel {\r\n    color: white;\n}\n.signout-detail {\r\n    margin-top: 3rem;\r\n    background-color: #dedede;\r\n    padding: 30px 40px;\r\n    background: rgba(222, 222, 219, 0.2);\r\n    box-shadow: 0 4px 10px 0 rgba(222, 222, 219, 0.37);\r\n    -webkit-backdrop-filter: blur(10px);\r\n            backdrop-filter: blur(10px);\r\n    border-radius: 10px;\r\n    border: 1px solid rgba(255, 255, 219, 0.18);\n}\n.input-email,\r\n.input-password {\r\n    color: #212529;\r\n    text-align: left;\r\n    font-size: 14px;\r\n    box-sizing: border-box;\r\n    padding: 0;\r\n    margin: 0;\r\n    position: relative;\n}\n.input-email i,\r\n.input-password i {\r\n    position: absolute;\r\n    top: 10px;\r\n    left: 20px;\r\n    font-size: 20px;\r\n    color: #aaa;\n}\n.input-email input,\r\n.input-password input {\r\n    border-radius: 4px;\r\n    box-sizing: border-box;\r\n    padding: 8px 40px 8px 50px;\r\n    transition: .4s;\n}\n.signout-button input {\r\n    font-weight: 600;\r\n    width: 100%;\r\n    color: white;\n}\n.signout-social i {\r\n    float: left;\r\n    padding: 5px 0 0 5px;\n}\n.signout-facebook {\r\n    width: 100%;\n}\n.signout-google {\r\n    background: rgb(218, 64, 13);\r\n    background: linear-gradient(90deg, rgba(218, 64, 13, 1) 0%, rgba(237, 11, 0, 1) 3%, rgba(255, 63, 0, 0.8606793059020483) 100%);\r\n    color: white;\n}\n.input-email>input:focus,\r\n.input-pass>input:focus {\r\n    border-color: #1e90ff;\r\n    box-shadow: 0 0 8px 0 #1e90ff;\n}\n.input-email>input:focus+i,\r\n.input-password>input:focus+i {\r\n    color: #1e90ff;\r\n    left: 13px;\r\n    transition: .4s;\n}\n.signout-google:hover {\r\n    background: rgb(205, 8, 0);\r\n    background: linear-gradient(328deg, rgba(205, 8, 0, 1) 2%, rgba(213, 9, 0, 1) 42%, rgba(199, 50, 0, 0.8606793059020483) 100%);\r\n    transition: .2s;\r\n    color: white;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\r\n    background-image: url(\"https://cdn.wallpapersafari.com/17/62/Mw5A6y.jpg\");\n}\nh1.signout-title {\r\n    font-size: 2rem;\r\n    font-weight: 700;\r\n    text-shadow: 0px -2px 25px #ededed;\r\n    /* border-bottom: 3px solid red; */\r\n    margin-right: 57%;\n}\nlabel {\r\n    color: white;\n}\n.signout-detail {\r\n    margin-top: 3rem;\r\n    background-color: #dedede;\r\n    padding: 30px 40px;\r\n    background: rgba(222, 222, 219, 0.2);\r\n    box-shadow: 0 4px 10px 0 rgba(222, 222, 219, 0.37);\r\n    -webkit-backdrop-filter: blur(10px);\r\n            backdrop-filter: blur(10px);\r\n    border-radius: 10px;\r\n    border: 1px solid rgba(255, 255, 219, 0.18);\n}\n.input-username,\r\n.input-email,\r\n.input-password {\r\n    color: #212529;\r\n    text-align: left;\r\n    font-size: 14px;\r\n    box-sizing: border-box;\r\n    padding: 0;\r\n    margin: 0;\r\n    position: relative;\n}\n.input-username i,\r\n.input-email i,\r\n.input-password i {\r\n    position: absolute;\r\n    top: 10px;\r\n    left: 20px;\r\n    font-size: 20px;\r\n    color: #aaa;\n}\n.input-username input,\r\n.input-email input,\r\n.input-password input {\r\n    border-radius: 4px;\r\n    box-sizing: border-box;\r\n    padding: 8px 40px 8px 50px;\r\n    transition: .4s;\n}\n.signout-button input {\r\n    font-weight: 600;\r\n    width: 100%;\r\n    color: white;\n}\n.signout-social i {\r\n    float: left;\r\n    padding: 5px 0 0 5px;\n}\n.signout-facebook {\r\n    width: 100%;\n}\n.signout-google {\r\n    background: rgb(218, 64, 13);\r\n    background: linear-gradient(90deg, rgba(218, 64, 13, 1) 0%, rgba(237, 11, 0, 1) 3%, rgba(255, 63, 0, 0.8606793059020483) 100%);\r\n    color: white;\n}\n.input-username>input:focus,\r\n.input-email>input:focus,\r\n.input-pass>input:focus {\r\n    border-color: #1e90ff;\r\n    box-shadow: 0 0 8px 0 #1e90ff;\n}\n.input-username>input:focus+i,\r\n.input-email>input:focus+i,\r\n.input-password>input:focus+i {\r\n    color: #1e90ff;\r\n    left: 13px;\r\n    transition: .4s;\n}\n.signout-google:hover {\r\n    background: rgb(205, 8, 0);\r\n    background: linear-gradient(328deg, rgba(205, 8, 0, 1) 2%, rgba(213, 9, 0, 1) 42%, rgba(199, 50, 0, 0.8606793059020483) 100%);\r\n    transition: .2s;\r\n    color: white;\n}\n.check-value {\r\n    position: absolute;\r\n    width: 45%;\r\n    text-align: center;\r\n    top: 18px;\r\n    right: 34px;\r\n    height: 35px;\r\n    border-radius: 10px;\r\n    font-size: 22px;\r\n    font-weight: 600;\r\n    transition: .3s;\r\n    background-color: rgb(9, 199, 9);\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
