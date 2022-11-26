@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DangkyController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,15 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/module13', function () {
-    return view('module13');
-});
-Route::get('/module14', function () {
-    return view('module14');
-});
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+// Route::get('/module13', function () {
+//     return view('module13');
+// });
+// Route::get('/module14', function () {
+//     return view('module14');
+// });
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// });
 
-Route::resource('dangky', 'DangkyController');
-// Route::post('/', [DangkyController::class, 'loginUser']);
+// Route::resource('dangky', 'DangkyController');
+// Route::post('/dangky', [DangkyController::class, 'store']);
+
+
+// Route::get('/dangky/loginUser', [DangkyController::class, 'loginUser']);
+
+Route::get('{any}', function(){
+    return view('app');
+})->where('any','.*');

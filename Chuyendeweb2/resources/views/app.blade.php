@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{csrf_token()}}">
 
-        <title>Dashboard</title>
+        <title>App</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">        
@@ -39,7 +39,7 @@
                 ])!!}
             </script>
         @endif
-        <div id="module15"></div>
+        <div id="app"></div>
         <script src="{{ mix('js/app.js') }}"></script> 
     </body>
 </html>

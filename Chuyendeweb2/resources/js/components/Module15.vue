@@ -242,6 +242,7 @@
 <script>
 import axios from 'axios';
 export default {
+    name: 'Module15',
     data() {
         return {
             query: null,

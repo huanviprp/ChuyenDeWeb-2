@@ -7,7 +7,7 @@
                     <div class="form-group">
                         <label for="">UserName</label>
                         <div class="input-username">
-                            <input type="text" class="form-control email" name="email" v-model="user.userName"
+                            <input type="text" class="form-control email" name="email" v-model="user.name"
                                 placeholder="Nhập Username" autofocus="" required
                                 oninvalid="this.setCustomValidity('Enter User Name Here')"
                                 oninput="this.setCustomValidity('')">
@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="">UserName/Email:</label>
+                        <label for="">Email:</label>
                         <div class="input-email">
                             <input type="email" class="form-control email" name="email" v-model="user.email"
                                 placeholder="Nhập Email" autofocus="" :rules="validateEmail">
@@ -54,6 +54,7 @@
 <script>
 import axios from 'axios';
 export default {
+    name: 'Module14',
     data() {
         return {
             user: {},
