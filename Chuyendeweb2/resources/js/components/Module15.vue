@@ -1,7 +1,7 @@
 <template>
     <div class="admin-panel clearfix">
-        <div class="slidebar">
-            <div class="logo">
+        <div class="module15 slidebar">
+            <div class="dashboard logo">
                 <a href=""></a>
             </div>
             <ul>
@@ -22,7 +22,7 @@
                         <a href="/" title="Trang chủ"> <i class="fa-solid fa-house"></i></a>
                     </div>
                     <div class="container">
-                        <div class="row">
+                        <div class="row ">
                             <div class="col-md-12">
                                 <div class="monitor">
                                     <div class="clearfix">
@@ -66,12 +66,11 @@
                         <h2 class="header"><span class="icon"></span>User</h2>
                         <a href="/" title="Trang chủ"> <i class="fa-solid fa-house"></i></a>
                     </div>
-                    <div class="container">
-                        <div class="row">
+                    <div class="container-fluid">
+                        <div class="row scroll-main">
                             <div class="col-md-12">
                                 <div class="monitor">
                                     <div class="clearfix">
-                                        <Search/>
                                         <div class="row">
                                             <table>
                                                 <thead>
@@ -79,58 +78,28 @@
                                                         <th></th>
                                                         <th>ID</th>
                                                         <th>Username</th>
+                                                        <th>Email</th>
                                                         <th>Password</th>
+                                                        <th>Tạo ngày</th>
                                                         <th>Comment</th>
                                                         <th></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr data-userid="1">
+                                                    <tr v-for="user in Users" data-userid="1">
                                                         <td></td>
-                                                        <td>1</td>
-                                                        <td>John Doe</td>
-                                                        <td>*****************</td>
+                                                        <td>{{ user.id }}</td>
+                                                        <td>{{ user.name }}</td>
+                                                        <td>{{ user.email }}</td>
+                                                        <td>{{ user.password }}</td>
+                                                        <td>{{ user.created_at }}</td>
                                                         <td><a href="#comment" style="font-size:14px">Xem comment</a>
                                                         </td>
                                                         <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-userid="2">
-                                                        <td></td>
-                                                        <td>2</td>
-                                                        <td>John Doe</td>
-                                                        <td>*****************</td>
-                                                        <td><a href="#comment" style="font-size:14px">Xem comment</a>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-userid="3">
-                                                        <td></td>
-                                                        <td>3</td>
-                                                        <td>John Doe</td>
-                                                        <td>*****************</td>
-                                                        <td><a href="#comment" style="font-size:14px">Xem comment</a>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-userid="4">
-                                                        <td></td>
-                                                        <td>4</td>
-                                                        <td>John Doe</td>
-                                                        <td>*****************</td>
-                                                        <td><a href="#comment" style="font-size:14px">Xem comment</a>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
+                                                            <button type="button" data-action="edit"><i
+                                                                    class="fa-regular fa-pen-to-square"></i></button>
+                                                            <button type="button" data-action="delete"><i
+                                                                    class="fa-solid fa-ban"></i></button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -148,12 +117,11 @@
                         <h2 class="header"><span class="icon"></span>Comic</h2>
                         <a href="/" title="Trang chủ"> <i class="fa-solid fa-house"></i></a>
                     </div>
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row scroll-main">
                             <div class="col-md-12">
                                 <div class="monitor">
                                     <div class="clearfix">
-                                        <Search/>
                                         <div class="row">
                                             <table>
                                                 <thead>
@@ -173,242 +141,23 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr data-comicid="1">
-                                                        <td>1</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân điện quang long lanh lung linh....... helloo every numbrere one heloooooooooooooooooo</td>
+                                                    <tr v-for="comic in Comics" data-comicid="1">
+                                                        <td>{{ comic.Comic_id }}</td>
+                                                        <td>{{ comic.Name }}</td>
+                                                        <td class="descr">{{ comic.Descripsion }}</td>
                                                         <td>Action</td>
                                                         <td><a href="#chapter">123</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
+                                                        <td><img v-bind:src="comic.Img_feature" alt=""></td>
+                                                        <td>{{ comic.Date }}</td>
+                                                        <td>{{ comic.View }}</td>
+                                                        <td>{{ comic.Status }}</td>
+                                                        <td>{{ comic.author_id }}</td>
                                                         <td>Feature</td>
                                                         <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-comicid="2">
-                                                        <td>2</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân</td>
-                                                        <td>Action</td>
-                                                        <td><a href="#chapter">123</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
-                                                        <td>Feature</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-comicid="3">
-                                                        <td>3</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân</td>
-                                                        <td>Fantasy</td>
-                                                        <td><a href="#chapter">20</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
-                                                        <td>Feature</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-comicid="4">
-                                                        <td>4</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân</td>
-                                                        <td>Horror</td>
-                                                        <td><a href="#chapter">2</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
-                                                        <td>Feature</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-comicid="4">
-                                                        <td>4</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân</td>
-                                                        <td>Horror</td>
-                                                        <td><a href="#chapter">5</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
-                                                        <td>Feature</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-comicid="4">
-                                                        <td>4</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân</td>
-                                                        <td>Horror</td>
-                                                        <td><a href="#chapter">123</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
-                                                        <td>Feature</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-comicid="4">
-                                                        <td>4</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân</td>
-                                                        <td>Horror</td>
-                                                        <td><a href="#chapter">21</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
-                                                        <td>Feature</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-comicid="4">
-                                                        <td>4</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân</td>
-                                                        <td>Horror</td>
-                                                        <td><a href="#chapter">4</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
-                                                        <td>Feature</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-comicid="4">
-                                                        <td>4</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân</td>
-                                                        <td>Horror</td>
-                                                        <td><a href="#chapter">32</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
-                                                        <td>Feature</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-comicid="4">
-                                                        <td>4</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân</td>
-                                                        <td>Horror</td>
-                                                        <td><a href="#chapter">123</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
-                                                        <td>Feature</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-comicid="4">
-                                                        <td>4</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân</td>
-                                                        <td>Horror</td>
-                                                        <td><a href="#chapter">123</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
-                                                        <td>Feature</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-comicid="4">
-                                                        <td>4</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân</td>
-                                                        <td>Horror</td>
-                                                        <td><a href="#chapter">32</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
-                                                        <td>Feature</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-comicid="4">
-                                                        <td>4</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân</td>
-                                                        <td>Horror</td>
-                                                        <td><a href="#chapter">12</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
-                                                        <td>Feature</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr data-comicid="4">
-                                                        <td>4</td>
-                                                        <td>Siêu nhân gao</td>
-                                                        <td class="descr">Ở đây có 5 siêu nhân</td>
-                                                        <td>Horror</td>
-                                                        <td><a href="#chapter">21</a> </td>
-                                                        <td>img-link</td>
-                                                        <td>12/11/2022</td>
-                                                        <td>12.455</td>
-                                                        <td>Đang hoàn thành</td>
-                                                        <td>Ân Phan</td>
-                                                        <td>Feature</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
+                                                            <button type="button" data-action="edit"><i
+                                                                    class="fa-regular fa-pen-to-square"></i></button>
+                                                            <button type="button" data-action="delete"><i
+                                                                    class="fa-solid fa-ban"></i></button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -431,7 +180,6 @@
                             <div class="col-md-12">
                                 <div class="monitor">
                                     <div class="clearfix">
-                                        <Search/>
                                         <div class="row">
                                             <table>
                                                 <thead>
@@ -450,8 +198,10 @@
                                                         <td>action</td>
                                                         <td>2</td>
                                                         <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
+                                                            <button type="button" data-action="edit"><i
+                                                                    class="fa-regular fa-pen-to-square"></i></button>
+                                                            <button type="button" data-action="delete"><i
+                                                                    class="fa-solid fa-ban"></i></button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -490,6 +240,57 @@
     </div>
 </template>
 <script>
+import axios from 'axios';
+export default {
+    name: 'Module15',
+    data() {
+        return {
+            query: null,
+            Comics: [],
+            Users: []
+        }
+    },
+    created() {
+        axios.get('api/dataComic').then(
+            res => {
+                this.Comics = res.data;
+            }
+        ).catch(function (error) {
+            console.log(error);
+        })
+        axios.get('api/datauser').then(
+            res => {
+                this.Users = res.data;
+            }
+        )
+    },
+    watch:{
+        query(after, before){
+            this.getUserData(); 
+        }
+    },
+    methods: {
+        // getUserData() {
+        //     axios.get('api/datauser', { param: { search: this.query } }).then(
+        //         res => {
+        //             this.Users = res.data;
+        //         }
+        //     )
+        // },
+        deleteUser(id) {
+
+            const headers = { "CENSORED": "CENSORED" };
+            axios.delete('myAPI' + id, { headers })
+                .then(response => {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error.response);
+                });
+
+        },
+    }
+}
 </script>
 <style>
 body {
@@ -514,23 +315,24 @@ body {
     background-color: rgb(247, 247, 247);
 }
 
-.slidebar .logo {
+.module15.slidebar .logo {
     height: 145px;
     border-bottom: 1px solid rgb(235, 235, 235);
+    padding-left: 0 !important;
 }
 
-.slidebar ul {
+.module15.slidebar ul {
     padding: 0;
     margin: 0;
 }
 
-.slidebar li {
+.module15.slidebar li {
     list-style-type: none;
     margin: 0;
     position: relative;
 }
 
-.slidebar ul a {
+.module15.slidebar ul a {
     color: rgb(140, 140, 140);
     text-decoration: none;
     font: 16px/40px helvetica, verdana, sans-serif;
@@ -542,7 +344,7 @@ body {
     text-transform: capitalize;
 }
 
-.slidebar li:hover a {
+.module15.slidebar li:hover a {
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 0 0 rgb(255, 255, 255), inset 5px 0 0 -1px rgb(234, 83, 63);
 }
@@ -592,11 +394,13 @@ body {
     background-color: #F7F7F7;
     border: 1px solid rgb(235, 235, 235);
 }
-.topmain a{
+
+.topmain a {
     margin-right: 30px;
 }
+
 /*logo*/
-.logo a {
+.dashboard.logo a {
     width: 88px;
     height: 88px;
     display: inline-block;
@@ -609,7 +413,7 @@ body {
     background-color: rgb(214, 214, 214);
 }
 
-.logo a:before {
+.dashboard.logo a:before {
     content: "A";
     width: 70px;
     height: 70px;
@@ -694,36 +498,48 @@ td {
     background-color: white;
     padding: 7px;
 }
-.monitor .clearfix td>a{
-    font-size: 18px;
-    color: black ;
+
+td>img {
+    width: 65%;
 }
+
+.monitor .clearfix td>a {
+    font-size: 18px;
+    color: black;
+}
+
 .monitor .clearfix button i {
     font-size: 20px;
 }
-.monitor .clearfix button{
+
+.monitor .clearfix button {
     margin-right: 15px;
 }
+
 tr:not(:last-of-type) {
     border-bottom: 1px solid #ddd;
 }
-.main-descr{
+
+.main-descr {
     width: 20%;
 }
+
 .descr {
-  	display: -webkit-box;
-  	height: calc( 16px*1.3*2.4);
-  	font-size: 16px;
-  	line-height: 1.3;
-  	-webkit-line-clamp: 2;  /* số dòng hiển thị */
-  	-webkit-box-orient: vertical;
-  	overflow: hidden;
-  	text-overflow: ellipsis;
-  	margin-top:10px;
+    display: -webkit-box;
+    height: calc(16px*1.3*3.4);
+    font-size: 16px;
+    line-height: 1.3;
+    -webkit-line-clamp: 3;
+    /* số dòng hiển thị */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 30px;
     margin-right: 0;
 }
-.scroll-main{
-height: 550px;
-overflow-x: auto;
+
+.scroll-main {
+    height: 550px;
+    overflow-x: auto;
 }
 </style>
