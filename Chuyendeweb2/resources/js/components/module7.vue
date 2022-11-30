@@ -90,7 +90,12 @@ export default {
     data() {
         return {
             isActive: false,
+            user: {},
+            id: this.$route.params.id
         };
+    },
+    created() {
+        console.log(this.id);
     },
 
     methods: {
