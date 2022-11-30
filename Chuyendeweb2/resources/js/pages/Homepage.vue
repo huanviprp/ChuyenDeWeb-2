@@ -1,22 +1,23 @@
 <template>
     <div>
         <header>
-            <module-1></module-1>
-            <module-2></module-2>
+            <Module1></Module1>
+            <Module2></Module2>
+            adahh
         </header>
         <div class="container home">
-            <module-3></module-3>
+            <Module3></Module3>
             <div class="row">
                 <div class="col-md-9">
-                    <module-4></module-4>
+                    <Module4></Module4>
                 </div>
                 <div class="col-md-3">
-                    <module-6></module-6>
+                    <Module6></Module6>
                 </div>
             </div>
         </div>
         <footer>
-            <module-5></module-5>
+            <Module5></Module5>
         </footer>
     </div>
 </template>
@@ -28,6 +29,7 @@ import Module4 from "../components/module4.vue"
 import Module5 from "../components/module5.vue"
 import Module6 from "../components/module6.vue"
 export default {
+
     components: {
         Module1,
         Module2,

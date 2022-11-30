@@ -19,32 +19,32 @@
 // import Module18 from './components/module18.vue';
 
 
-export const routes = [
-  {
-    name: 'home',
-    path: '/',
-    component: Home
-  },
-  {
-    name: 'register',
-    path: '/register/:id',
-    component: Module14
-  },
-  {
-    name: 'login',
-    path: '/login',
-    component: Module13
-  },
-  {
-    name: 'dashboard',
-    path: '/dashboard',
-    component: Module15
-  }
-];
+// export const routes = [
+//   {
+//     name: 'home',
+//     path: '/',
+//     component: Home
+//   },
+//   {
+//     name: 'register',
+//     path: '/register/:id',
+//     component: Module14
+//   },
+//   {
+//     name: 'login',
+//     path: '/login',
+//     component: Module13
+//   },
+//   {
+//     name: 'dashboard',
+//     path: '/dashboard',
+//     component: Module15
+//   }
+// ];
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes: routes,
-});
+// const router = createRouter({
+//   history: createWebHistory(),
+//   routes: routes,
+// });
 
-export default router;
+// export default router;

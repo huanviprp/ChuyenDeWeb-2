@@ -55,6 +55,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/resultsearch', function () {
 //     return view('resultsearch');
 // });
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+Route::get('{any}', function () {
+    return view('app');
+})->where('any', '.*');

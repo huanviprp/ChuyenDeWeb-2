@@ -15741,6 +15741,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./router */ "./resources/js/router/index.js");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_router__WEBPACK_IMPORTED_MODULE_3__);
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 // import {createRouter, createWebHistory} from 'vue-router'
@@ -15749,7 +15750,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_pages_Homepage_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
 app.config.globalProperties.$axios = (axios__WEBPACK_IMPORTED_MODULE_2___default());
-app.use(_router__WEBPACK_IMPORTED_MODULE_3__["default"]);
+app.use((_router__WEBPACK_IMPORTED_MODULE_3___default()));
 app.mount('#homepage');
 
 /***/ }),
@@ -15800,14 +15801,8 @@ if (token) {
 /*!**************************************!*\
   !*** ./resources/js/router/index.js ***!
   \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "routes": () => (/* binding */ routes)
-/* harmony export */ });
 // import Module10 from './components/Module10.vue';
 // import Module11 from './components/Module11.vue';
 // import Module12 from './components/Module12.vue';
@@ -15828,28 +15823,35 @@ __webpack_require__.r(__webpack_exports__);
 // import Module17 from './components/module17.vue';
 // import Module18 from './components/module18.vue';
 
-var routes = [{
-  name: 'home',
-  path: '/',
-  component: Home
-}, {
-  name: 'register',
-  path: '/register/:id',
-  component: Module14
-}, {
-  name: 'login',
-  path: '/login',
-  component: Module13
-}, {
-  name: 'dashboard',
-  path: '/dashboard',
-  component: Module15
-}];
-var router = createRouter({
-  history: createWebHistory(),
-  routes: routes
-});
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);
+// export const routes = [
+//   {
+//     name: 'home',
+//     path: '/',
+//     component: Home
+//   },
+//   {
+//     name: 'register',
+//     path: '/register/:id',
+//     component: Module14
+//   },
+//   {
+//     name: 'login',
+//     path: '/login',
+//     component: Module13
+//   },
+//   {
+//     name: 'dashboard',
+//     path: '/dashboard',
+//     component: Module15
+//   }
+// ];
+
+// const router = createRouter({
+//   history: createWebHistory(),
+//   routes: routes,
+// });
+
+// export default router;
 
 /***/ }),
 
