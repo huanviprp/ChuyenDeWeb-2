@@ -15427,14 +15427,6 @@ module.exports = {
 
 /***/ }),
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 7b64a6c (h)
-=======
->>>>>>> origin/PhanThanhAn/Module-15
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/App.vue?vue&type=script&lang=js":
 /*!**********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/App.vue?vue&type=script&lang=js ***!
@@ -15460,23 +15452,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     logout: function logout(e) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-      var _this = this;
-      e.preventDefault();
-      this.$axios.get('/sanctum/csrf-cookie').then(function (response) {
-        _this.$axios.post('/logout').then(function (response) {
-          if (response.data.success) {
-            window.location.href = "/";
-          } else {
-            console.log(response);
-          }
-        })["catch"](function (error) {
-          console.log(error);
-        });
-=======
-=======
->>>>>>> origin/PhanThanhAn/Module-15
       e.preventDefault();
       this.$axios.post('/logout').then(function (response) {
         if (response.data.success) {
@@ -15486,10 +15461,6 @@ __webpack_require__.r(__webpack_exports__);
         }
       })["catch"](function (error) {
         console.log(error);
-<<<<<<< HEAD
->>>>>>> 7b64a6c (h)
-=======
->>>>>>> origin/PhanThanhAn/Module-15
       });
     }
   }
@@ -15620,13 +15591,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
-=======
->>>>>>> 7b64a6c (h)
-=======
->>>>>>> origin/PhanThanhAn/Module-15
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=script&lang=js":
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=script&lang=js ***!
@@ -15674,31 +15638,11 @@ __webpack_require__.r(__webpack_exports__);
     //         }
     //     )
     // },
-    deleteUser: function deleteUser(id) {
-      var headers = {
-        "CENSORED": "CENSORED"
-      };
-      axios__WEBPACK_IMPORTED_MODULE_0___default()["delete"]('myAPI' + id, {
-        headers: headers
-      }).then(function (response) {
-        console.log(response);
-      })["catch"](function (error) {
-        console.log(error.response);
-      });
-    }
   }
 });
 
 /***/ }),
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 7b64a6c (h)
-=======
->>>>>>> origin/PhanThanhAn/Module-15
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/App.vue?vue&type=template&id=f348271a":
 /*!**************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/App.vue?vue&type=template&id=f348271a ***!
@@ -16072,13 +16016,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
-=======
->>>>>>> 7b64a6c (h)
-=======
->>>>>>> origin/PhanThanhAn/Module-15
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=template&id=28778efb":
 /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=template&id=28778efb ***!
@@ -16374,14 +16311,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 7b64a6c (h)
-=======
->>>>>>> origin/PhanThanhAn/Module-15
 ___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\r\n    background-image: url(\"https://cdn.wallpapersafari.com/17/62/Mw5A6y.jpg\");\n}\nh1.login-title {\r\n    font-size: 2rem;\r\n    font-weight: 700;\r\n    text-shadow: 0px -2px 25px #ededed;\r\n    /* border-bottom: 3px solid red; */\r\n    margin-right: 57%;\n}\nlabel {\r\n    color: white;\n}\n.login-detail {\r\n    margin-top: 3rem;\r\n    background-color: #dedede;\r\n    padding: 30px 40px;\r\n    background: rgba(222, 222, 219, 0.2);\r\n    box-shadow: 0 4px 10px 0 rgba(222, 222, 219, 0.37);\r\n    -webkit-backdrop-filter: blur(10px);\r\n            backdrop-filter: blur(10px);\r\n    border-radius: 10px;\r\n    border: 1px solid rgba(255, 255, 219, 0.18);\n}\n.input-email,\r\n.input-password {\r\n    color: #212529;\r\n    text-align: left;\r\n    font-size: 14px;\r\n    box-sizing: border-box;\r\n    padding: 0;\r\n    margin: 0;\r\n    position: relative;\n}\n.input-email i,\r\n.input-password i {\r\n    position: absolute;\r\n    top: 10px;\r\n    left: 20px;\r\n    font-size: 20px;\r\n    color: #aaa;\n}\n.input-email input,\r\n.input-password input {\r\n    border-radius: 4px;\r\n    box-sizing: border-box;\r\n    padding: 8px 40px 8px 50px;\r\n    transition: .4s;\n}\n.login-button input {\r\n    font-weight: 600;\r\n    width: 100%;\r\n    color: white;\n}\n.login-social i {\r\n    float: left;\r\n    padding: 5px 0 0 5px;\n}\n.login-facebook {\r\n    width: 100%;\n}\n.login-google {\r\n    background: rgb(218, 64, 13);\r\n    background: linear-gradient(90deg, rgba(218, 64, 13, 1) 0%, rgba(237, 11, 0, 1) 3%, rgba(255, 63, 0, 0.8606793059020483) 100%);\r\n    color: white;\n}\n.input-email>input:focus,\r\n.input-pass>input:focus {\r\n    border-color: #1e90ff;\r\n    box-shadow: 0 0 8px 0 #1e90ff;\n}\n.input-email>input:focus+i,\r\n.input-password>input:focus+i {\r\n    color: #1e90ff;\r\n    left: 13px;\r\n    transition: .4s;\n}\n.login-facebook:hover {\r\n    transition: .2s;\r\n    color: black;\r\n    font-weight: 600;\n}\n.login-google:hover {\r\n    background: rgb(205, 8, 0);\r\n    background: linear-gradient(328deg, rgba(205, 8, 0, 1) 2%, rgba(213, 9, 0, 1) 42%, rgba(199, 50, 0, 0.8606793059020483) 100%);\r\n    transition: .2s;\r\n    color: black;\r\n    font-weight: 600;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -16430,10 +16359,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-<<<<<<< HEAD
->>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
-=======
->>>>>>> origin/PhanThanhAn/Module-15
 ___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\r\n    background-image: url('https://cdn.wallpapersafari.com/17/62/Mw5A6y.jpg');\r\n    padding: 0;\r\n    margin: 0;\r\n    font-size: 16px;\r\n    font-family: sans-serif;\n}\n.admin-panel {\r\n    width: 90%;\r\n    margin: 20px auto;\n}\r\n\r\n/*slidebar*/\n.slidebar {\r\n    width: 15%;\r\n    min-height: 690px;\r\n    float: left;\r\n    border-right: 1px solid rgb(235, 235, 235);\r\n    background-color: rgb(247, 247, 247);\n}\n.module15.slidebar .logo {\r\n    height: 145px;\r\n    border-bottom: 1px solid rgb(235, 235, 235);\r\n    padding-left: 0 !important;\n}\n.module15.slidebar ul {\r\n    padding: 0;\r\n    margin: 0;\n}\n.module15.slidebar li {\r\n    list-style-type: none;\r\n    margin: 0;\r\n    position: relative;\n}\n.module15.slidebar ul a {\r\n    color: rgb(140, 140, 140);\r\n    text-decoration: none;\r\n    font: 16px/40px helvetica, verdana, sans-serif;\r\n    box-sizing: border-box;\r\n    border-bottom: 1px solid rgb(235, 235, 235);\r\n    display: block;\r\n    box-shadow: inset 0 1px 0 rgb(255, 255, 255);\r\n    text-indent: 20px;\r\n    text-transform: capitalize;\n}\n.module15.slidebar li:hover a {\r\n    background-color: rgb(255, 255, 255);\r\n    box-shadow: 1px 0 0 rgb(255, 255, 255), inset 5px 0 0 -1px rgb(234, 83, 63);\n}\r\n\r\n/*main*/\n.main {\r\n    float: left;\r\n    width: 85%;\r\n    height: 690px;\r\n    background-color: rgb(255, 255, 255);\r\n    position: relative;\r\n    font-family: helvetica, verdana, sans-serif;\n}\n.main .topbar {\r\n    border-bottom: 1px solid rgb(235, 235, 235);\r\n    margin: 0;\r\n    padding: 0;\n}\r\n\r\n/*mainContent*/\n.mainContent>div {\r\n    width: 100%;\r\n\r\n    position: absolute;\r\n    display: none;\r\n    border: 1px solid rgb(235, 235, 235);\r\n    transition: opacity 200ms linear;\n}\r\n\r\n\r\n/*通过opacity来切换不同的选项卡*/\n.mainContent>div:target {\r\n    display: block;\n}\n.mainContent h2 {\r\n    margin: 1em 30px;\r\n    color: rgb(234, 83, 63);\r\n    font-size: 20px;\r\n    text-transform: uppercase;\r\n    font-weight: 700;\n}\n.topmain {\r\n    background-color: #F7F7F7;\r\n    border: 1px solid rgb(235, 235, 235);\n}\n.topmain a {\r\n    margin-right: 30px;\n}\r\n\r\n/*logo*/\n.dashboard.logo a {\r\n    width: 88px;\r\n    height: 88px;\r\n    display: inline-block;\r\n    position: relative;\r\n    left: 50%;\r\n    top: 50%;\r\n    margin: -45px 0 0 -45px;\r\n    border: 1px solid rgb(200, 200, 200);\r\n    border-radius: 50%;\r\n    background-color: rgb(214, 214, 214);\n}\n.dashboard.logo a:before {\r\n    content: \"A\";\r\n    width: 70px;\r\n    height: 70px;\r\n    font: 50px/70px helvetica, verdana, sans-serif;\r\n    text-align: center;\r\n    position: absolute;\r\n    top: 8px;\r\n    left: 8px;\r\n    border-radius: 35px;\r\n    border: 1px solid rgb(210, 210, 210);\r\n    display: inline-block;\r\n    background: linear-gradient(top, rgb(255, 255, 255), rgb(245, 245, 245));\n}\r\n\r\n/* .monitor {\r\n    margin-left: 30px;\r\n    margin-top: 30px;\r\n} */\r\n\r\n/* .monitor ul {\r\n    float: left;\r\n    padding: 0;\r\n    margin: 0 31px 0 17px;\r\n} */\n.monitor a {\r\n    list-style: none;\r\n    font: 600 14px/28px helvetica, verdana, sans-serif;\r\n    color: rgb(102, 102, 102);\r\n    text-transform: capitalize;\r\n    /* padding: 10px 30px; */\r\n    font-size: 27px;\n}\n.monitor li a {\r\n    color: rgb(102, 102, 102);\r\n    text-transform: capitalize;\r\n    text-decoration: none;\n}\n.monitor li:first-child {\r\n    border-bottom: 1px dotted rgb(153, 153, 153);\n}\n.monitor .clearfix div>div {\r\n    margin: 40px 0px;\r\n    padding: 30px 20px;\r\n    text-align: center;\n}\n.monitor .clearfix i {\r\n    font-size: 70px;\n}\n.monitor p {\r\n    color: rgb(128, 128, 128);\r\n    margin: 28px 0 18px 17px;\r\n    display: block;\r\n    font-weight: 600;\r\n    font-size: 12px;\n}\n.monitor p a {\r\n    text-decoration: none;\r\n    color: rgb(27, 106, 173);\n}\r\n\r\n/* ----- TABLE --------- */\ntable {\r\n    width: 100%;\r\n    margin: auto;\r\n    border-collapse: collapse;\n}\nth {\r\n    text-align: left;\r\n    padding: 10px;\r\n    background-color: rgba(0, 0, 0, .15);\n}\ntd {\r\n    background-color: white;\r\n    padding: 7px;\n}\ntd>img {\r\n    width: 65%;\n}\n.monitor .clearfix td>a {\r\n    font-size: 18px;\r\n    color: black;\n}\n.monitor .clearfix button i {\r\n    font-size: 20px;\n}\n.monitor .clearfix button {\r\n    margin-right: 15px;\n}\ntr:not(:last-of-type) {\r\n    border-bottom: 1px solid #ddd;\n}\n.main-descr {\r\n    width: 20%;\n}\n.descr {\r\n    display: -webkit-box;\r\n    height: calc(16px*1.3*3.4);\r\n    font-size: 16px;\r\n    line-height: 1.3;\r\n    -webkit-line-clamp: 3;\r\n    /* số dòng hiển thị */\r\n    -webkit-box-orient: vertical;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    margin-top: 30px;\r\n    margin-right: 0;\n}\n.scroll-main {\r\n    height: 550px;\r\n    overflow-x: auto;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -33936,14 +33861,6 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 7b64a6c (h)
-=======
->>>>>>> origin/PhanThanhAn/Module-15
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module13.vue?vue&type=style&index=0&id=285b5ff9&lang=css":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module13.vue?vue&type=style&index=0&id=285b5ff9&lang=css ***!
@@ -34004,13 +33921,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
-=======
->>>>>>> 7b64a6c (h)
-=======
->>>>>>> origin/PhanThanhAn/Module-15
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=style&index=0&id=28778efb&lang=css":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=style&index=0&id=28778efb&lang=css ***!
@@ -34474,19 +34384,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Module15_vue_vue_type_template_id_28778efb__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Module15.vue?vue&type=template&id=28778efb */ "./resources/js/components/Module15.vue?vue&type=template&id=28778efb");
 /* harmony import */ var _Module15_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Module15.vue?vue&type=script&lang=js */ "./resources/js/components/Module15.vue?vue&type=script&lang=js");
 /* harmony import */ var _Module15_vue_vue_type_style_index_0_id_28778efb_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Module15.vue?vue&type=style&index=0&id=28778efb&lang=css */ "./resources/js/components/Module15.vue?vue&type=style&index=0&id=28778efb&lang=css");
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* harmony import */ var D_TLH5_chuyende_ChuyenDeWeb_2_git_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
-=======
 /* harmony import */ var C_wamp64_www_ChuyenDeWeb_2_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
->>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
-=======
-/* harmony import */ var C_wamp64_www_ChuyenDeWeb_2_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
->>>>>>> 7b64a6c (h)
-=======
-/* harmony import */ var C_wamp64_www_ChuyenDeWeb_2_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
->>>>>>> origin/PhanThanhAn/Module-15
 
 
 
@@ -34494,19 +34392,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-const __exports__ = /*#__PURE__*/(0,D_TLH5_chuyende_ChuyenDeWeb_2_git_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Module15_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Module15_vue_vue_type_template_id_28778efb__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Module15.vue"]])
-=======
 const __exports__ = /*#__PURE__*/(0,C_wamp64_www_ChuyenDeWeb_2_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Module15_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Module15_vue_vue_type_template_id_28778efb__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Module15.vue"]])
->>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
-=======
-const __exports__ = /*#__PURE__*/(0,C_wamp64_www_ChuyenDeWeb_2_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Module15_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Module15_vue_vue_type_template_id_28778efb__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Module15.vue"]])
->>>>>>> 7b64a6c (h)
-=======
-const __exports__ = /*#__PURE__*/(0,C_wamp64_www_ChuyenDeWeb_2_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Module15_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Module15_vue_vue_type_template_id_28778efb__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Module15.vue"]])
->>>>>>> origin/PhanThanhAn/Module-15
 /* hot reload */
 if (false) {}
 
@@ -34515,14 +34401,6 @@ if (false) {}
 
 /***/ }),
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 7b64a6c (h)
-=======
->>>>>>> origin/PhanThanhAn/Module-15
 /***/ "./resources/js/App.vue?vue&type=script&lang=js":
 /*!******************************************************!*\
   !*** ./resources/js/App.vue?vue&type=script&lang=js ***!
@@ -34587,13 +34465,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
-=======
->>>>>>> 7b64a6c (h)
-=======
->>>>>>> origin/PhanThanhAn/Module-15
 /***/ "./resources/js/components/Module15.vue?vue&type=script&lang=js":
 /*!**********************************************************************!*\
   !*** ./resources/js/components/Module15.vue?vue&type=script&lang=js ***!
@@ -34610,14 +34481,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 7b64a6c (h)
-=======
->>>>>>> origin/PhanThanhAn/Module-15
 /***/ "./resources/js/App.vue?vue&type=template&id=f348271a":
 /*!************************************************************!*\
   !*** ./resources/js/App.vue?vue&type=template&id=f348271a ***!
@@ -34682,13 +34545,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
-=======
->>>>>>> 7b64a6c (h)
-=======
->>>>>>> origin/PhanThanhAn/Module-15
 /***/ "./resources/js/components/Module15.vue?vue&type=template&id=28778efb":
 /*!****************************************************************************!*\
   !*** ./resources/js/components/Module15.vue?vue&type=template&id=28778efb ***!
