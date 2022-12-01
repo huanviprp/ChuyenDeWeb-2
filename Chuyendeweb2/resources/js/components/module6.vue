@@ -7,11 +7,11 @@
         </button>
         <button class="tablinks" :class="[b2Active ? 'active' : 'notacitve']" @click="showBlock(2, $event)"
             id="tabtuan">
-            Top Tuần
+            Top Tháng
         </button>
         <button class="tablinks" :class="[b3Active ? 'active' : 'notacitve']" @click="showBlock(3, $event)"
             id="tabthang">
-            Top Tháng
+            Top Năm
         </button>
     </div>
 
@@ -176,22 +176,21 @@
     </div>
 
     <div id="thang" class="tab-container" v-else>
-        <div class="tab-content 1">
-            <div class="row">
-                <div class="col-1 rank">1</div>
+        <div class="tab-content 1" v-if="Comics && Comics.length">
+            <div class="row" v-for="Comic of Comics" :key="Comic.Comic_id">
+                <div class="col-1 rank">{{ this.Rank += 1 }}</div>
                 <div class="col-11 rank-content">
                     <div class="row">
                         <div class="col-3">
                             <a href="">
-                                <img src="https://st.ntcdntempv3.com/data/comics/147/dung-si-nam.jpg" alt=""
-                                    class="rank-img" /></a>
+                                <img v-bind:src="Comic.Img_feature" alt="" class="rank-img" /></a>
                         </div>
 
                         <div class="col-9 rank-info">
-                            <a href="" class="name">Truyen one</a>
+                            <a href="" class="name">{{ Comic.Name }}</a>
                             <div class="chapter">
                                 Chap 1
-                                <span class="icon-eyes"><i class="fa-solid fa-eye"></i> 20.123</span>
+                                <span class="icon-eyes"><i class="fa-solid fa-eye"></i> {{ Comic.View }}</span>
                             </div>
                         </div>
                     </div>
@@ -202,6 +201,7 @@
 </template>
   
 <script>
+import axios from 'axios';
 export default {
     data() {
         return {
@@ -209,7 +209,23 @@ export default {
             b2Active: false,
             b3Active: false,
             currentBlock: 1,
+            Comics: [],
+            Rank: 0
         };
+    },
+    created() {
+
+
+
+
+        axios.get('http://127.0.0.1:8000/api/gettopnam').then(
+            res => {
+                this.Comics = res.data;
+                console.log(this.Comics);
+            }
+        )
+
+
     },
     methods: {
         showBlock(number, e) {
@@ -234,20 +250,24 @@ export default {
 </script>
   
 <style>
-*{
+* {
     padding: 0;
 }
-#module6{
+
+#module6 {
     position: sticky;
     top: 0;
 }
+
 .icon-eyes {
     margin-left: 36px;
 }
-h3.top-rank{
-    color:#de6e98;
+
+h3.top-rank {
+    color: #de6e98;
     font-weight: bolder;
 }
+
 .rank {
     padding-top: 25px;
 }

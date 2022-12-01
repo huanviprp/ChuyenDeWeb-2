@@ -47,4 +47,10 @@ class ComicController extends Controller
         $comic->View =  $currentviewarr['View'] + 1;
         $comic->save();
     }
+    public function TopNam()
+    {
+
+        return  Comic::orderBy('View', 'desc')->get(); // gets the whole row
+
+    }
 }

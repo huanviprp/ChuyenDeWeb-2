@@ -15644,14 +15644,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       b1Active: true,
       b2Active: false,
       b3Active: false,
-      currentBlock: 1
+      currentBlock: 1,
+      Comics: [],
+      Rank: 0
     };
+  },
+  created: function created() {
+    var _this = this;
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/gettopnam').then(function (res) {
+      _this.Comics = res.data;
+      console.log(_this.Comics);
+    });
   },
   methods: {
     showBlock: function showBlock(number, e) {
@@ -16359,9 +16371,46 @@ var _hoisted_14 = {
   id: "thang",
   "class": "tab-container"
 };
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"tab-content 1\"><div class=\"row\"><div class=\"col-1 rank\">1</div><div class=\"col-11 rank-content\"><div class=\"row\"><div class=\"col-3\"><a href=\"\"><img src=\"https://st.ntcdntempv3.com/data/comics/147/dung-si-nam.jpg\" alt=\"\" class=\"rank-img\"></a></div><div class=\"col-9 rank-info\"><a href=\"\" class=\"name\">Truyen one</a><div class=\"chapter\"> Chap 1 <span class=\"icon-eyes\"><i class=\"fa-solid fa-eye\"></i> 20.123</span></div></div></div></div></div></div>", 1);
-var _hoisted_16 = [_hoisted_15];
+var _hoisted_15 = {
+  key: 0,
+  "class": "tab-content 1"
+};
+var _hoisted_16 = {
+  "class": "col-1 rank"
+};
+var _hoisted_17 = {
+  "class": "col-11 rank-content"
+};
+var _hoisted_18 = {
+  "class": "row"
+};
+var _hoisted_19 = {
+  "class": "col-3"
+};
+var _hoisted_20 = {
+  href: ""
+};
+var _hoisted_21 = ["src"];
+var _hoisted_22 = {
+  "class": "col-9 rank-info"
+};
+var _hoisted_23 = {
+  href: "",
+  "class": "name"
+};
+var _hoisted_24 = {
+  "class": "chapter"
+};
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Chap 1 ");
+var _hoisted_26 = {
+  "class": "icon-eyes"
+};
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa-solid fa-eye"
+}, null, -1 /* HOISTED */);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _this = this;
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["tablinks", [$data.b1Active ? 'active' : 'notacitve']]),
     onClick: _cache[0] || (_cache[0] = function ($event) {
@@ -16374,13 +16423,22 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.showBlock(2, $event);
     }),
     id: "tabtuan"
-  }, " Top Tuần ", 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, " Top Tháng ", 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["tablinks", [$data.b3Active ? 'active' : 'notacitve']]),
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return $options.showBlock(3, $event);
     }),
     id: "tabthang"
-  }, " Top Tháng ", 2 /* CLASS */)]), $data.currentBlock == 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, _hoisted_9)) : $data.currentBlock == 2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, _hoisted_13)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_14, _hoisted_16))], 64 /* STABLE_FRAGMENT */);
+  }, " Top Năm ", 2 /* CLASS */)]), $data.currentBlock == 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, _hoisted_9)) : $data.currentBlock == 2 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, _hoisted_13)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_14, [$data.Comics && $data.Comics.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.Comics, function (Comic) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      "class": "row",
+      key: Comic.Comic_id
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_this.Rank += 1), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+      src: Comic.Img_feature,
+      alt: "",
+      "class": "rank-img"
+    }, null, 8 /* PROPS */, _hoisted_21)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Comic.Name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_26, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Comic.View), 1 /* TEXT */)])])])])])]);
+  }), 128 /* KEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]))], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -17033,7 +17091,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n*{\r\n    padding: 0;\n}\n#module6{\r\n    position: sticky;\r\n    top: 0;\n}\n.icon-eyes {\r\n    margin-left: 36px;\n}\nh3.top-rank{\r\n    color:#de6e98;\r\n    font-weight: bolder;\n}\n.rank {\r\n    padding-top: 25px;\n}\n.tab-content {\r\n    border-bottom: 1px rgb(148, 145, 145) solid;\r\n    padding-bottom: 10px;\r\n    padding-top: 10px;\n}\n.name {\r\n    font-weight: 600;\r\n    text-decoration: none;\r\n    color: black;\n}\n.chapter {\r\n    margin-top: 20px;\n}\n.rank-img {\r\n    width: 50px;\n}\n.tab-container {\r\n    background-color: #dedede;\n}\nbody {\r\n    font-family: Arial;\n}\r\n\r\n/* Style the tab */\n.tab {\r\n    overflow: hidden;\r\n    border: 1px solid #ccc;\r\n    background-color: #f1f1f1;\n}\r\n\r\n/* Style the buttons inside the tab */\n.tab button {\r\n    background-color: inherit;\r\n    float: left;\r\n    border: none;\r\n    outline: none;\r\n    cursor: pointer;\r\n    padding: 20px 14px;\r\n    transition: 0.3s;\r\n    font-size: 17px;\n}\r\n\r\n/* Change background color of buttons on hover */\n.tab button:hover {\r\n    background-color: #ddd;\n}\r\n\r\n/* Create an active/current tablink class */\n.tab button.active {\r\n    background-color: #ccc;\n}\r\n\r\n/* Style the tab content */\n.tab-container {\r\n    /* display: none; */\r\n    padding: 6px 12px;\r\n    border: 4px solid #ccc;\r\n    border-top: none;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n* {\r\n    padding: 0;\n}\n#module6 {\r\n    position: sticky;\r\n    top: 0;\n}\n.icon-eyes {\r\n    margin-left: 36px;\n}\nh3.top-rank {\r\n    color: #de6e98;\r\n    font-weight: bolder;\n}\n.rank {\r\n    padding-top: 25px;\n}\n.tab-content {\r\n    border-bottom: 1px rgb(148, 145, 145) solid;\r\n    padding-bottom: 10px;\r\n    padding-top: 10px;\n}\n.name {\r\n    font-weight: 600;\r\n    text-decoration: none;\r\n    color: black;\n}\n.chapter {\r\n    margin-top: 20px;\n}\n.rank-img {\r\n    width: 50px;\n}\n.tab-container {\r\n    background-color: #dedede;\n}\nbody {\r\n    font-family: Arial;\n}\r\n\r\n/* Style the tab */\n.tab {\r\n    overflow: hidden;\r\n    border: 1px solid #ccc;\r\n    background-color: #f1f1f1;\n}\r\n\r\n/* Style the buttons inside the tab */\n.tab button {\r\n    background-color: inherit;\r\n    float: left;\r\n    border: none;\r\n    outline: none;\r\n    cursor: pointer;\r\n    padding: 20px 14px;\r\n    transition: 0.3s;\r\n    font-size: 17px;\n}\r\n\r\n/* Change background color of buttons on hover */\n.tab button:hover {\r\n    background-color: #ddd;\n}\r\n\r\n/* Create an active/current tablink class */\n.tab button.active {\r\n    background-color: #ccc;\n}\r\n\r\n/* Style the tab content */\n.tab-container {\r\n    /* display: none; */\r\n    padding: 6px 12px;\r\n    border: 4px solid #ccc;\r\n    border-top: none;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
