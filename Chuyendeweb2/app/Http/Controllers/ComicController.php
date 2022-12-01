@@ -36,10 +36,15 @@ class ComicController extends Controller
         return $dataName;
     }
 
-    public function Upview()
+    public function Upview($id)
     {
-        $search = $request->name;
-        $dataName = Comic::where('Name', 'LIKE', "%$search%")->get();
-        return $dataName;
+
+
+
+        $currentviewarr = Comic::select('View')->where('Comic_id', $id)->first();
+        // $currentview = json_decode($currentviewarr);
+        $comic = Comic::where('Comic_id', $id)->first();
+        $comic->View =  $currentviewarr['View'] + 1;
+        $comic->save();
     }
 }

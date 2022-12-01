@@ -28,4 +28,4 @@ Route::get('/datauser', [UserController::class, 'index']);
 Route::get('/getdetailtruyen/{id}', [ComicController::class, 'getComicbyID']);
 Route::get('/getdetailtacgia/{id}', [AuthorController::class, 'getAuthorbyID']);
 Route::get('/getdetailtheloai/{id}', [CategoryController::class, 'getCategorybyID']);
-Route::get('/tangview', [ComicController::class, 'Upview']);
+Route::get('/tangview/{id}', [ComicController::class, 'Upview']);

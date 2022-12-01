@@ -15713,6 +15713,13 @@ var params = new URLSearchParams(location.search);
         _this.Authors = res.data;
         console.log(_this.Authors);
       });
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/getdetailtacgia/' + _this.Comics[0].author_id).then(function (res) {
+        _this.Authors = res.data;
+        console.log(_this.Authors);
+      });
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/tangview/' + _this.id).then(function (res) {
+        console.log(_this.Comics[0].View);
+      });
     });
   },
   methods: {

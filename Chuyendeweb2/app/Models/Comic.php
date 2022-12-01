@@ -10,7 +10,7 @@ class Comic extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'comic';
-
+    protected $primaryKey = 'Comic_id';
     protected $fillable = [
         'Comic_id',
         'Name',
@@ -22,10 +22,4 @@ class Comic extends Model
         'author_id',
         'feature'
     ];
-
-    public function addView($data, $id)
-    {
-        $data[] = $id;
-        return DB::update("UPDATE $this->table SET `type_name`='?'WHERE id = ?", $data);
-    }
 }
