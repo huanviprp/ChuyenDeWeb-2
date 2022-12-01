@@ -30,11 +30,7 @@
                                         Thể Loại
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="/category">Kinh Dị</a></li>
-                                        <li><a class="dropdown-item" href="/category">Trinh Thám</a></li>
-                                        <li><a class="dropdown-item" href="/category">Hài Hước</a></li>
-                                        <li><a class="dropdown-item" href="/category">Lãng Mạn</a></li>
-                                        <li><a class="dropdown-item" href="/category">Võ Thuật</a></li>
+                                        <li v-for="Category in Categories" v-bind:key="Category.Category_id"><a class="dropdown-item" v-bind:href="'/category?'+ Category.Category">{{ Category.Category}}</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -56,8 +52,25 @@
 </template>
   
 <script>
+import axios from 'axios';
 export default {
-
+    data() {
+       return{
+        Categories:[]
+       }
+    },
+    created() {
+        axios.get('api/category').then(
+            res =>{
+                this.Categories = res.data;
+            }
+        )
+        axios.get('api/category').then(
+            res =>{
+                this.Categories = res.data;
+            }
+        )
+    }
 }
 </script>
   
