@@ -3,7 +3,6 @@
         <div class="offset-md-3 col-md-6 signout-detail">
             <h1 class="signout-title">ĐĂNG KÝ</h1>
             <div class="signout-form">
-<<<<<<< HEAD
                 <form action="" method="post" v-on:submit.prevent="onSubmit()">
                     <div class="form-group">
                         <label for="">UserName</label>
@@ -15,40 +14,40 @@
                             <i class="fas fa-envelope" aria-hidden="true"></i>
                         </div>
                     </div>
-=======
-                <form action="" method="post" v-on:submit.prevent="register">
->>>>>>> parent of f0668b9 (fix bug)
-                    <div class="form-group">
-                        <label for="">Email:</label>
-                        <div class="input-email">
-                            <input type="email" class="form-control email" name="email"
-                                placeholder="Nhập Username hoặc Email" autofocus="" required oninvalid="this.setCustomValidity('Enter User Name Here')" oninput="this.setCustomValidity('')">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <form action="" method="post" v-on:submit.prevent="register">
+                        <div class="form-group">
+                            <label for="">Email:</label>
+                            <div class="input-email">
+                                <input type="email" class="form-control email" name="email"
+                                    placeholder="Nhập Username hoặc Email" autofocus="" required
+                                    oninvalid="this.setCustomValidity('Enter User Name Here')"
+                                    oninput="this.setCustomValidity('')">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Mật khẩu:</label>
-                        <div class="input-password">
-                            <input type="password" class="form-control password" name="password" placeholder="Password"
-                                required>
-                            <i class="fas fa-lock" aria-hidden="true"></i>
+                        <div class="form-group">
+                            <label for="">Mật khẩu:</label>
+                            <div class="input-password">
+                                <input type="password" class="form-control password" name="password"
+                                    placeholder="Password" required>
+                                <i class="fas fa-lock" aria-hidden="true"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Nhập lại mật khẩu:</label>
-                        <div class="input-password">
-                            <input type="password" class="form-control password" name="password"
-                                placeholder="Nhập lại Password" required>
-                            <i class="fas fa-lock" aria-hidden="true"></i>
+                        <div class="form-group">
+                            <label for="">Nhập lại mật khẩu:</label>
+                            <div class="input-password">
+                                <input type="password" class="form-control password" name="password"
+                                    placeholder="Nhập lại Password" required>
+                                <i class="fas fa-lock" aria-hidden="true"></i>
+                            </div>
+                            <div class="dangnhap text-right my-3">
+                                <a href="/login">Trờ về trang đăng nhập</a>
+                            </div>
+                            <div class="login-button mb-2">
+                                <input type="submit" class="btn btn-warning" value="Đăng Ký">
+                            </div>
                         </div>
-                        <div class="dangnhap text-right my-3">
-                            <a href="/login">Trờ về trang đăng nhập</a>
-                        </div>
-                        <div class="login-button mb-2">
-                            <input type="submit" class="btn btn-warning" value="Đăng Ký">
-                        </div>
-                    </div>
-                </form>
+                    </form>
             </div>
 
 
@@ -58,7 +57,6 @@
     </div>
 </template>
 <script>
-<<<<<<< HEAD
 import axios from 'axios';
 export default {
     name: 'Module14',
@@ -69,41 +67,13 @@ export default {
         };
     },
     methods: {
-        onSubmit(){
-                this.axios.post("/dangky",this.user).then((response)=>{
-                    this.check=true;
-                });
-            }
-=======
-export default{
-        data(){
-            return{
-                title:"Form Register",
-                formdata:{},
-                message:"",
-                success:0,
-            }
-        },
-        methods:{
-           register(){
-                this.axios.post("http://localhost:8888/form-register",this.user).then((response) => {
-                       console.log(response);
-                       if(response.data.success>0){
-                           this.message="You register success";
-                           this.success=response.data.success;
-                       }
-                       else{
-                           this.message="Register to failed";
-                           this.success=response.data.success;
-                       }
-                  });
-                    
-            },
- 
+        onSubmit() {
+            this.axios.post("/dangky", this.user).then((response) => {
+                this.check = true;
+            });
         }
->>>>>>> parent of f0668b9 (fix bug)
     }
-
+}
 </script>
 <style>
 body {
