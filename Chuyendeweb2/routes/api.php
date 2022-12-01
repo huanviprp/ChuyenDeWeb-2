@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComicController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/', [ComicController::class,'index']);
 Route::get('/hot', [ComicController::class,'ComicHot']);
 Route::get('/category', [ComicController::class,'Category']);
+Route::get('/datauser', [UserController::class,'index']);

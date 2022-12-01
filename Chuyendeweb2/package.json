@@ -19,6 +19,6 @@
         "vue-loader": "^17.0.0"
     },
     "dependencies": {
-        "vuejs-paginate": "^2.1.0"
+        "vue-router": "^4.1.6"
     }
 }

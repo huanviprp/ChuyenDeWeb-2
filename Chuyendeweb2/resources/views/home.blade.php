@@ -17,14 +17,15 @@
         body {
             background-image: url('https://cdn.wallpapersafari.com/17/62/Mw5A6y.jpg');
         }
-        .module6{
-            padding-top:1.5em;
+
+        .module6 {
+            padding-top: 1.5em;
         }
     </style>
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <div class="module1" id="module1"></div>
         <div class="module2" id="module2"></div>
     </header>
@@ -45,7 +46,8 @@
     </div>
     <footer>
         <div class="module5" id="module5"></div>
-    </footer>
+    </footer> -->
+    <div class="homepage" id="homepage"></div>
     <script src="{{mix('js/app.js')}}"></script>
 </body>
 
