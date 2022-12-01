@@ -86,7 +86,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr v-for="user in Users" data-userid="1">
+                                                    <tr v-for="user in Users" :key="user.User_id">
                                                         <td></td>
                                                         <td>{{ user.User_id }}</td>
                                                         <td>{{ user.userName }}</td>
@@ -98,7 +98,7 @@
                                                         <td>
                                                             <button type="button" data-action="edit"><i
                                                                     class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i
+                                                            <button type="button" @click.prevent="deleteUser(user.User_id)" data-action="delete"><i
                                                                     class="fa-solid fa-ban"></i></button>
                                                         </td>
                                                     </tr>
@@ -264,19 +264,13 @@ export default {
             }
         )
     },
-    watch:{
-        query(after, before){
-            this.getUserData(); 
-        }
-    },
     methods: {
-        // getUserData() {
-        //     axios.get('api/datauser', { param: { search: this.query } }).then(
-        //         res => {
-        //             this.Users = res.data;
-        //         }
-        //     )
-        // },
+        deleteUser(id) {
+            let uri = `http://127.0.0.1:8000/api/dashboard#user/delete/${id}`;
+            this.axios.delete(uri).then(response => {
+                this.Users.splice(this.Users.indexOf(id), 1);
+            });
+        }
     }
 }
 </script>

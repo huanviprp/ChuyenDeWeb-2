@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-
+use App\Http\Resources\UserCollection;
 class DangkyController extends Controller
 {
     /**
@@ -107,5 +107,13 @@ class DangkyController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function delete($User_id)
+    {
+      $user = User::find($User_id);
+
+      $user->delete();
+
+      return response()->json('successfully deleted');
     }
 }

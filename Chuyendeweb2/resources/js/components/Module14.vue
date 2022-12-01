@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="">UserName/Email:</label>
+                        <label for="">Email:</label>
                         <div class="input-email">
                             <input type="email" class="form-control email" name="email" v-model="user.email"
                                 placeholder="Nhập Email" autofocus="" :rules="validateEmail">

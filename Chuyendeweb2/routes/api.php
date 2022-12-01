@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::post('/login', [UserController::class, 'login']);
 // Route::post('register', [UserController::class, 'register']);
 // Route::post('logout', [UserController::class, 'logout'])->middleware('auth:sanctum');
-
+Route::delete('/delete/{User_id}', [DangkyController::class, 'delete']);
 
 Route::get('/dataComic', [ComicController::class, 'index']);
 Route::get('/datauser', [DangkyController::class, 'index']);
