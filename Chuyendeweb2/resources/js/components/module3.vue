@@ -5,7 +5,8 @@
     </h3>
     <div class="row comic-hot">
         <div class="col-md-3 comic">
-            <a href="/detail"><img class="img-comic" src="https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&pid=Api&P=0"></a>
+            <a href="/detail"><img class="img-comic"
+                    src="https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&pid=Api&P=0"></a>
             <div class=" infor-comic">
                 <ul>
                     <li><i class="fa fa-eye" aria-hidden="true"></i>123</li>
@@ -23,7 +24,8 @@
             </div>
         </div>
         <div class="col-md-3 comic">
-            <a href="/detail"><img class="img-comic" src="https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&pid=Api&P=0"></a>
+            <a href="/detail"><img class="img-comic"
+                    src="https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&pid=Api&P=0"></a>
             <div class=" infor-comic">
                 <ul>
                     <li><i class="fa fa-eye" aria-hidden="true"></i>123</li>
@@ -59,7 +61,8 @@
             </div>
         </div>
         <div class="col-md-3 comic">
-            <a href="/detail"><img class="img-comic" src="//st.ntcdntempv3.com/data/comics/10/chainsawman-phan-2.jpg"></a>
+            <a href="/detail"><img class="img-comic"
+                    src="//st.ntcdntempv3.com/data/comics/10/chainsawman-phan-2.jpg"></a>
             <div class=" infor-comic">
                 <ul>
                     <li><i class="fa fa-eye" aria-hidden="true"></i>123</li>
@@ -77,7 +80,8 @@
             </div>
         </div>
         <div class="col-md-3 comic">
-            <a href="/detail"><img class="img-comic" src="//st.ntcdntempv3.com/data/comics/118/fatetype-redline-truyen-ky-ve-chen-thanh-3330.jpg"></a>
+            <a href="/detail"><img class="img-comic"
+                    src="//st.ntcdntempv3.com/data/comics/118/fatetype-redline-truyen-ky-ve-chen-thanh-3330.jpg"></a>
             <div class=" infor-comic">
                 <ul>
                     <li><i class="fa fa-eye" aria-hidden="true"></i>123</li>
@@ -95,7 +99,8 @@
             </div>
         </div>
         <div class="col-md-3 comic">
-            <a href="/detail"><img class="img-comic" src="https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&pid=Api&P=0"></a>
+            <a href="/detail"><img class="img-comic"
+                    src="https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&pid=Api&P=0"></a>
             <div class=" infor-comic">
                 <ul>
                     <li><i class="fa fa-eye" aria-hidden="true"></i>123</li>
@@ -172,11 +177,12 @@ export default {
 
 .name-comic {
     margin-bottom: 1px;
-    padding-left: 3px; 
+    padding-left: 3px;
 }
-#module3 a{
+
+#module3 a {
     text-decoration: none;
-    color:black;
+    color: black;
 }
 
 .comic-hot {
