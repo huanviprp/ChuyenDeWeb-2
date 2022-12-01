@@ -3,7 +3,6 @@
         <header>
             <Module1></Module1>
             <Module2></Module2>
-            adahh
         </header>
         <div class="container home">
             <Module3></Module3>

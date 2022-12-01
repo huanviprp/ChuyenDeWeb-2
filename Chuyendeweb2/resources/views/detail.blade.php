@@ -17,30 +17,9 @@
     </style>
 </head>
 
-<body class="antialiased">
-    <div class="module1" id="module1"></div>
-    <div class="module2" id="module2"></div>
-
-    <div class="container">
-        
-        <div class="row">
-          
-            <div class="col-9"> 
-            <div id="Breadcrumb">
-                
-                </div>               
-                <div id="module7"></div>
-                <div id="module8"></div>
-                <div id="module9"></div>
-            </div>
-
-            <div class="col-3 module6">
-                <!-- module6 -->
-                <div id="module6"></div>
-            </div>
-        </div>
-    </div>
-    <div class="module5" id="module5"></div>
+<body>
+    
+    <div class="detail" id="detail"></div>
     <script src="{{ mix('js/app.js') }}"></script>
 
 
