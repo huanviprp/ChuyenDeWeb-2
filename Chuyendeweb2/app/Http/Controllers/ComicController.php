@@ -8,7 +8,8 @@ use App\Models\Comic;
 class ComicController extends Controller
 {
     //Comic
-    public function index(){
-        return Comic::all();
+    public function index()
+    {
+        return comic::all();
     }
 }
