@@ -15196,7 +15196,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      search: '',
+      showSearch: true,
+      product: []
+    };
+  },
+  methods: {
+    searchComic: function searchComic() {
+      var _this = this;
+      // fetch('/api/search')
+      // .then(res => res.json())
+      // .then(res => {
+      //     this.Result = res;
+      //     this.search = '';
+      //     this.showSearch = true;
+      // });
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post('/resultsearch?key=' + this.search, {
+        name: this.search
+      }).then(function (response) {
+        _this.product = response.data;
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -15290,7 +15318,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      Categories: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/category').then(function (res) {
+      _this.Categories = res.data;
+    });
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/category').then(function (res) {
+      _this.Categories = res.data;
+    });
+  }
+});
 
 /***/ }),
 
@@ -15305,7 +15351,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      Comics: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/hot').then(function (res) {
+      _this.Comics = res.data;
+    }), this.interval = setInterval(function () {
+      return _this.next();
+    }, 3000);
+  },
+  methods: {
+    next: function next() {
+      this.Comics.push(this.Comics.shift());
+    },
+    pre: function pre() {
+      this.Comics.unshift(this.Comics.pop());
+    }
+  }
+});
 
 /***/ }),
 
@@ -15537,11 +15608,13 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "logo"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_2 = {
   "class": "container hd"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_3 = {
   "class": "row header1"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-md-3 img-logo"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   "class": "",
@@ -15549,23 +15622,20 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: _images_logo3_png__WEBPACK_IMPORTED_MODULE_1__["default"],
   alt: ""
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+})])], -1 /* HOISTED */);
+var _hoisted_5 = {
   "class": "col-md-6 search"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+};
+var _hoisted_6 = {
   "class": "d-flex search1",
-  action: "/resultsearch"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  "class": "form-control me-2",
-  type: "search",
-  placeholder: "Search",
-  "aria-label": "Search"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "btn btn-outline-success",
-  type: "submit"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  method: "post"
+};
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fa fa-search",
   "aria-hidden": "true"
-})])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, null, -1 /* HOISTED */);
+var _hoisted_8 = [_hoisted_7];
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-md-3 login"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
   action: "/login",
@@ -15573,10 +15643,55 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   "class": "btn btn-success",
   type: "submit"
-}, "Đăng Nhập")])])])], -1 /* HOISTED */);
-var _hoisted_3 = [_hoisted_2];
+}, "Đăng Nhập")])], -1 /* HOISTED */);
+var _hoisted_10 = {
+  key: 0
+};
+var _hoisted_11 = {
+  "class": "container"
+};
+var _hoisted_12 = {
+  "class": "row"
+};
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<a href=\"/detail\"><img class=\"img-comic\" src=\"https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&amp;pid=Api&amp;P=0\"></a><div class=\"infor-comic\"><ul><li><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>123</li><li><i class=\"fa fa-comment\" aria-hidden=\"true\"></i> 123</li><li><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> 123</li></ul></div>", 2);
+var _hoisted_15 = {
+  "class": "new-chapter"
+};
+var _hoisted_16 = {
+  "class": "name-comic",
+  href: "/detail"
+};
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: ""
+}, "Chapter 3")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: ""
+}, "Chapter 2")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: ""
+}, "Chapter 1")])], -1 /* HOISTED */);
+var _hoisted_18 = {
+  key: 1
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "class": "form-control me-2",
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.search = $event;
+    }),
+    type: "search",
+    placeholder: "Search",
+    "aria-label": "Search"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.search]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "btn btn-outline-success",
+    type: "submit",
+    onClick: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+      return $options.searchComic();
+    }, ["prevent"]))
+  }, _hoisted_8)])]), _hoisted_9])])]), $data.showSearch == true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.product, function (comic) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      "class": "col-md-3 comic",
+      key: comic.Comic_id
+    }, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(comic.Name), 1 /* TEXT */)]), _hoisted_17])]);
+  }), 128 /* KEYED_FRAGMENT */))])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.showSearch == false ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_18)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -15940,15 +16055,19 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "list"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_2 = {
   "class": "container"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_3 = {
   "class": "row"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_4 = {
   "class": "col-md-12 list-func"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", {
+};
+var _hoisted_5 = {
   "class": "navbar navbar-expand-lg navbar-light bg-light"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+};
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   "class": "navbar-toggler",
   type: "button",
   "data-toggle": "collapse",
@@ -15958,63 +16077,32 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "aria-label": "Toggle navigation"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "navbar-toggler-icon"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+})], -1 /* HOISTED */);
+var _hoisted_7 = {
   "class": "collapse navbar-collapse",
   id: "navbarSupportedContent"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+};
+var _hoisted_8 = {
   "class": "navbar-nav me-auto mb-2 mb-lg-0"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "nav-item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "nav-link active",
-  "aria-current": "page",
-  href: "/"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fa fa-home",
-  "aria-hidden": "true"
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "nav-item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "nav-link",
-  href: "#"
-}, "Tìm Truyện")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "nav-item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "nav-link",
-  href: "#"
-}, "Lịch Sử")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "nav-item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "nav-link",
-  href: "/follow"
-}, "Theo Dõi")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+};
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<li class=\"nav-item\"><a class=\"nav-link active\" aria-current=\"page\" href=\"/\"><i class=\"fa fa-home\" aria-hidden=\"true\"></i></a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">Tìm Truyện</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"#\">Lịch Sử</a></li><li class=\"nav-item\"><a class=\"nav-link\" href=\"/follow\">Theo Dõi</a></li>", 4);
+var _hoisted_13 = {
   "class": "nav-item dropdown"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+};
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   "class": "nav-link dropdown-toggle",
   href: "#",
   id: "navbarDropdown",
   role: "button",
   "data-bs-toggle": "dropdown",
   "aria-expanded": "false"
-}, " Thể Loại "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+}, " Thể Loại ", -1 /* HOISTED */);
+var _hoisted_15 = {
   "class": "dropdown-menu",
   "aria-labelledby": "navbarDropdown"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "dropdown-item",
-  href: "/category"
-}, "Kinh Dị")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "dropdown-item",
-  href: "/category"
-}, "Trinh Thám")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "dropdown-item",
-  href: "/category"
-}, "Hài Hước")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "dropdown-item",
-  href: "/category"
-}, "Lãng Mạn")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "dropdown-item",
-  href: "/category"
-}, "Võ Thuật")])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+};
+var _hoisted_16 = ["href"];
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
   "class": "nav-item dropdown"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   "class": "nav-link dropdown-toggle",
@@ -16029,10 +16117,17 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   "class": "dropdown-item",
   href: "#"
-}, "Action")])])])])])])])])], -1 /* HOISTED */);
-var _hoisted_3 = [_hoisted_2];
+}, "Action")])])], -1 /* HOISTED */);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_15, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.Categories, function (Category) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
+      key: Category.Category_id
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      "class": "dropdown-item",
+      href: '/category?' + Category.Category
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Category.Category), 9 /* TEXT, PROPS */, _hoisted_16)]);
+  }), 128 /* KEYED_FRAGMENT */))])]), _hoisted_17])])])])])])]);
 }
 
 /***/ }),
@@ -16050,9 +16145,69 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h3><p style=\"color:#de6e98;padding-top:0.5cm;\"><b>Truyện Hot <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i></b></p></h3><div class=\"row comic-hot\"><div class=\"col-md-3 comic\"><a href=\"/detail\"><img class=\"img-comic\" src=\"https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&amp;pid=Api&amp;P=0\"></a><div class=\"infor-comic\"><ul><li><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>123</li><li><i class=\"fa fa-comment\" aria-hidden=\"true\"></i> 123</li><li><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> 123</li></ul></div><div class=\"new-chapter\"><a class=\"name-comic\" href=\"/detail\"><b>Tên truyện</b></a><ul><li><a href=\"\">Chapter 3</a></li><li><a href=\"\">Chapter 2</a></li><li><a href=\"\">Chapter 1</a></li></ul></div></div><div class=\"col-md-3 comic\"><a href=\"/detail\"><img class=\"img-comic\" src=\"https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&amp;pid=Api&amp;P=0\"></a><div class=\"infor-comic\"><ul><li><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>123</li><li><i class=\"fa fa-comment\" aria-hidden=\"true\"></i> 123</li><li><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> 123</li></ul></div><div class=\"new-chapter\"><a class=\"name-comic\" href=\"/detail\"><b>Tên truyện</b></a><ul><li><a href=\"\">Chapter 3</a></li><li><a href=\"\">Chapter 2</a></li><li><a href=\"\">Chapter 1</a></li></ul></div></div><div class=\"col-md-3 comic\"><a href=\"/detail\"><img class=\"img-comic\" src=\"//st.ntcdntempv3.com/data/comics/162/lookism.jpg\"></a><div class=\"infor-comic\"><ul><li><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>123</li><li><i class=\"fa fa-comment\" aria-hidden=\"true\"></i> 123</li><li><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> 123</li></ul></div><div class=\"new-chapter\"><a class=\"name-comic\" href=\"/detail\"><b>Tên truyện</b></a><ul><li><a href=\"\">Chapter 3</a></li><li><a href=\"\">Chapter 2</a></li><li><a href=\"\">Chapter 1</a></li></ul></div></div><div class=\"col-md-3 comic\"><a href=\"/detail\"><img class=\"img-comic\" src=\"//st.ntcdntempv3.com/data/comics/10/chainsawman-phan-2.jpg\"></a><div class=\"infor-comic\"><ul><li><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>123</li><li><i class=\"fa fa-comment\" aria-hidden=\"true\"></i> 123</li><li><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> 123</li></ul></div><div class=\"new-chapter\"><a class=\"name-comic\" href=\"/detail\"><b>Chainsawman Phần 2</b></a><ul><li><a href=\"\">Chapter 3</a></li><li><a href=\"\">Chapter 2</a></li><li><a href=\"\">Chapter 1</a></li></ul></div></div><div class=\"col-md-3 comic\"><a href=\"/detail\"><img class=\"img-comic\" src=\"//st.ntcdntempv3.com/data/comics/118/fatetype-redline-truyen-ky-ve-chen-thanh-3330.jpg\"></a><div class=\"infor-comic\"><ul><li><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>123</li><li><i class=\"fa fa-comment\" aria-hidden=\"true\"></i> 123</li><li><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> 123</li></ul></div><div class=\"new-chapter\"><a class=\"name-comic\" href=\"/detail\"><b>Fate/type Redline - Truyền Kỳ về Chén Thánh Đế Đô</b></a><ul><li><a href=\"\">Chapter 3</a></li><li><a href=\"\">Chapter 2</a></li><li><a href=\"\">Chapter 1</a></li></ul></div></div><div class=\"col-md-3 comic\"><a href=\"/detail\"><img class=\"img-comic\" src=\"https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&amp;pid=Api&amp;P=0\"></a><div class=\"infor-comic\"><ul><li><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>123</li><li><i class=\"fa fa-comment\" aria-hidden=\"true\"></i> 123</li><li><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> 123</li></ul></div><div class=\"new-chapter\"><a class=\"name-comic\" href=\"/detail\"><b>Tên truyện</b></a><ul><li><a href=\"\">Chapter 3</a></li><li><a href=\"\">Chapter 2</a></li><li><a href=\"\">Chapter 1</a></li></ul></div></div></div>", 2);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  style: {
+    "color": "#de6e98",
+    "padding-top": "0.5cm"
+  }
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Truyện Hot "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa fa-angle-right",
+  "aria-hidden": "true"
+})])])], -1 /* HOISTED */);
+var _hoisted_2 = {
+  "class": "product"
+};
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa fa-arrow-right",
+  "aria-hidden": "true"
+}, null, -1 /* HOISTED */);
+var _hoisted_4 = [_hoisted_3];
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa fa-arrow-right",
+  "aria-hidden": "true"
+}, null, -1 /* HOISTED */);
+var _hoisted_6 = [_hoisted_5];
+var _hoisted_7 = {
+  key: 0,
+  "class": "product-container"
+};
+var _hoisted_8 = {
+  "class": "product-image"
+};
+var _hoisted_9 = {
+  href: "/detail"
+};
+var _hoisted_10 = ["src"];
+var _hoisted_11 = {
+  "class": "product-info"
+};
+var _hoisted_12 = {
+  href: "/detail"
+};
+var _hoisted_13 = {
+  "class": "product-short-description"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return _hoisted_1;
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "pre-btn",
+    onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+      return $options.pre();
+    }, ["prevent"]))
+  }, _hoisted_4), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "nxt-btn",
+    onClick: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+      return $options.next();
+    }, ["prevent"]))
+  }, _hoisted_6), $data.Comics && $data.Comics.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.Comics, function (Comic) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      "class": "product-card",
+      key: Comic.Comic_id
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+      src: Comic.Img_feature,
+      "class": "product-thumb",
+      alt: ""
+    }, null, 8 /* PROPS */, _hoisted_10)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Comic.Name), 1 /* TEXT */)])])])]);
+  }), 128 /* KEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -16710,7 +16865,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.img-comic {\r\n    width: 100%;\r\n    height: 200px;\n}\n.comic {\r\n    width: 200px;\r\n    padding: 0%;\r\n    border: 2px solid black;\r\n    margin-right: 10px;\r\n    background: #f5f2f2;\r\n    margin-bottom: 0.3cm;\n}\n.comic-new {\r\n    margin-left: 1cm;\n}\n.infor-comic {\r\n    background: black;\n}\n.infor-comic ul {\r\n    padding-left: 0px;\r\n    margin-bottom: 1px;\r\n    text-align: center;\n}\n.infor-comic ul li {\r\n\r\n    font-size: 11px;\r\n    display: inline;\r\n    color: white;\r\n    padding-right: 10px\n}\n.new-chapter ul li {\r\n    font-size: 13px;\r\n    padding-right: 10px;\r\n    list-style: none;\n}\n.new-chapter ul {\r\n    padding-left: 0px;\r\n    padding-left: 10px;\n}\n.name-comic {\r\n    margin-bottom: 1px;\r\n    padding-left: 3px;\n}\n#module3 a{\r\n    text-decoration: none;\r\n    color:black;\n}\n.comic-hot {\r\n    justify-content: center;\n}\n.container.home {\r\n    background: #dedede;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.img-comic {\r\n    width: 100%;\r\n    height: 200px;\n}\n.comic {\r\n    width: 200px;\r\n    padding: 0%;\r\n    border: 2px solid black;\r\n    margin-right: 10px;\r\n    background: #f5f2f2;\r\n    margin-bottom: 0.3cm;\n}\n.comic-new {\r\n    margin-left: 1cm;\n}\n.infor-comic {\r\n    background: black;\n}\n.infor-comic ul {\r\n    padding-left: 0px;\r\n    margin-bottom: 1px;\r\n    text-align: center;\n}\n.infor-comic ul li {\r\n\r\n    font-size: 11px;\r\n    display: inline;\r\n    color: white;\r\n    padding-right: 10px\n}\n.new-chapter ul li {\r\n    font-size: 13px;\r\n    padding-right: 10px;\r\n    list-style: none;\n}\n.new-chapter ul {\r\n    padding-left: 0px;\r\n    padding-left: 10px;\n}\n.name-comic {\r\n    margin-bottom: 1px;\r\n    padding-left: 3px;\n}\n#module3 a{\r\n    text-decoration: none;\r\n    color:black;\n}\n.comic-hot {\r\n    justify-content: center;\n}\n.container.home {\r\n    background: #dedede;\n}\r\n/* HEADER */\r\n\r\n\r\n\r\n\r\n\r\n\r\n/* PRODUCTS */\n.product {\r\n  position: relative;\r\n  overflow: hidden;\r\n  padding: 20px;\n}\n.product-category {\r\n  padding: 0 10vw;\r\n  font-size: 30px;\r\n  font-weight: 500;\r\n  margin-bottom: 40px;\r\n  text-transform: capitalize;\n}\n.product-container {\r\n  padding: -1px 10vw;\r\n  display: flex;\r\n  overflow-x: auto;\r\n  scroll-behavior: smooth;\n}\n.product-container::-webkit-scrollbar {\r\n  display: none;\n}\n.product-card {\r\n  flex: 0 0 auto;\r\n  width: 222px;\r\n  height: 450px;\r\n  margin-right: 40px;\n}\n.product-image {\r\n  position: relative;\r\n  width: 100%;\r\n  height: 350px;\r\n  overflow: hidden;\n}\n.product-thumb {\r\n  width: 100%;\r\n  height: 100%;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.card-btn {\r\n  position: absolute;\r\n  bottom: 10px;\r\n  left: 50%;\r\n  transform: translateX(-50%);\r\n  padding: 10px;\r\n  width: 90%;\r\n  text-transform: capitalize;\r\n  border: none;\r\n  outline: none;\r\n  background: #fff;\r\n  border-radius: 5px;\r\n  transition: 0.5s;\r\n  cursor: pointer;\r\n  opacity: 0;\n}\n.product-card:hover .card-btn {\r\n  opacity: 1;\n}\n.card-btn:hover {\r\n  background: #ff7d7d;\r\n  color: #fff;\n}\n.product-info {\r\n  width: 100%;\r\n  height: 100px;\r\n  padding-top: 10px;\n}\n.product-brand {\r\n  text-transform: uppercase;\n}\n.product-short-description {\r\n  width: 100%;\r\n  height: 20px;\r\n  line-height: 20px;\r\n  overflow: hidden;\r\n  opacity: 0.5;\r\n  text-transform: capitalize;\r\n  margin: 5px 0;\n}\n.pre-btn,\r\n.nxt-btn {\r\n  border: none;\r\n  width: 10vw;\r\n  height: 100%;\r\n  position: absolute;\r\n  top: 0;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);\r\n  cursor: pointer;\r\n  z-index: 8;\n}\n.pre-btn {\r\n  left: 0;\r\n  transform: rotate(180deg);\n}\n.nxt-btn {\r\n  right: 0;\n}\n.pre-btn img,\r\n.nxt-btn img {\r\n  opacity: 0.2;\n}\n.pre-btn:hover img,\r\n.nxt-btn:hover img {\r\n  opacity: 1;\n}\n.collection-container {\r\n  width: 100%;\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  grid-gap: 10px;\n}\n.collection {\r\n  position: relative;\n}\n.collection img {\r\n  width: 100%;\r\n  height: 100%;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.collection p {\r\n  position: absolute;\r\n  top: 50%;\r\n  left: 50%;\r\n  transform: translate(-50%, -50%);\r\n  text-align: center;\r\n  color: #fff;\r\n  font-size: 50px;\r\n  text-transform: capitalize;\n}\n.collection:nth-child(3) {\r\n  grid-column: span 2;\r\n  margin-bottom: 10px;\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

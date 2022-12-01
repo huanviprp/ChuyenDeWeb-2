@@ -8,9 +8,9 @@
                         </a>
                     </div>
                     <div class="col-md-6 search">
-                        <form class="d-flex search1" action="/resultsearch">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">
+                        <form class="d-flex search1" method="post">
+                            <input class="form-control me-2" v-model="search" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit" @click.prevent="searchComic()">
                             <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
                         </form>
@@ -23,11 +23,61 @@
                 </div>
             </div>
     </div>
+    <div v-if="showSearch==true">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 comic" v-for="comic in product" v-bind:key="comic.Comic_id">
+            <a href="/detail"><img class="img-comic" src="https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&pid=Api&P=0"></a>
+            <div class=" infor-comic">
+                <ul>
+                    <li><i class="fa fa-eye" aria-hidden="true"></i>123</li>
+                    <li><i class="fa fa-comment" aria-hidden="true"></i> 123</li>
+                    <li><i class="fa fa-heart" aria-hidden="true"></i> 123</li>
+                </ul>
+            </div>
+            <div class="new-chapter">
+                <a class="name-comic" href="/detail"><b>{{ comic.Name}}</b></a>
+                <ul>
+                    <li><a href="">Chapter 3</a></li>
+                    <li><a href="">Chapter 2</a></li>
+                    <li><a href="">Chapter 1</a></li>
+                </ul>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+    <div v-if="showSearch==false">
+    </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
-    
+    data(){
+        return{
+            search:'',
+            showSearch: true,
+            product: []
+        }
+    },
+    methods: {
+        searchComic(){
+            // fetch('/api/search')
+            // .then(res => res.json())
+            // .then(res => {
+            //     this.Result = res;
+            //     this.search = '';
+            //     this.showSearch = true;
+            // });
+            axios.post('/resultsearch?key=' + this.search, {
+                    name: this.search
+                })
+                .then((response) => {
+                    this.product = response.data;
+                });
+        }
+    }
 }
 </script>
 

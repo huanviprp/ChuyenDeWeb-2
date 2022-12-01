@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\ComicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,3 +57,4 @@ Route::get('/category', function () {
 Route::get('/resultsearch', function () {
     return view('resultsearch');
 });
+Route::post('/resultsearch', [ComicController::class,'search']);
