@@ -3,7 +3,7 @@
         <div class="offset-md-3 col-md-6 signout-detail">
             <h1 class="signout-title">ĐĂNG KÝ</h1>
             <div class="signout-form">
-                <form action="" method="post" v-on:submit.prevent="register()">
+                <form action="" method="post" v-on:submit.prevent="onSubmit()">
                     <div class="form-group">
                         <label for="">UserName</label>
                         <div class="input-username">
@@ -62,21 +62,11 @@ export default {
         };
     },
     methods: {
-        register() {
-            axios.post("/dangky", this.user).then((response) => {
-                this.check = true;
-            });
-        },
-        validateEmail(value) {
-            if (!value) {
-                return 'Bạn chưa nhập vào ô này';
+        onSubmit(){
+                this.axios.post("/dangky",this.user).then((response)=>{
+                    this.check=true;
+                });
             }
-            const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-            if (!regex.test(value)) {
-                return 'Ô này phải có giá trị Email';
-            }
-            return true;
-        }
     }
 }
 </script>

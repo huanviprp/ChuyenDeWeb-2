@@ -15600,21 +15600,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    register: function register() {
+    onSubmit: function onSubmit() {
       var _this = this;
-      axios__WEBPACK_IMPORTED_MODULE_0___default().post("/dangky", this.user).then(function (response) {
+      this.axios.post("/dangky", this.user).then(function (response) {
         _this.check = true;
       });
-    },
-    validateEmail: function validateEmail(value) {
-      if (!value) {
-        return 'Bạn chưa nhập vào ô này';
-      }
-      var regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-      if (!regex.test(value)) {
-        return 'Ô này phải có giá trị Email';
-      }
-      return true;
     }
   }
 });
@@ -16020,7 +16010,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     action: "",
     method: "post",
     onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
-      return $options.register();
+      return $options.onSubmit();
     }, ["prevent"]))
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
@@ -16043,7 +16033,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     placeholder: "Nhập Email",
     autofocus: "",
-    rules: $options.validateEmail
+    rules: _ctx.validateEmail
   }, null, 8 /* PROPS */, _hoisted_12), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.user.email]]), _hoisted_13])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "password",
     "class": "form-control password",
