@@ -1,26 +1,22 @@
 <template>
     <div class="container">
-        <div v-if="error !== null">
-            <button type="button" class="btn-close" aria-label="Close"></button>
-            <strong>{{error}}</strong>
-        </div>
         <div class="offset-md-3 col-md-6 login-detail">
             <h1 class="login-title">ĐĂNG NHẬP</h1>
             <div class="login-form">
-                <form action="" method="post">
+                <form action="" method="post" v-on:submit.prevent="onSubmit">
                     <div class="form-group">
-                        <label for="">Email:</label>
-                        <div class="input-email">
-                            <input type="email" class="form-control email" v-model="email" name="email" placeholder="Email" autofocus=""
-                                required>
+                        <label for="">Username:</label>
+                        <div class="input-username">
+                            <input type="username" class="form-control email" v-model="user.userName" name="username"
+                                placeholder="Username" autofocus="" required>
                             <i class="fas fa-envelope" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="">Mật khẩu:</label>
                         <div class="input-password">
-                            <input type="password" class="form-control password" v-model="password" name="password" placeholder="Password"
-                                required>
+                            <input type="password" class="form-control password" v-model="user.Password" name="password"
+                                placeholder="Password" required>
                             <i class="fas fa-lock" aria-hidden="true"></i>
                         </div>
                     </div>
@@ -29,7 +25,10 @@
                     </div>
 
                     <div class="login-button mb-2">
-                        <button type="submit" class="btn btn-warning" @click="handleSubmit">Đăng nhập</button>
+                        <input type="submit" class="btn btn-warning" value="Đăng nhập">
+                        <label class="label label-success" v-if="check_a">Login thanh cong</label><br />
+                        <label class="label label-success" v-if="check_b">Login Khong thanh cong</label><br />
+
                     </div>
                 </form>
             </div>
@@ -54,56 +53,26 @@ export default {
     name: 'Module13',
     data() {
         return {
-            // user: {},
-            // check_a: false,
-            // check_b: false
-            email: "",
-            password: "",
-            error: null,
+            user: {},
+            check_a: false,
+            check_b: false
         }
     },
     methods: {
-        handleSubmit(e) {
-            e.preventDefault()
-            if (this.password.length > 0) {
-                this.$axios.get('/sanctum/csrf-cookie').then(response => {
-                    this.$axios.post('/login', {
-                        email: this.email,
-                        password: this.password
-                    })
-                        .then(response => {
-                            if (response.data.success) {
-                                this.$router.go('/dashboard')
-                            } else {
-                                this.error = response.data.message
-                            }
-                        })
-                        .catch(function (error) {
-                            console.log(error);
-                        });
-                })
-            }
-        }
-        // onSubmit() {
-        //     axios.post("/dangky/loginUser", this.user).then((response) => {
-        //         var data = response.data.success;
-        //         if (data > 0) {
-        //             this.check_a = true;
-        //             this.check_b = false;
-        //         }
-        //         else {
-        //             this.check_a = false;
-        //             this.check_b = true;
-        //         }
+        onSubmit() {
+            this.axios.post("/register/loginUser", this.user).then((response) => {
+                var data = response.data.success;
+                if (data > 0) {
+                    this.check_a = true;
+                    this.check_b = false;
+                }
+                else {
+                    this.check_a = false;
+                    this.check_b = true;
+                }
 
-        //     });
-        // }
-    },
-    beforeRouteEnter(to, from, next) {
-        if (window.Laravel.isLoggedin) {
-            return next('dashboard');
+            });
         }
-        next();
     }
 }
 

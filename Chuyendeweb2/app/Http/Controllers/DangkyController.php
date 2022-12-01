@@ -38,14 +38,15 @@ class DangkyController extends Controller
     public function store(Request $request)
     {
         $user = new User;
-        $user->name = $request->userName;
+        $user->userName = $request->userName;
         $user->email = $request->email;
         $user->password = hash('md5', $request->Password);
+        $user->role_id = 2;
         $user->save();
     }
     public function loginUser(Request $request){
         $email = $request->email; //lấy email của phương thức post vuejs gửi qua
-        $pass = $request->pass;  //lấy pass của phương thức post vuejs gửi qua
+        $pass = $request->Password;  //lấy pass của phương thức post vuejs gửi qua
   
         //kiểm tra email và pass trong CSDL
         $data = User::where('email','=',$email)->where('password','=',hash('md5',$pass))->get();

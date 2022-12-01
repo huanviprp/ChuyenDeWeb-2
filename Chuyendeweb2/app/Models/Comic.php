@@ -9,7 +9,7 @@ class Comic extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'Comic';
+    protected $table = 'comic';
 
     protected $fillable = [
         'Comic_id',

@@ -88,10 +88,10 @@
                                                 <tbody>
                                                     <tr v-for="user in Users" data-userid="1">
                                                         <td></td>
-                                                        <td>{{ user.id }}</td>
-                                                        <td>{{ user.name }}</td>
+                                                        <td>{{ user.User_id }}</td>
+                                                        <td>{{ user.userName }}</td>
                                                         <td>{{ user.email }}</td>
-                                                        <td>{{ user.password }}</td>
+                                                        <td>{{ user.Password }}</td>
                                                         <td>{{ user.created_at }}</td>
                                                         <td><a href="#comment" style="font-size:14px">Xem comment</a>
                                                         </td>

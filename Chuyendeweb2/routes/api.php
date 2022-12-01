@@ -25,5 +25,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::post('logout', [UserController::class, 'logout'])->middleware('auth:sanctum');
 
 
-Route::post('/dataComic', [ComicController::class, 'index']);
+Route::get('/dataComic', [ComicController::class, 'index']);
 Route::get('/datauser', [DangkyController::class, 'index']);

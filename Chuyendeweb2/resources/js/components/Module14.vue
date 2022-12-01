@@ -64,6 +64,7 @@ export default {
         register() {
             axios.post("/register", this.user).then((response) => {
                 this.check = true;
+                window.location.href = "/login";
             });
         },
         validateEmail(value) {

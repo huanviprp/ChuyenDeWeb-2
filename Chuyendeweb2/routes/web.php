@@ -29,10 +29,11 @@ use Illuminate\Support\Facades\Route;
 // Route::post('/dangky', [DangkyController::class, 'store']);
 
 
-// Route::get('/dangky/loginUser', [DangkyController::class, 'loginUser']);
 
 Route::get('{any}', function(){
     return view('app');
 })->where('any','.*');
 Route::resource('register', 'DangkyController');
-Route::post('/', [DangkyController::class, 'loginUser']);
+Route::post('/register', [DangkyController::class, 'store']);
+Route::get('/register/loginUser', [DangkyController::class, 'loginUser']);
+// Route::post('/', [DangkyController::class, 'loginUser']);

@@ -12,7 +12,6 @@
                 <a class="nav-item nav-link" @click="logout">LogOut</a>
             </div>
             <div class="navbar-nav me-auto mb-2 mb-lg-0" v-else>
-                <router-link to="/">Home</router-link>
                 <router-link to="/login">Login</router-link>
                 <router-link to="/register">Register</router-link>
                 <router-link to="/dashboard">Dashboard</router-link>
