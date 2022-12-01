@@ -15390,12 +15390,13 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       isActive: false,
-      Comics: []
+      Comics: [],
+      id: this.$route.params.id
     };
   },
   created: function created() {
     var _this = this;
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/').then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/' + this.id).then(function (res) {
       _this.Comics = res.data;
     });
   },

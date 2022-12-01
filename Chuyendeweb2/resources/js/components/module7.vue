@@ -91,11 +91,12 @@ export default {
     data() {
         return {
             isActive: false,
-            Comics: []
+            Comics: [],
+            id: this.$route.params.id
         };
     },
     created() {
-        axios.get('api/').then(
+        axios.get('api/' + this.id).then(
             res => {
                 this.Comics = res.data;
             }

@@ -12,4 +12,8 @@ class ComicController extends Controller
     {
         return comic::all();
     }
+    public function getdetail($id)
+    {
+        return comic::where('comic_id', $id)->get();
+    }
 }
