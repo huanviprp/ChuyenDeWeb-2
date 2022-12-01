@@ -277,18 +277,6 @@ export default {
         //         }
         //     )
         // },
-        deleteUser(id) {
-
-            const headers = { "CENSORED": "CENSORED" };
-            axios.delete('myAPI' + id, { headers })
-                .then(response => {
-                    console.log(response);
-                })
-                .catch(function (error) {
-                    console.log(error.response);
-                });
-
-        },
     }
 }
 </script>
