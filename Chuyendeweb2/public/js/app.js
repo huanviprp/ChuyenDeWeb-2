@@ -15256,7 +15256,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      Comics: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/hot').then(function (res) {
+      _this.Comics = res.data;
+    }), this.interval = setInterval(function () {
+      return _this.next();
+    }, 3000);
+  },
+  methods: {
+    next: function next() {
+      this.Comics.push(this.Comics.shift());
+    },
+    pre: function pre() {
+      this.Comics.unshift(this.Comics.pop());
+    }
+  }
+});
 
 /***/ }),
 
@@ -15358,11 +15383,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      isActive: false
+      isActive: false,
+      Comics: []
     };
+  },
+  created: function created() {
+    var _this = this;
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/').then(function (res) {
+      _this.Comics = res.data;
+    });
   },
   methods: {
     toggleClass: function toggleClass() {
@@ -15778,9 +15813,69 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h3><p style=\"color:#de6e98;padding-top:0.5cm;\"><b>Truyện Hot <i class=\"fa fa-angle-right\" aria-hidden=\"true\"></i></b></p></h3><div class=\"row comic-hot\"><div class=\"col-md-3 comic\"><a href=\"/detail\"><img class=\"img-comic\" src=\"https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&amp;pid=Api&amp;P=0\"></a><div class=\"infor-comic\"><ul><li><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>123</li><li><i class=\"fa fa-comment\" aria-hidden=\"true\"></i> 123</li><li><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> 123</li></ul></div><div class=\"new-chapter\"><a class=\"name-comic\" href=\"/detail\"><b>Tên truyện</b></a><ul><li><a href=\"\">Chapter 3</a></li><li><a href=\"\">Chapter 2</a></li><li><a href=\"\">Chapter 1</a></li></ul></div></div><div class=\"col-md-3 comic\"><a href=\"/detail\"><img class=\"img-comic\" src=\"https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&amp;pid=Api&amp;P=0\"></a><div class=\"infor-comic\"><ul><li><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>123</li><li><i class=\"fa fa-comment\" aria-hidden=\"true\"></i> 123</li><li><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> 123</li></ul></div><div class=\"new-chapter\"><a class=\"name-comic\" href=\"/detail\"><b>Tên truyện</b></a><ul><li><a href=\"\">Chapter 3</a></li><li><a href=\"\">Chapter 2</a></li><li><a href=\"\">Chapter 1</a></li></ul></div></div><div class=\"col-md-3 comic\"><a href=\"/detail\"><img class=\"img-comic\" src=\"//st.ntcdntempv3.com/data/comics/162/lookism.jpg\"></a><div class=\"infor-comic\"><ul><li><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>123</li><li><i class=\"fa fa-comment\" aria-hidden=\"true\"></i> 123</li><li><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> 123</li></ul></div><div class=\"new-chapter\"><a class=\"name-comic\" href=\"/detail\"><b>Tên truyện</b></a><ul><li><a href=\"\">Chapter 3</a></li><li><a href=\"\">Chapter 2</a></li><li><a href=\"\">Chapter 1</a></li></ul></div></div><div class=\"col-md-3 comic\"><a href=\"/detail\"><img class=\"img-comic\" src=\"//st.ntcdntempv3.com/data/comics/10/chainsawman-phan-2.jpg\"></a><div class=\"infor-comic\"><ul><li><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>123</li><li><i class=\"fa fa-comment\" aria-hidden=\"true\"></i> 123</li><li><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> 123</li></ul></div><div class=\"new-chapter\"><a class=\"name-comic\" href=\"/detail\"><b>Chainsawman Phần 2</b></a><ul><li><a href=\"\">Chapter 3</a></li><li><a href=\"\">Chapter 2</a></li><li><a href=\"\">Chapter 1</a></li></ul></div></div><div class=\"col-md-3 comic\"><a href=\"/detail\"><img class=\"img-comic\" src=\"//st.ntcdntempv3.com/data/comics/118/fatetype-redline-truyen-ky-ve-chen-thanh-3330.jpg\"></a><div class=\"infor-comic\"><ul><li><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>123</li><li><i class=\"fa fa-comment\" aria-hidden=\"true\"></i> 123</li><li><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> 123</li></ul></div><div class=\"new-chapter\"><a class=\"name-comic\" href=\"/detail\"><b>Fate/type Redline - Truyền Kỳ về Chén Thánh Đế Đô</b></a><ul><li><a href=\"\">Chapter 3</a></li><li><a href=\"\">Chapter 2</a></li><li><a href=\"\">Chapter 1</a></li></ul></div></div><div class=\"col-md-3 comic\"><a href=\"/detail\"><img class=\"img-comic\" src=\"https://tse3.mm.bing.net/th?id=OIP.oJhAtynqCdcsrNOO0RAWYgHaMW&amp;pid=Api&amp;P=0\"></a><div class=\"infor-comic\"><ul><li><i class=\"fa fa-eye\" aria-hidden=\"true\"></i>123</li><li><i class=\"fa fa-comment\" aria-hidden=\"true\"></i> 123</li><li><i class=\"fa fa-heart\" aria-hidden=\"true\"></i> 123</li></ul></div><div class=\"new-chapter\"><a class=\"name-comic\" href=\"/detail\"><b>Tên truyện</b></a><ul><li><a href=\"\">Chapter 3</a></li><li><a href=\"\">Chapter 2</a></li><li><a href=\"\">Chapter 1</a></li></ul></div></div></div>", 2);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  style: {
+    "color": "#de6e98",
+    "padding-top": "0.5cm"
+  }
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Truyện Hot "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa fa-angle-right",
+  "aria-hidden": "true"
+})])])], -1 /* HOISTED */);
+var _hoisted_2 = {
+  "class": "product"
+};
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa fa-arrow-right",
+  "aria-hidden": "true"
+}, null, -1 /* HOISTED */);
+var _hoisted_4 = [_hoisted_3];
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fa fa-arrow-right",
+  "aria-hidden": "true"
+}, null, -1 /* HOISTED */);
+var _hoisted_6 = [_hoisted_5];
+var _hoisted_7 = {
+  key: 0,
+  "class": "product-container"
+};
+var _hoisted_8 = {
+  "class": "product-image"
+};
+var _hoisted_9 = ["href"];
+var _hoisted_10 = ["src"];
+var _hoisted_11 = {
+  "class": "product-info"
+};
+var _hoisted_12 = {
+  href: "/detail"
+};
+var _hoisted_13 = {
+  "class": "product-short-description"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return _hoisted_1;
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "pre-btn",
+    onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+      return $options.pre();
+    }, ["prevent"]))
+  }, _hoisted_4), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "nxt-btn",
+    onClick: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+      return $options.next();
+    }, ["prevent"]))
+  }, _hoisted_6), $data.Comics && $data.Comics.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.Comics, function (Comic) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      "class": "product-card",
+      key: Comic.Comic_id
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      href: '/detail/?id=' + Comic.Comic_id
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+      src: Comic.Img_feature,
+      "class": "product-thumb",
+      alt: ""
+    }, null, 8 /* PROPS */, _hoisted_10)], 8 /* PROPS */, _hoisted_9)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Comic.Name), 1 /* TEXT */)])])])]);
+  }), 128 /* KEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -15811,9 +15906,7 @@ var _hoisted_2 = {
   key: 0,
   "class": "row comic-new"
 };
-var _hoisted_3 = {
-  href: "/detail"
-};
+var _hoisted_3 = ["href"];
 var _hoisted_4 = ["src"];
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "infor-comic"
@@ -15844,12 +15937,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       "class": "col-md-3 comic",
       key: Comic.Comic_id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      href: '/detail/?id=' + Comic.Comic_id
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
       "class": "img-comic",
       src: Comic.Img_feature
-    }, null, 8 /* PROPS */, _hoisted_4)]), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    }, null, 8 /* PROPS */, _hoisted_4)], 8 /* PROPS */, _hoisted_3), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       "class": "name-comic",
-      href: '/detail/' + Comic.Comic_id
+      href: '/detail/?id=' + Comic.Comic_id
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Comic.Name), 1 /* TEXT */)], 8 /* PROPS */, _hoisted_7), _hoisted_8])]);
   }), 128 /* KEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64 /* STABLE_FRAGMENT */);
 }
@@ -16451,7 +16546,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.img-comic {\r\n    width: 100%;\r\n    height: 200px;\n}\n.comic {\r\n    width: 200px;\r\n    padding: 0%;\r\n    border: 2px solid black;\r\n    margin-right: 10px;\r\n    background: #f5f2f2;\r\n    margin-bottom: 0.3cm;\n}\n.comic-new {\r\n    margin-left: 1cm;\n}\n.infor-comic {\r\n    background: black;\n}\n.infor-comic ul {\r\n    padding-left: 0px;\r\n    margin-bottom: 1px;\r\n    text-align: center;\n}\n.infor-comic ul li {\r\n\r\n    font-size: 11px;\r\n    display: inline;\r\n    color: white;\r\n    padding-right: 10px\n}\n.new-chapter ul li {\r\n    font-size: 13px;\r\n    padding-right: 10px;\r\n    list-style: none;\n}\n.new-chapter ul {\r\n    padding-left: 0px;\r\n    padding-left: 10px;\n}\n.name-comic {\r\n    margin-bottom: 1px;\r\n    padding-left: 3px;\n}\n#module3 a {\r\n    text-decoration: none;\r\n    color: black;\n}\n.comic-hot {\r\n    justify-content: center;\n}\n.container.home {\r\n    background: #dedede;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.img-comic {\r\n    width: 100%;\r\n    height: 200px;\n}\n.comic {\r\n    width: 200px;\r\n    padding: 0%;\r\n    border: 2px solid black;\r\n    margin-right: 10px;\r\n    background: #f5f2f2;\r\n    margin-bottom: 0.3cm;\n}\n.comic-new {\r\n    margin-left: 1cm;\n}\n.infor-comic {\r\n    background: black;\n}\n.infor-comic ul {\r\n    padding-left: 0px;\r\n    margin-bottom: 1px;\r\n    text-align: center;\n}\n.infor-comic ul li {\r\n\r\n    font-size: 11px;\r\n    display: inline;\r\n    color: white;\r\n    padding-right: 10px\n}\n.new-chapter ul li {\r\n    font-size: 13px;\r\n    padding-right: 10px;\r\n    list-style: none;\n}\n.new-chapter ul {\r\n    padding-left: 0px;\r\n    padding-left: 10px;\n}\n.name-comic {\r\n    margin-bottom: 1px;\r\n    padding-left: 3px;\n}\n#module3 a {\r\n    text-decoration: none;\r\n    color: black;\n}\n.comic-hot {\r\n    justify-content: center;\n}\n.container.home {\r\n    background: #dedede;\n}\r\n\r\n/* HEADER */\r\n\r\n\r\n\r\n\r\n\r\n\r\n/* PRODUCTS */\n.product {\r\n    position: relative;\r\n    overflow: hidden;\r\n    padding: 20px;\n}\n.product-category {\r\n    padding: 0 10vw;\r\n    font-size: 30px;\r\n    font-weight: 500;\r\n    margin-bottom: 40px;\r\n    text-transform: capitalize;\n}\n.product-container {\r\n    padding: -1px 10vw;\r\n    display: flex;\r\n    overflow-x: auto;\r\n    scroll-behavior: smooth;\n}\n.product-container::-webkit-scrollbar {\r\n    display: none;\n}\n.product-card {\r\n    flex: 0 0 auto;\r\n    width: 222px;\r\n    height: 450px;\r\n    margin-right: 40px;\n}\n.product-image {\r\n    position: relative;\r\n    width: 100%;\r\n    height: 350px;\r\n    overflow: hidden;\n}\n.product-thumb {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.card-btn {\r\n    position: absolute;\r\n    bottom: 10px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    padding: 10px;\r\n    width: 90%;\r\n    text-transform: capitalize;\r\n    border: none;\r\n    outline: none;\r\n    background: #fff;\r\n    border-radius: 5px;\r\n    transition: 0.5s;\r\n    cursor: pointer;\r\n    opacity: 0;\n}\n.product-card:hover .card-btn {\r\n    opacity: 1;\n}\n.card-btn:hover {\r\n    background: #ff7d7d;\r\n    color: #fff;\n}\n.product-info {\r\n    width: 100%;\r\n    height: 100px;\r\n    padding-top: 10px;\n}\n.product-brand {\r\n    text-transform: uppercase;\n}\n.product-short-description {\r\n    width: 100%;\r\n    height: 20px;\r\n    line-height: 20px;\r\n    overflow: hidden;\r\n    opacity: 0.5;\r\n    text-transform: capitalize;\r\n    margin: 5px 0;\n}\n.pre-btn,\r\n.nxt-btn {\r\n    border: none;\r\n    width: 10vw;\r\n    height: 100%;\r\n    position: absolute;\r\n    top: 0;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);\r\n    cursor: pointer;\r\n    z-index: 8;\n}\n.pre-btn {\r\n    left: 0;\r\n    transform: rotate(180deg);\n}\n.nxt-btn {\r\n    right: 0;\n}\n.pre-btn img,\r\n.nxt-btn img {\r\n    opacity: 0.2;\n}\n.pre-btn:hover img,\r\n.nxt-btn:hover img {\r\n    opacity: 1;\n}\n.collection-container {\r\n    width: 100%;\r\n    display: grid;\r\n    grid-template-columns: repeat(2, 1fr);\r\n    grid-gap: 10px;\n}\n.collection {\r\n    position: relative;\n}\n.collection img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.collection p {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    text-align: center;\r\n    color: #fff;\r\n    font-size: 50px;\r\n    text-transform: capitalize;\n}\n.collection:nth-child(3) {\r\n    grid-column: span 2;\r\n    margin-bottom: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -16475,7 +16570,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.container.home {\r\n    background: #dedede;\n}\n.comic{\r\n    color:black\n}\n.comic-new .comic a{\r\n    text-decoration: none;\r\n    color:black;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.container.home {\r\n    background: #dedede;\n}\n.comic {\r\n    color: black\n}\n.comic-new .comic a {\r\n    text-decoration: none;\r\n    color: black;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -16547,7 +16642,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#Breadcrumb{\r\n    padding-left: 15px;\r\n    height: 45px;\r\n    padding-top: 10px;\r\n    background-color: #dedede;\n}\n.container-module7{\r\n    padding: 0;\n}\n.title-container {\r\n    margin-bottom: 20px;\n}\n.chapter-name:hover {\r\n    background-color: #adacac;\n}\n.follow:hover {\r\n    background-color: rgb(1 86 1);\r\n    color: white;\n}\n.see-more {\r\n    cursor: pointer;\n}\n.des-content.hidden {\r\n    height: 80px;\r\n    overflow: hidden;\r\n    transition: 1s;\n}\n.des-content.show {\r\n    height: auto;\r\n    overflow: hidden;\r\n    transition: 1s;\n}\n.des-conent-more {\r\n    height: auto;\n}\n.des {\r\n    margin-top: 30px;\r\n    margin-left: 20px;\n}\n.title-info-containter {\r\n    margin-top: 10px;\r\n    width: 75rem;\n}\n.tag-icon {\r\n    padding-right: 10px;\r\n    color: #de6e98;\n}\n.tag-icon.heart {\r\n    color: white;\n}\n.header-title.hidden {\r\n    background-color: #dedede;\r\n    height: 35rem;\n}\n.header-title.show {\r\n    background-color: #dedede;\r\n    height: (100% +20px) !important;\n}\n.title1,\r\n.title2 {\r\n    text-align: center;\n}\n.image-feature {\r\n    vertical-align: middle;\r\n    width: 100%;\n}\n.image-container {\r\n    width: 200px;\r\n    box-shadow: 1px 1px 15px 1px #525252;\r\n    padding: 0;\r\n\r\n    margin-left: 40px;\r\n    border: 0.5px #b0b0b0 solid;\n}\n.text-span {\r\n    padding-left: 20px;\n}\n.info-container {\r\n    margin-left: 55px;\r\n    font-size: 18px;\n}\n.info {\r\n    margin-bottom: 10px;\n}\n.follow {\r\n    width: 130px;\r\n    height: 40px;\r\n    background-color: rgb(41, 146, 41);\r\n    color: white;\n}\n.follow a {\r\n    text-decoration: none;\r\n    color: white;\n}\nbody {\r\n    background-image: url(\"https://cdn.wallpapersafari.com/17/62/Mw5A6y.jpg\");\n}\n.des-title {\r\n    color: #de6e98;\r\n    border-bottom: 1px #f01264 solid;\r\n    font-weight: bold;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#Breadcrumb {\r\n    padding-left: 15px;\r\n    height: 45px;\r\n    padding-top: 10px;\r\n    background-color: #dedede;\n}\n.container-module7 {\r\n    padding: 0;\n}\n.title-container {\r\n    margin-bottom: 20px;\n}\n.chapter-name:hover {\r\n    background-color: #adacac;\n}\n.follow:hover {\r\n    background-color: rgb(1 86 1);\r\n    color: white;\n}\n.see-more {\r\n    cursor: pointer;\n}\n.des-content.hidden {\r\n    height: 80px;\r\n    overflow: hidden;\r\n    transition: 1s;\n}\n.des-content.show {\r\n    height: auto;\r\n    overflow: hidden;\r\n    transition: 1s;\n}\n.des-conent-more {\r\n    height: auto;\n}\n.des {\r\n    margin-top: 30px;\r\n    margin-left: 20px;\n}\n.title-info-containter {\r\n    margin-top: 10px;\r\n    width: 75rem;\n}\n.tag-icon {\r\n    padding-right: 10px;\r\n    color: #de6e98;\n}\n.tag-icon.heart {\r\n    color: white;\n}\n.header-title.hidden {\r\n    background-color: #dedede;\r\n    height: 35rem;\n}\n.header-title.show {\r\n    background-color: #dedede;\r\n    height: (100% +20px) !important;\n}\n.title1,\r\n.title2 {\r\n    text-align: center;\n}\n.image-feature {\r\n    vertical-align: middle;\r\n    width: 100%;\n}\n.image-container {\r\n    width: 200px;\r\n    box-shadow: 1px 1px 15px 1px #525252;\r\n    padding: 0;\r\n\r\n    margin-left: 40px;\r\n    border: 0.5px #b0b0b0 solid;\n}\n.text-span {\r\n    padding-left: 20px;\n}\n.info-container {\r\n    margin-left: 55px;\r\n    font-size: 18px;\n}\n.info {\r\n    margin-bottom: 10px;\n}\n.follow {\r\n    width: 130px;\r\n    height: 40px;\r\n    background-color: rgb(41, 146, 41);\r\n    color: white;\n}\n.follow a {\r\n    text-decoration: none;\r\n    color: white;\n}\nbody {\r\n    background-image: url(\"https://cdn.wallpapersafari.com/17/62/Mw5A6y.jpg\");\n}\n.des-title {\r\n    color: #de6e98;\r\n    border-bottom: 1px #f01264 solid;\r\n    font-weight: bold;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

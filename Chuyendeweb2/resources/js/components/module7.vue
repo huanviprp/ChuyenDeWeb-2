@@ -86,14 +86,21 @@
 </template>
   
 <script>
-
+import axios from 'axios';
 export default {
     data() {
         return {
             isActive: false,
+            Comics: []
         };
     },
-
+    created() {
+        axios.get('api/').then(
+            res => {
+                this.Comics = res.data;
+            }
+        )
+    },
     methods: {
         toggleClass: function () {
             this.isActive = !this.isActive;
@@ -104,15 +111,17 @@ export default {
 </script>
   
 <style>
-#Breadcrumb{
+#Breadcrumb {
     padding-left: 15px;
     height: 45px;
     padding-top: 10px;
     background-color: #dedede;
 }
-.container-module7{
+
+.container-module7 {
     padding: 0;
 }
+
 .title-container {
     margin-bottom: 20px;
 }
