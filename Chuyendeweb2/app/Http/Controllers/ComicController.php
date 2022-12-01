@@ -9,24 +9,30 @@ use App\Models\Category;
 class ComicController extends Controller
 {
     //Comic
-    public function index(){
+    public function index()
+    {
         return Comic::all();
     }
-    public function ComicHot(){
-        return Comic::where('feature','1')->get();
+    public function ComicHot()
+    {
+        return Comic::where('feature', '1')->get();
     }
-    public function Category(){
+    public function Category()
+    {
         return Category::all();
     }
     function getComicByCategoryID($id)
     {
-        return Comic::where('Category_id', $id)->get(); 
+        return Comic::where('Category_id', $id)->get();
+    }
+    function getComicbyID($id)
+    {
+        return Comic::where('Comic_id', $id)->get();
     }
     public function search(Request $request)
     {
         $search = $request->name;
-    	$dataName = Comic::where('Name', 'LIKE', "%$search%")->get();
-    	return $dataName;
+        $dataName = Comic::where('Name', 'LIKE', "%$search%")->get();
+        return $dataName;
     }
-
 }

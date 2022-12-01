@@ -80,20 +80,31 @@
                     ea repellendus incidunt nam maiores iure ratione nostrum rem. Sed?
                 </p>
                 <p class="see-more" @click="toggleClass">Xem Thêm</p>
+
             </div>
         </div>
     </div>
 </template>
   
 <script>
-
+import router from '../router';
+import axios from 'axios';
 export default {
     data() {
         return {
             isActive: false,
+            Comic: [],
+            // id: this.$router.query,
         };
     },
+    created() {
 
+        axios.get('api/getdetailtruyen/').then(
+            res => {
+                this.Comics = res.data;
+            }
+        )
+    },
     methods: {
         toggleClass: function () {
             this.isActive = !this.isActive;
@@ -104,15 +115,17 @@ export default {
 </script>
   
 <style>
-#Breadcrumb{
+#Breadcrumb {
     padding-left: 15px;
     height: 45px;
     padding-top: 10px;
     background-color: #dedede;
 }
-.container-module7{
+
+.container-module7 {
     padding: 0;
 }
+
 .title-container {
     margin-bottom: 20px;
 }

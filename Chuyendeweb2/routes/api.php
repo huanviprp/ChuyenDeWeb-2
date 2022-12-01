@@ -19,7 +19,8 @@ use App\Http\Controllers\UserController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/', [ComicController::class,'index']);
-Route::get('/hot', [ComicController::class,'ComicHot']);
-Route::get('/category', [ComicController::class,'Category']);
-Route::get('/datauser', [UserController::class,'index']);
+Route::get('/', [ComicController::class, 'index']);
+Route::get('/hot', [ComicController::class, 'ComicHot']);
+Route::get('/category', [ComicController::class, 'Category']);
+Route::get('/datauser', [UserController::class, 'index']);
+Route::get('/getdetailtruyen/{id}', [ComicController::class, 'getComicbyID']);

@@ -11,7 +11,14 @@ const app = createApp(Homepage)
 const app2 = createApp(Detailcomic)
 const app3 = createApp(ReadComic)
 app.config.globalProperties.$axios = axios
+
 app.use(router);
+app2.use(router);
+
+// router.isReady().then(() => {
+//     app2.mount('#detail')
+// })
+
 app.mount('#homepage');
 app2.mount('#detail');
 app3.mount('#readComic');
