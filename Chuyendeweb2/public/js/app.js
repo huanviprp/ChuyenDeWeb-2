@@ -15428,7 +15428,10 @@ module.exports = {
 /***/ }),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 7b64a6c (h)
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/App.vue?vue&type=script&lang=js":
 /*!**********************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/App.vue?vue&type=script&lang=js ***!
@@ -15454,6 +15457,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     logout: function logout(e) {
+<<<<<<< HEAD
       var _this = this;
       e.preventDefault();
       this.$axios.get('/sanctum/csrf-cookie').then(function (response) {
@@ -15466,6 +15470,17 @@ __webpack_require__.r(__webpack_exports__);
         })["catch"](function (error) {
           console.log(error);
         });
+=======
+      e.preventDefault();
+      this.$axios.post('/logout').then(function (response) {
+        if (response.data.success) {
+          window.location.href = "/";
+        } else {
+          console.log(response);
+        }
+      })["catch"](function (error) {
+        console.log(error);
+>>>>>>> 7b64a6c (h)
       });
     }
   }
@@ -15606,7 +15621,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+<<<<<<< HEAD
 >>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
+=======
+>>>>>>> 7b64a6c (h)
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=script&lang=js":
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=script&lang=js ***!
@@ -15672,7 +15690,10 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 7b64a6c (h)
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/App.vue?vue&type=template&id=f348271a":
 /*!**************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/App.vue?vue&type=template&id=f348271a ***!
@@ -16046,7 +16067,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+<<<<<<< HEAD
 >>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
+=======
+>>>>>>> 7b64a6c (h)
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=template&id=28778efb":
 /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=template&id=28778efb ***!
@@ -16343,7 +16367,10 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 7b64a6c (h)
 ___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\r\n    background-image: url(\"https://cdn.wallpapersafari.com/17/62/Mw5A6y.jpg\");\n}\nh1.login-title {\r\n    font-size: 2rem;\r\n    font-weight: 700;\r\n    text-shadow: 0px -2px 25px #ededed;\r\n    /* border-bottom: 3px solid red; */\r\n    margin-right: 57%;\n}\nlabel {\r\n    color: white;\n}\n.login-detail {\r\n    margin-top: 3rem;\r\n    background-color: #dedede;\r\n    padding: 30px 40px;\r\n    background: rgba(222, 222, 219, 0.2);\r\n    box-shadow: 0 4px 10px 0 rgba(222, 222, 219, 0.37);\r\n    -webkit-backdrop-filter: blur(10px);\r\n            backdrop-filter: blur(10px);\r\n    border-radius: 10px;\r\n    border: 1px solid rgba(255, 255, 219, 0.18);\n}\n.input-email,\r\n.input-password {\r\n    color: #212529;\r\n    text-align: left;\r\n    font-size: 14px;\r\n    box-sizing: border-box;\r\n    padding: 0;\r\n    margin: 0;\r\n    position: relative;\n}\n.input-email i,\r\n.input-password i {\r\n    position: absolute;\r\n    top: 10px;\r\n    left: 20px;\r\n    font-size: 20px;\r\n    color: #aaa;\n}\n.input-email input,\r\n.input-password input {\r\n    border-radius: 4px;\r\n    box-sizing: border-box;\r\n    padding: 8px 40px 8px 50px;\r\n    transition: .4s;\n}\n.login-button input {\r\n    font-weight: 600;\r\n    width: 100%;\r\n    color: white;\n}\n.login-social i {\r\n    float: left;\r\n    padding: 5px 0 0 5px;\n}\n.login-facebook {\r\n    width: 100%;\n}\n.login-google {\r\n    background: rgb(218, 64, 13);\r\n    background: linear-gradient(90deg, rgba(218, 64, 13, 1) 0%, rgba(237, 11, 0, 1) 3%, rgba(255, 63, 0, 0.8606793059020483) 100%);\r\n    color: white;\n}\n.input-email>input:focus,\r\n.input-pass>input:focus {\r\n    border-color: #1e90ff;\r\n    box-shadow: 0 0 8px 0 #1e90ff;\n}\n.input-email>input:focus+i,\r\n.input-password>input:focus+i {\r\n    color: #1e90ff;\r\n    left: 13px;\r\n    transition: .4s;\n}\n.login-facebook:hover {\r\n    transition: .2s;\r\n    color: black;\r\n    font-weight: 600;\n}\n.login-google:hover {\r\n    background: rgb(205, 8, 0);\r\n    background: linear-gradient(328deg, rgba(205, 8, 0, 1) 2%, rgba(213, 9, 0, 1) 42%, rgba(199, 50, 0, 0.8606793059020483) 100%);\r\n    transition: .2s;\r\n    color: black;\r\n    font-weight: 600;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -33896,7 +33923,10 @@ process.umask = function() { return 0; };
 /***/ }),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 7b64a6c (h)
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module13.vue?vue&type=style&index=0&id=285b5ff9&lang=css":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module13.vue?vue&type=style&index=0&id=285b5ff9&lang=css ***!
@@ -33957,7 +33987,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+<<<<<<< HEAD
 >>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
+=======
+>>>>>>> 7b64a6c (h)
 /***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=style&index=0&id=28778efb&lang=css":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Module15.vue?vue&type=style&index=0&id=28778efb&lang=css ***!
@@ -34422,10 +34455,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Module15_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Module15.vue?vue&type=script&lang=js */ "./resources/js/components/Module15.vue?vue&type=script&lang=js");
 /* harmony import */ var _Module15_vue_vue_type_style_index_0_id_28778efb_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Module15.vue?vue&type=style&index=0&id=28778efb&lang=css */ "./resources/js/components/Module15.vue?vue&type=style&index=0&id=28778efb&lang=css");
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* harmony import */ var D_TLH5_chuyende_ChuyenDeWeb_2_git_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 =======
 /* harmony import */ var C_wamp64_www_ChuyenDeWeb_2_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 >>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
+=======
+/* harmony import */ var C_wamp64_www_ChuyenDeWeb_2_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+>>>>>>> 7b64a6c (h)
 
 
 
@@ -34434,10 +34471,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const __exports__ = /*#__PURE__*/(0,D_TLH5_chuyende_ChuyenDeWeb_2_git_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Module15_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Module15_vue_vue_type_template_id_28778efb__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Module15.vue"]])
 =======
 const __exports__ = /*#__PURE__*/(0,C_wamp64_www_ChuyenDeWeb_2_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Module15_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Module15_vue_vue_type_template_id_28778efb__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Module15.vue"]])
 >>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
+=======
+const __exports__ = /*#__PURE__*/(0,C_wamp64_www_ChuyenDeWeb_2_Chuyendeweb2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Module15_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Module15_vue_vue_type_template_id_28778efb__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Module15.vue"]])
+>>>>>>> 7b64a6c (h)
 /* hot reload */
 if (false) {}
 
@@ -34447,7 +34488,10 @@ if (false) {}
 /***/ }),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 7b64a6c (h)
 /***/ "./resources/js/App.vue?vue&type=script&lang=js":
 /*!******************************************************!*\
   !*** ./resources/js/App.vue?vue&type=script&lang=js ***!
@@ -34512,7 +34556,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+<<<<<<< HEAD
 >>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
+=======
+>>>>>>> 7b64a6c (h)
 /***/ "./resources/js/components/Module15.vue?vue&type=script&lang=js":
 /*!**********************************************************************!*\
   !*** ./resources/js/components/Module15.vue?vue&type=script&lang=js ***!
@@ -34530,7 +34577,10 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 7b64a6c (h)
 /***/ "./resources/js/App.vue?vue&type=template&id=f348271a":
 /*!************************************************************!*\
   !*** ./resources/js/App.vue?vue&type=template&id=f348271a ***!
@@ -34595,7 +34645,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+<<<<<<< HEAD
 >>>>>>> refs/rewritten/origin-PhanThanhAn-Module-15
+=======
+>>>>>>> 7b64a6c (h)
 /***/ "./resources/js/components/Module15.vue?vue&type=template&id=28778efb":
 /*!****************************************************************************!*\
   !*** ./resources/js/components/Module15.vue?vue&type=template&id=28778efb ***!
