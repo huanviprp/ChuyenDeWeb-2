@@ -6,8 +6,8 @@ import axios from 'axios';
 import router from './router';
 
 
-
-const app = createApp(Homepage)
-app.config.globalProperties.$axios = axios
-app.use(router);
-app.mount('#homepage');
+createApp(Homepage).mount("#homepage");
+// const app = createApp(Homepage)
+// app.config.globalProperties.$axios = axios
+// app.use(router);
+// app.mount('#homepage');
