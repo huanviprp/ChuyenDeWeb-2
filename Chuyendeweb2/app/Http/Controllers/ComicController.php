@@ -35,4 +35,11 @@ class ComicController extends Controller
         $dataName = Comic::where('Name', 'LIKE', "%$search%")->get();
         return $dataName;
     }
+
+    public function Upview()
+    {
+        $search = $request->name;
+        $dataName = Comic::where('Name', 'LIKE', "%$search%")->get();
+        return $dataName;
+    }
 }

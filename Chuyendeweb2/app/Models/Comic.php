@@ -22,4 +22,10 @@ class Comic extends Model
         'author_id',
         'feature'
     ];
+
+    public function addView($data, $id)
+    {
+        $data[] = $id;
+        return DB::update("UPDATE $this->table SET `type_name`='?'WHERE id = ?", $data);
+    }
 }

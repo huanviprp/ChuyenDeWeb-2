@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 require('./bootstrap');
 // import {createRouter, createWebHistory} from 'vue-router'
 import Homepage from './pages/Homepage.vue';
-import Detailcomic from './pages/Detail-comic.vue';
+import Detailcomic from './pages/Detailcomic.vue';
 import ReadComic from './pages/Inf-comic.vue';
 import axios from 'axios';
 import router from './router';
@@ -15,10 +15,10 @@ app.config.globalProperties.$axios = axios
 app.use(router);
 app2.use(router);
 
-// router.isReady().then(() => {
-//     app2.mount('#detail')
-// })
+router.isReady().then(() => {
+    app2.mount('#detail')
+})
 
 app.mount('#homepage');
-app2.mount('#detail');
+// app2.mount('#detail');
 app3.mount('#readComic');
