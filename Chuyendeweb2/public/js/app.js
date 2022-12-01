@@ -15704,26 +15704,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = {
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" adahh ");
+var _hoisted_2 = {
   "class": "container home"
 };
-var _hoisted_2 = {
+var _hoisted_3 = {
   "class": "row"
 };
-var _hoisted_3 = {
+var _hoisted_4 = {
   "class": "col-md-9"
 };
-var _hoisted_4 = {
+var _hoisted_5 = {
   "class": "col-md-3"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_module_1 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("module-1");
-  var _component_module_2 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("module-2");
-  var _component_module_3 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("module-3");
-  var _component_module_4 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("module-4");
-  var _component_module_6 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("module-6");
-  var _component_module_5 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("module-5");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_module_1), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_module_2)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_module_3), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_module_4)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_module_6)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("footer", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_module_5)])]);
+  var _component_Module1 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Module1");
+  var _component_Module2 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Module2");
+  var _component_Module3 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Module3");
+  var _component_Module4 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Module4");
+  var _component_Module6 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Module6");
+  var _component_Module5 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Module5");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Module1), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Module2), _hoisted_1]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Module3), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Module4)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Module6)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("footer", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Module5)])]);
 }
 
 /***/ }),
@@ -15748,10 +15749,11 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-var app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_pages_Homepage_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
-app.config.globalProperties.$axios = (axios__WEBPACK_IMPORTED_MODULE_2___default());
-app.use((_router__WEBPACK_IMPORTED_MODULE_3___default()));
-app.mount('#homepage');
+(0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_pages_Homepage_vue__WEBPACK_IMPORTED_MODULE_1__["default"]).mount("#homepage");
+// const app = createApp(Homepage)
+// app.config.globalProperties.$axios = axios
+// app.use(router);
+// app.mount('#homepage');
 
 /***/ }),
 
