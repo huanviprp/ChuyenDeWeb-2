@@ -19,10 +19,10 @@ class UserController extends Controller
             'password' => $request->password
         ];
 
-        if(Auth::attemp($credentials)){
+        if (Auth::attemp($credentials)) {
             $success = true;
             $message = "Bạn đăng nhập thành công";
-        }else{
+        } else {
             $success = false;
             $message = "Đăng nhập không thành công";
         }
@@ -38,11 +38,11 @@ class UserController extends Controller
     {
         try {
             $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = hash('md5', $reques->pass);
-        $user->save();
-        }catch(\Illuminate\Database\QueryException $ex){
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->password = hash('md5', $request->pass);
+            $user->save();
+        } catch (\Illuminate\Database\QueryException $ex) {
             $success = false;
             $message = $ex->getMessage();
         }
@@ -53,12 +53,13 @@ class UserController extends Controller
         ];
         return response()->json($response);
     }
-    public function logout(){
+    public function logout()
+    {
         try {
             Session::flush();
             $success = true;
             $message = "Bạn đăng xuất thành công";
-        }catch(\Illuminate\Database\QueryException $ex){
+        } catch (\Illuminate\Database\QueryException $ex) {
             $success = false;
             $message = $ex->getMessage();
         }

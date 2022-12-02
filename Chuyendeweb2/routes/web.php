@@ -25,12 +25,12 @@ use Illuminate\Support\Facades\Route;
 //     return view('dashboard');
 // });
 
-// Route::resource('dangky', 'DangkyController');
-// Route::post('/dangky', [DangkyController::class, 'store']);
+Route::resource('dangky', 'DangkyController');
+Route::post('/dangky', [DangkyController::class, 'store']);
 
 
-// Route::get('/dangky/loginUser', [DangkyController::class, 'loginUser']);
+Route::post('/dangky/loginUser', [DangkyController::class, 'loginUser']);
 
-Route::get('{any}', function(){
+Route::get('{any}', function () {
     return view('app');
-})->where('any','.*');
+})->where('any', '.*');

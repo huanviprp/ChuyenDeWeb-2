@@ -2,7 +2,7 @@
     <div class="container">
         <div v-if="error !== null">
             <button type="button" class="btn-close" aria-label="Close"></button>
-            <strong>{{error}}</strong>
+            <strong>{{ error }}</strong>
         </div>
         <div class="offset-md-3 col-md-6 login-detail">
             <h1 class="login-title">ĐĂNG NHẬP</h1>
@@ -11,16 +11,16 @@
                     <div class="form-group">
                         <label for="">Email:</label>
                         <div class="input-email">
-                            <input type="email" class="form-control email" v-model="email" name="email" placeholder="Email" autofocus=""
-                                required>
+                            <input type="email" class="form-control email" v-model="email" name="email"
+                                placeholder="Email" autofocus="" required>
                             <i class="fas fa-envelope" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="">Mật khẩu:</label>
                         <div class="input-password">
-                            <input type="password" class="form-control password" v-model="password" name="password" placeholder="Password"
-                                required>
+                            <input type="password" class="form-control password" v-model="password" name="password"
+                                placeholder="Password" required>
                             <i class="fas fa-lock" aria-hidden="true"></i>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ export default {
             e.preventDefault()
             if (this.password.length > 0) {
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
-                    this.$axios.post('/login', {
+                    this.$axios.get('/dangky/loginUser', {
                         email: this.email,
                         password: this.password
                     })
