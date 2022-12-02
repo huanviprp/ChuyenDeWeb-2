@@ -7,6 +7,7 @@ import ReadComic from './pages/Inf-comic.vue';
 import axios from 'axios';
 import router from './router';
 import login from './components/module13.vue';
+import register from './components/module14.vue';
 import VueCookies from 'vue-cookies';
 
 
@@ -15,6 +16,8 @@ const app = createApp(Homepage)
 const app2 = createApp(Detailcomic)
 const app3 = createApp(ReadComic)
 const app4 = createApp(login)
+
+const app5 = createApp(register)
 app.config.globalProperties.$axios = axios
 
 app.use(router);
@@ -29,3 +32,4 @@ app.mount('#homepage');
 // app2.mount('#detail');
 app3.mount('#readComic');
 app4.mount('#module13');
+app5.mount('#module14');

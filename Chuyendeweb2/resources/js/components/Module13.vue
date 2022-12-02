@@ -58,6 +58,7 @@ export default {
     name: 'Module13',
     data() {
         return {
+
             email: "",
             password: "",
             error: null,
@@ -70,6 +71,7 @@ export default {
             if (this.password.length > 0) {
                 axios.get('/sanctum/csrf-cookie').then(response => {
                     axios.post('/api/kiemtra', {
+
                         email: this.email,
                         password: this.password
                     })
