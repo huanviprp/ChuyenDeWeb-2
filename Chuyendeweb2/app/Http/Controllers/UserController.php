@@ -11,7 +11,7 @@ class UserController extends Controller
     {
         return User::all();
     }
-    public function login($request Request)
+    public function login(Request $request)
     {
         //Lấy danh sách user trong database đổ về vue để xử lý ra template
         $credentials = [
