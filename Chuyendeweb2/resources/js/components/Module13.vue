@@ -63,18 +63,23 @@ export default {
             error: null,
         }
     },
+
     methods: {
         handleSubmit(e) {
             e.preventDefault()
             if (this.password.length > 0) {
                 axios.get('/sanctum/csrf-cookie').then(response => {
-                    axios.post('/kiemtra', {
+                    axios.post('/api/kiemtra', {
                         email: this.email,
                         password: this.password
                     })
                         .then(response => {
-                            if (response.data.success) {
-                                this.$router.go('/dashboard')
+
+                            if (response.data) {
+                                // router.go('/dashboard');
+                                window.location.href = '/';
+
+
                             } else {
                                 this.error = response.data.message
                             }

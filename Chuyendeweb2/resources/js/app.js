@@ -7,6 +7,8 @@ import ReadComic from './pages/Inf-comic.vue';
 import axios from 'axios';
 import router from './router';
 import login from './components/module13.vue';
+import VueCookies from 'vue-cookies';
+
 
 
 const app = createApp(Homepage)
@@ -16,6 +18,7 @@ const app4 = createApp(login)
 app.config.globalProperties.$axios = axios
 
 app.use(router);
+app.use(VueCookies);
 app2.use(router);
 
 router.isReady().then(() => {

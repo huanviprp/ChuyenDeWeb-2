@@ -1,8 +1,6 @@
 // import Module10 from './components/Module10.vue';
 // import Module11 from './components/Module11.vue';
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import axios from 'axios';
+
 import detail from '../pages/Detailcomic.vue';
 import { createRouter, createWebHistory } from 'vue-router'
 

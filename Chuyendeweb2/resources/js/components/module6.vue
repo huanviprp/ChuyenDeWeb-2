@@ -3,11 +3,11 @@
     <div class="tab">
         <button class="tablinks" :class="[b1Active ? 'active' : 'notacitve']" @click="showBlock(1, $event)"
             id="tabngay">
-            Top Ngày
+            Top View
         </button>
         <button class="tablinks" :class="[b2Active ? 'active' : 'notacitve']" @click="showBlock(2, $event)"
             id="tabtuan">
-            Top Tháng
+            Top Hot
         </button>
         <button class="tablinks" :class="[b3Active ? 'active' : 'notacitve']" @click="showBlock(3, $event)"
             id="tabthang">
@@ -16,163 +16,53 @@
     </div>
 
     <div id="ngay" class="tab-container" v-if="currentBlock == 1">
-        <div class="tab-content 1">
-            <div class="row">
-                <div class="col-1 rank">1</div>
+        <div class="tab-content 1" v-if="Comics && Comics.length">
+            <div class="row" v-for="(Comic, index) in Comics" :key="Comic.Comic_id">
+                <div class="col-1 rank">{{ index + 1 }}</div>
                 <div class="col-11 rank-content">
                     <div class="row">
                         <div class="col-3">
-                            <a href="">
-                                <img src="https://st.ntcdntempv3.com/data/comics/147/dung-si-nam.jpg" alt=""
-                                    class="rank-img" /></a>
+                            <a v-bind:href="'/detail/' + Comic.Comic_id">
+                                <img v-bind:src="Comic.Img_feature" alt="" class="rank-img" /></a>
                         </div>
 
                         <div class="col-9 rank-info">
-                            <a href="" class="name">Truyen one</a>
+                            <a v-bind:href="'/detail/' + Comic.Comic_id" class="name">{{ Comic.Name }}</a>
                             <div class="chapter">
                                 Chap 1
-                                <span class="icon-eyes"><i class="fa-solid fa-eye"></i> 20.123</span>
+                                <span class="icon-eyes"><i class="fa-solid fa-eye"></i> {{ Comic.View }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="tab-content 1">
-            <div class="row">
-                <div class="col-1 rank">1</div>
-                <div class="col-11 rank-content">
-                    <div class="row">
-                        <div class="col-3">
-                            <a href="">
-                                <img src="https://st.ntcdntempv3.com/data/comics/147/dung-si-nam.jpg" alt=""
-                                    class="rank-img" /></a>
-                        </div>
 
-                        <div class="col-9 rank-info">
-                            <a href="" class="name">Truyen one</a>
-                            <div class="chapter">
-                                Chap 1
-                                <span class="icon-eyes"><i class="fa-solid fa-eye"></i> 20.123</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-content 1">
-            <div class="row">
-                <div class="col-1 rank">1</div>
-                <div class="col-11 rank-content">
-                    <div class="row">
-                        <div class="col-3">
-                            <a href="">
-                                <img src="https://st.ntcdntempv3.com/data/comics/147/dung-si-nam.jpg" alt=""
-                                    class="rank-img" /></a>
-                        </div>
-
-                        <div class="col-9 rank-info">
-                            <a href="" class="name">Truyen one</a>
-                            <div class="chapter">
-                                Chap 1
-                                <span class="icon-eyes"><i class="fa-solid fa-eye"></i> 20.123</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-content 1">
-            <div class="row">
-                <div class="col-1 rank">1</div>
-                <div class="col-11 rank-content">
-                    <div class="row">
-                        <div class="col-3">
-                            <a href="">
-                                <img src="https://st.ntcdntempv3.com/data/comics/147/dung-si-nam.jpg" alt=""
-                                    class="rank-img" /></a>
-                        </div>
-
-                        <div class="col-9 rank-info">
-                            <a href="" class="name">Truyen one</a>
-                            <div class="chapter">
-                                Chap 1
-                                <span class="icon-eyes"><i class="fa-solid fa-eye"></i> 20.123</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-content 1">
-            <div class="row">
-                <div class="col-1 rank">1</div>
-                <div class="col-11 rank-content">
-                    <div class="row">
-                        <div class="col-3">
-                            <a href="">
-                                <img src="https://st.ntcdntempv3.com/data/comics/147/dung-si-nam.jpg" alt=""
-                                    class="rank-img" /></a>
-                        </div>
-
-                        <div class="col-9 rank-info">
-                            <a href="" class="name">Truyen one</a>
-                            <div class="chapter">
-                                Chap 1
-                                <span class="icon-eyes"><i class="fa-solid fa-eye"></i> 20.123</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div id="tuan" class="tab-container" v-else-if="currentBlock == 2">
-        <div class="tab-content 1">
-            <div class="row">
-                <div class="col-1 rank">1</div>
+        <div class="tab-content 1" v-if="ComicsHot && ComicsHot.length">
+            <div class="row" v-for="(Comic, index) in ComicsHot" :key="Comic.Comic_id">
+                <div class="col-1 rank">{{ index + 1 }}</div>
                 <div class="col-11 rank-content">
                     <div class="row">
                         <div class="col-3">
-                            <a href="">
-                                <img src="https://st.ntcdntempv3.com/data/comics/147/dung-si-nam.jpg" alt=""
-                                    class="rank-img" /></a>
+                            <a v-bind:href="'/detail/' + Comic.Comic_id">
+                                <img v-bind:src="Comic.Img_feature" alt="" class="rank-img" /></a>
                         </div>
 
                         <div class="col-9 rank-info">
-                            <a href="" class="name">Truyen one</a>
+                            <a v-bind:href="'/detail/' + Comic.Comic_id" class="name">{{ Comic.Name }}</a>
                             <div class="chapter">
                                 Chap 1
-                                <span class="icon-eyes"><i class="fa-solid fa-eye"></i> 20.123</span>
+                                <span class="icon-eyes"><i class="fa-solid fa-eye"></i> {{ Comic.View }}</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="tab-content 1">
-            <div class="row">
-                <div class="col-1 rank">1</div>
-                <div class="col-11 rank-content">
-                    <div class="row">
-                        <div class="col-3">
-                            <a href="">
-                                <img src="https://st.ntcdntempv3.com/data/comics/147/dung-si-nam.jpg" alt=""
-                                    class="rank-img" /></a>
-                        </div>
 
-                        <div class="col-9 rank-info">
-                            <a href="" class="name">Truyen one</a>
-                            <div class="chapter">
-                                Chap 1
-                                <span class="icon-eyes"><i class="fa-solid fa-eye"></i> 20.123</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div id="thang" class="tab-container" v-else>
@@ -182,12 +72,12 @@
                 <div class="col-11 rank-content">
                     <div class="row">
                         <div class="col-3">
-                            <a href="">
+                            <a v-bind:href="'/detail/' + Comic.Comic_id">
                                 <img v-bind:src="Comic.Img_feature" alt="" class="rank-img" /></a>
                         </div>
 
                         <div class="col-9 rank-info">
-                            <a href="" class="name">{{ Comic.Name }}</a>
+                            <a v-bind:href="'/detail/' + Comic.Comic_id" class="name">{{ Comic.Name }}</a>
                             <div class="chapter">
                                 Chap 1
                                 <span class="icon-eyes"><i class="fa-solid fa-eye"></i> {{ Comic.View }}</span>
@@ -210,6 +100,7 @@ export default {
             b3Active: false,
             currentBlock: 1,
             Comics: [],
+            ComicsHot: [],
             Rank: 1,
         };
     },
@@ -223,7 +114,13 @@ export default {
                 this.Comics = res.data;
                 console.log(this.Comics);
             }
-        )
+        ),
+            axios.get('http://127.0.0.1:8000/api/gettophot').then(
+                res => {
+                    this.ComicsHot = res.data;
+                    console.log(this.ComicsHot);
+                }
+            )
 
 
     },

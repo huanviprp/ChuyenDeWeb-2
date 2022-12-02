@@ -33,6 +33,7 @@ Route::get('/dashboard', function () {
 
     return view('dashboard');
 });
+
 Route::get('/detail/{id}', function () {
     return view('detail');
 });

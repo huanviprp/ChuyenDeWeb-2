@@ -6,6 +6,7 @@ use App\Http\Controllers\ComicController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,12 @@ Route::get('/getdetailtacgia/{id}', [AuthorController::class, 'getAuthorbyID']);
 Route::get('/getdetailtheloai/{id}', [CategoryController::class, 'getCategorybyID']);
 Route::get('/tangview/{id}', [ComicController::class, 'Upview']);
 Route::get('/gettopnam', [ComicController::class, 'TopNam']);
-Route::get('/kiemtra', [UserController::class, 'login']);
+Route::get('/gettophot', [ComicController::class, 'TopHot']);
+Route::post('/kiemtra', [AuthController::class, 'login']);
+Route::post('/createuser', [AuthController::class, 'register']);
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('user', [\App\Http\Controllers\AuthController::class, 'user']);
+    Route::get('logout', [\App\Http\Controllers\AuthController::class, 'logout']);
+});
+// Route::get('/user', [AuthController::class, 'user']);
+// Route::get('/logout', [AuthController::class, 'logout']);

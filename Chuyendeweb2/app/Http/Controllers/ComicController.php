@@ -50,7 +50,13 @@ class ComicController extends Controller
     public function TopNam()
     {
 
-        return  Comic::orderBy('View', 'desc')->get(); // gets the whole row
+        return  Comic::orderBy('View', 'desc')->limit(5)->get(); // gets the whole row
+
+    }
+    public function TopHot()
+    {
+
+        return  Comic::where('feature', 1)->orderBy('View', 'desc')->limit(5)->get(); // gets the whole row
 
     }
 }
