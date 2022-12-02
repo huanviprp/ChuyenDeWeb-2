@@ -7,6 +7,8 @@ import ReadComic from './pages/Inf-comic.vue';
 import axios from 'axios';
 import router from './router';
 import login from './components/module13.vue';
+
+
 const app = createApp(Homepage)
 const app2 = createApp(Detailcomic)
 const app3 = createApp(ReadComic)

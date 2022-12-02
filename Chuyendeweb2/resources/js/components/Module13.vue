@@ -7,7 +7,11 @@
         <div class="offset-md-3 col-md-6 login-detail">
             <h1 class="login-title">ĐĂNG NHẬP</h1>
             <div class="login-form">
-                <form action="" method="post">
+                <form autocomplete="off" @submit.prevent="handleSubmit">
+                    <div class="alert alert-danger" v-if="error">
+                        <p>Có lỗi đâu đó, không thể login!</p>
+                    </div>
+
                     <div class="form-group">
                         <label for="">Email:</label>
                         <div class="input-email">
@@ -29,7 +33,7 @@
                     </div>
 
                     <div class="login-button mb-2">
-                        <button type="submit" class="btn btn-warning" @click="handleSubmit">Đăng nhập</button>
+                        <button type="submit" class="btn btn-warning">Đăng nhập</button>
                     </div>
                 </form>
             </div>
@@ -63,8 +67,8 @@ export default {
         handleSubmit(e) {
             e.preventDefault()
             if (this.password.length > 0) {
-                this.$axios.get('/sanctum/csrf-cookie').then(response => {
-                    this.$axios.post('/login', {
+                axios.get('/sanctum/csrf-cookie').then(response => {
+                    axios.post('/kiemtra', {
                         email: this.email,
                         password: this.password
                     })

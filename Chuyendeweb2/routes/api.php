@@ -30,3 +30,4 @@ Route::get('/getdetailtacgia/{id}', [AuthorController::class, 'getAuthorbyID']);
 Route::get('/getdetailtheloai/{id}', [CategoryController::class, 'getCategorybyID']);
 Route::get('/tangview/{id}', [ComicController::class, 'Upview']);
 Route::get('/gettopnam', [ComicController::class, 'TopNam']);
+Route::get('/login', [UserController::class, 'login']);
