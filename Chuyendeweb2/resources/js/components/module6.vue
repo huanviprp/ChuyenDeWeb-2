@@ -178,7 +178,7 @@
     <div id="thang" class="tab-container" v-else>
         <div class="tab-content 1" v-if="Comics && Comics.length">
             <div class="row" v-for="Comic of Comics" :key="Comic.Comic_id">
-                <div class="col-1 rank">{{ this.Rank += 1 }}</div>
+                <div class="col-1 rank">{{ Rank++ }}</div>
                 <div class="col-11 rank-content">
                     <div class="row">
                         <div class="col-3">
@@ -210,7 +210,7 @@ export default {
             b3Active: false,
             currentBlock: 1,
             Comics: [],
-            Rank: 0
+            Rank: 1,
         };
     },
     created() {
