@@ -15530,9 +15530,6 @@ __webpack_require__.r(__webpack_exports__);
   name: 'Module13',
   data: function data() {
     return {
-      // user: {},
-      // check_a: false,
-      // check_b: false
       email: "",
       password: "",
       error: null
