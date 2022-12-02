@@ -266,7 +266,7 @@ export default {
     },
     methods: {
         deleteUser(id) {
-            let uri = `http://127.0.0.1:8000/api/dashboard#user/delete/${id}`;
+            let uri = `api/dashboard#user/delete/${id}`;
             this.axios.delete(uri).then(response => {
                 this.Users.splice(this.Users.indexOf(id), 1);
             });
