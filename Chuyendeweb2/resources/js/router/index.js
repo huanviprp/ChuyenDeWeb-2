@@ -1,12 +1,17 @@
 // import Module10 from './components/Module10.vue';
 // import Module11 from './components/Module11.vue';
 import detail from '../pages/Detailcomic.vue';
+import category from '../pages/Category.vue';
 import { createRouter, createWebHistory } from 'vue-router'
 
 export const routes = [
   {
     path: '/detail/:id',
     component: detail
+  },
+  {
+    path: '/category/:id',
+    component: category
   },
   // {
   //   name: 'register',

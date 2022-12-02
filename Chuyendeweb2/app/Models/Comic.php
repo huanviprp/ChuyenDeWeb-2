@@ -20,6 +20,7 @@ class Comic extends Model
         'View',
         'Status',
         'author_id',
-        'feature'
+        'feature',
+        'Category_id'
     ];
 }

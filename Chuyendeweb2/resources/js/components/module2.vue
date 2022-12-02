@@ -30,7 +30,7 @@
                                         Thể Loại
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li v-for="Category in Categories" v-bind:key="Category.Category_id"><a class="dropdown-item" v-bind:href="'/category?'+ Category.Category">{{ Category.Category}}</a></li>
+                                        <li v-for="Category in Categories" v-bind:key="Category.Category_id"><a class="dropdown-item" v-bind:href="'/category/'+ Category.Category_id">{{ Category.Category}}</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">

@@ -13,7 +13,7 @@ class Author extends Model
 
     protected $fillable = [
         'Author-id',
-        'Author-name',
+        'Username',
         'Gender'
     ];
 }

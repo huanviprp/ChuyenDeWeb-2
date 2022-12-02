@@ -23,10 +23,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::get('/', [ComicController::class, 'index']);
 Route::get('/hot', [ComicController::class, 'ComicHot']);
-// Route::get('/category', [ComicController::class, 'Category']);
+Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/datauser', [UserController::class, 'index']);
 Route::get('/getdetailtruyen/{id}', [ComicController::class, 'getComicbyID']);
 Route::get('/getdetailtacgia/{id}', [AuthorController::class, 'getAuthorbyID']);
 Route::get('/getdetailtheloai/{id}', [CategoryController::class, 'getCategorybyID']);
 Route::get('/tangview/{id}', [ComicController::class, 'Upview']);
 Route::get('/gettopnam', [ComicController::class, 'TopNam']);
+Route::get('/getcomicbyid/{id}', [ComicController::class, 'getComicByCategoryID']);
+

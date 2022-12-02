@@ -18,7 +18,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <div class="module1" id="module1" ></div>
         <div class="module2" id="module2"></div>
     </header>
@@ -34,7 +34,8 @@
     </div>
     <footer>
         <div class="module5" id="module5"></div>
-    </footer>
+    </footer> -->
+    <div class="category" id="category"></div>
     <script src="{{mix('js/app.js')}}"></script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

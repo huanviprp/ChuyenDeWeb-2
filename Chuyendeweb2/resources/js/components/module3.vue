@@ -50,6 +50,9 @@ export default {
 </script>
   
 <style>
+.product-info a {
+    text-decoration: none;
+}
 .img-comic {
     width: 100%;
     height: 200px;
@@ -206,6 +209,7 @@ export default {
 }
 
 .product-short-description {
+    color:black;
     width: 100%;
     height: 20px;
     line-height: 20px;
