@@ -71,7 +71,7 @@
                             <div class="col-md-12">
                                 <div class="monitor">
                                     <div class="clearfix">
-                                        <Search/>
+                                        <Search />
                                         <div class="row">
                                             <table>
                                                 <thead>
@@ -93,8 +93,10 @@
                                                         <td><a href="#comment" style="font-size:14px">Xem comment</a>
                                                         </td>
                                                         <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
+                                                            <button type="button" data-action="edit"><i
+                                                                    class="fa-regular fa-pen-to-square"></i></button>
+                                                            <button type="button" data-action="delete"><i
+                                                                    class="fa-solid fa-ban"></i></button>
                                                         </td>
                                                     </tr>
                                                     <!-- <tr data-userid="2">
@@ -153,7 +155,7 @@
                             <div class="col-md-12">
                                 <div class="monitor">
                                     <div class="clearfix">
-                                        <Search/>
+                                        <Search />
                                         <div class="row">
                                             <table>
                                                 <thead>
@@ -174,20 +176,22 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr v-for="comic in Comics" data-comicid="1">
-                                                        <td>{{comic.Comic_id}}</td>
-                                                        <td>{{comic.Name}}</td>
-                                                        <td class="descr">{{comic.Descripsion}}</td>
+                                                        <td>{{ comic.Comic_id }}</td>
+                                                        <td>{{ comic.Name }}</td>
+                                                        <td class="descr">{{ comic.Descripsion }}</td>
                                                         <td>Action</td>
                                                         <td><a href="#chapter">123</a> </td>
-                                                        <td>{{comic.Img_feature}}</td>
-                                                        <td>{{comic.Date}}</td>
-                                                        <td>{{comic.View}}</td>
-                                                        <td>{{comic.Status}}</td>
-                                                        <td>{{comic.author_id}}</td>
+                                                        <td>{{ comic.Img_feature }}</td>
+                                                        <td>{{ comic.Date }}</td>
+                                                        <td>{{ comic.View }}</td>
+                                                        <td>{{ comic.Status }}</td>
+                                                        <td>{{ comic.author_id }}</td>
                                                         <td>Feature</td>
                                                         <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
+                                                            <button type="button" data-action="edit"><i
+                                                                    class="fa-regular fa-pen-to-square"></i></button>
+                                                            <button type="button" data-action="delete"><i
+                                                                    class="fa-solid fa-ban"></i></button>
                                                         </td>
                                                     </tr>
                                                     <!-- <tr data-comicid="2">
@@ -431,7 +435,7 @@
                             <div class="col-md-12">
                                 <div class="monitor">
                                     <div class="clearfix">
-                                        <Search/>
+                                        <Search />
                                         <div class="row">
                                             <table>
                                                 <thead>
@@ -450,8 +454,10 @@
                                                         <td>action</td>
                                                         <td>2</td>
                                                         <td>
-                                                            <button type="button" data-action="edit"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i class="fa-solid fa-ban"></i></button>
+                                                            <button type="button" data-action="edit"><i
+                                                                    class="fa-regular fa-pen-to-square"></i></button>
+                                                            <button type="button" data-action="delete"><i
+                                                                    class="fa-solid fa-ban"></i></button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -493,13 +499,13 @@
 import axios from 'axios';
 export default {
     data() {
-       return{
-        Comics:[]
-       }
+        return {
+            Comics: []
+        }
     },
     created() {
         axios.get('api/').then(
-            res =>{
+            res => {
                 this.Comics = res.data;
             }
         )
@@ -608,9 +614,11 @@ body {
     background-color: #F7F7F7;
     border: 1px solid rgb(235, 235, 235);
 }
-.topmain a{
+
+.topmain a {
     margin-right: 30px;
 }
+
 /*logo*/
 .dashboard.logo a {
     width: 88px;
@@ -710,36 +718,44 @@ td {
     background-color: white;
     padding: 7px;
 }
-.monitor .clearfix td>a{
+
+.monitor .clearfix td>a {
     font-size: 18px;
-    color: black ;
+    color: black;
 }
+
 .monitor .clearfix button i {
     font-size: 20px;
 }
-.monitor .clearfix button{
+
+.monitor .clearfix button {
     margin-right: 15px;
 }
+
 tr:not(:last-of-type) {
     border-bottom: 1px solid #ddd;
 }
-.main-descr{
+
+.main-descr {
     width: 20%;
 }
+
 .descr {
-  	display: -webkit-box;
-  	height: calc( 16px*1.3*2.4);
-  	font-size: 16px;
-  	line-height: 1.3;
-  	-webkit-line-clamp: 2;  /* số dòng hiển thị */
-  	-webkit-box-orient: vertical;
-  	overflow: hidden;
-  	text-overflow: ellipsis;
-  	margin-top:10px;
+    display: -webkit-box;
+    height: calc(16px*1.3*2.4);
+    font-size: 16px;
+    line-height: 1.3;
+    -webkit-line-clamp: 2;
+    /* số dòng hiển thị */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 10px;
     margin-right: 0;
 }
-.scroll-main{
-height: 550px;
-overflow-x: auto;
+
+.scroll-main {
+    height: 550px;
+    overflow-x: auto;
 }
 </style>
