@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -13,25 +16,21 @@ class UserController extends Controller
     }
     public function login(Request $request)
     {
-        //Lấy danh sách user trong database đổ về vue để xử lý ra template
-        $credentials = [
-            'email' => $request->email,
-            'password' => $request->password
-        ];
-
-        if (Auth::attemp($credentials)) {
-            $success = true;
-            $message = "Bạn đăng nhập thành công";
-        } else {
-            $success = false;
-            $message = "Đăng nhập không thành công";
+        $credentials = request(['email', 'password']);
+        if (!$token = auth('api')->attempt($credentials)) {
+            return response()->json(['error' => 'Unauthorized'], 401);
         }
 
-        $response = [
-            'success' => $success,
-            'message' => $message
-        ];
+        return response()->json(auth('api')->user())->header('Authorization', $token);
+    }
+    public function logout()
+    {
+        auth('api')->logout();
 
-        return response()->json($response);
+        return response()->json(['message' => 'Successfully logged out']);
+    }
+    public function user()
+    {
+        return response()->json(auth('api')->user());
     }
 }
