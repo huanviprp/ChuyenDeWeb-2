@@ -1,13 +1,13 @@
 <template>
-    <div>
-        <h3 class="text-center">Edit Comic</h3>
+    <div class="container-fluid dashboard">
+        <h3 class="text-center">Add Comic</h3>
         <div class="row">
             <div class="col-md-6">
-                <form @submit.prevent="updateComic">
-                    <div class="form-group">
+                <form @submit.prevent="addComic">
+                    <!-- <div class="form-group">
                         <label>id</label>
-                        <input type="text" class="form-control" v-model="comic.Comic_id">
-                    </div>
+                        <input type="text" class="form-control" v-model="comic.id">
+                    </div> -->
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" class="form-control" v-model="comic.Name">
@@ -22,7 +22,7 @@
                     </div>
                     <div class="form-group">
                         <label>Date</label>
-                        <input type="text" class="form-control" v-model="comic.Date">
+                        <input type="text" class="form-control" v-model="comic.date">
                     </div>
                     <div class="form-group">
                         <label>View</label>
@@ -37,14 +37,14 @@
                         <input type="text" class="form-control" v-model="comic.author_id">
                     </div>
                     <div class="form-group">
-                        <label>Nổi bật (Number: 1 or 2)</label>
+                        <label>Nổi Bật *</label>
                         <input type="text" class="form-control" v-model="comic.feature">
                     </div>
                     <div class="form-group">
-                        <label>Category Id</label>
+                        <label>Category_id</label>
                         <input type="text" class="form-control" v-model="comic.Category_id">
                     </div>
-                    <button type="submit" class="btn btn-primary">Update Comic</button>
+                    <button type="submit" class="btn btn-primary">Add Comic</button>
                 </form>
             </div>
         </div>
@@ -53,29 +53,34 @@
 <script>
 import axios from 'axios';
 export default {
-    name: "Edit",
+    name: "AddComic",
     data() {
         return {
             comic: {}
         }
     },
-    created() {
-        axios
-            .get(`api/comic/edit/${this.$route.params.id}`)
-            .then((response) => {
-                this.comic = response.data;
-                console.log(response.data);
-                // console.log(this.$route.params.id);
-            });
-    },
     methods: {
-        updateComic() {
+        addComic() {
             axios
-                .post(`api/comic/update/${this.$route.params.id}`, this.comic)
-                .then((response) => {
-                    this.$router.push({ name: 'home' });
-                });
+                .post('api/comic/add', this.comic)
+                .then(response => (
+                    this.$router.push({ name: 'allcomic' })
+                    // console.log(response.data)
+                ))
+                .catch(error => console.log(error))
+                .finally(() => this.loading = false)
         }
     }
 }
 </script>
+<style>
+.dashboard {
+    background-color: rgb(247, 247, 247);
+    padding-right: 130px;
+    padding-left: 130px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 600px;
+    overflow-x: auto;
+}
+</style>

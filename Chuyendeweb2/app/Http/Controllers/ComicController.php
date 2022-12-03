@@ -11,13 +11,13 @@ class ComicController extends Controller
 {
     //Comic
     public function index(){
-        $comics = Comic::all()->sortByDesc('id')->toArray();
+        $comics = Comic::all()->sortByDesc('Comic_id')->toArray();
         return array_reverse($comics);
     }
     public function add(Request $request)
     {
         $comic = new Comic([
-            'id'=> $request->input('id'),
+            'Comic_id'=> $request->input('Comic_id'),
             'Name' => $request->input('Name'),
             'Descripsion' => $request->input('Descripsion'),
             'Img_feature' => $request->input('Img_feature'),

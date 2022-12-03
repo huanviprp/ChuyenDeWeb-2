@@ -22,7 +22,7 @@
                     </div>
                     <div class="form-group">
                         <label>Date</label>
-                        <input type="text" class="form-control" v-model="comic.Date">
+                        <input type="text" class="form-control" v-model="comic.date">
                     </div>
                     <div class="form-group">
                         <label>View</label>
@@ -53,7 +53,7 @@
 <script>
 import axios from 'axios';
 export default {
-    name: "Add",
+    name: "AddComic",
     data() {
         return {
             comic: {}
@@ -64,7 +64,7 @@ export default {
             axios
                 .post('api/comic/add', this.comic)
                 .then(response => (
-                    this.$router.push({ name: 'home' })
+                    this.$router.push({ name: 'allcomic' })
                     // console.log(response.data)
                 ))
                 .catch(error => console.log(error))
@@ -79,7 +79,8 @@ export default {
     padding-right: 130px;
     padding-left: 130px;
     padding-top: 50px;
-    height: 100%;
+    padding-bottom: 50px;
+    height: 600px;
     overflow-x: auto;
 }
 </style>

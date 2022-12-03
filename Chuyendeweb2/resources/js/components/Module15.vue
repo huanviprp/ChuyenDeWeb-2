@@ -1,26 +1,7 @@
 <template>
     <div class="admin-panel clearfix">
-        <div class="module15 slidebar">
-            <div class="dashboard logo">
-                <a href=""></a>
-            </div>
-            <ul>
-                <li><a href="#dashboard" id="targeted">dashboard</a></li>
-                <li><a href="#user">User</a></li>
-                <li><a href="#comic">Comic</a></li>
-                <li><a href="#category">Thể loại</a></li>
-                <li><a href="#author">Tác giả</a></li>
-                <li><a href="#chapter">Chapter</a></li>
-                <li><a href="#comment">Bình luận</a></li>
-            </ul>
-        </div>
         <div class="main">
             <div class="mainContent clearfix">
-                <div id="dashboard">
-                    <div class="topmain" style="display: flex; align-items: center; justify-content: space-between;">
-                        <h2 class="header"><span class="icon"></span>Dashboard</h2>
-                        <a href="/" title="Trang chủ"> <i class="fa-solid fa-house"></i></a>
-                    </div>
                 <div class="container">
                     <div class="row ">
                         <div class="col-md-12">
@@ -28,13 +9,13 @@
                                 <div class="clearfix">
                                     <div class="row">
                                         <div class="col-md-4 db-user">
-                                            <a href="#user"><i class="fa-solid fa-user"></i><br>User</a>
+                                            <a href="/alluser"><i class="fa-solid fa-user"></i><br>User</a>
                                         </div>
                                         <div class="col-md-4 db-comic">
-                                            <a href="#comic"><i class="fa-solid fa-book"></i><br>comic</a>
+                                            <a href="/allcomic"><i class="fa-solid fa-book"></i><br>comic</a>
                                         </div>
                                         <div class="col-md-4 db-category">
-                                            <a href="#category"><i class="fa-solid fa-bars"></i><br>category</a>
+                                            <a href="/allcategory"><i class="fa-solid fa-bars"></i><br>category</a>
                                         </div>
                                     </div>
                                 </div>
@@ -47,192 +28,17 @@
                                 <div class="clearfix">
                                     <div class="row">
                                         <div class="col-md-6 db-author">
-                                            <a href="#author"><i class="fa-solid fa-user-pen"></i><br>Tác giả</a>
+                                            <a href="/allauthor"><i class="fa-solid fa-user-pen"></i><br>Tác giả</a>
                                         </div>
                                         <div class="col-md-6 db-comment">
-                                            <a href="#comment"><i class="fa-solid fa-comment"></i><br>Bình luận</a>
+                                            <a href="/allcomment"><i class="fa-solid fa-comment"></i><br>Bình luận</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    </div>
 
-
-                </div>
-                <div id="user">
-                    <div class="topmain" style="display: flex; align-items: center; justify-content: space-between;">
-                        <h2 class="header"><span class="icon"></span>User</h2>
-                        <a href="/" title="Trang chủ"> <i class="fa-solid fa-house"></i></a>
-                    </div>
-                    <div class="container-fluid">
-                        <div class="row scroll-main">
-                            <div class="col-md-12">
-                                <div class="monitor">
-                                    <div class="clearfix">
-                                        <div class="row">
-                                            <table>
-                                                <thead>
-                                                    <tr>
-                                                        <th></th>
-                                                        <th>ID</th>
-                                                        <th>Username</th>
-                                                        <th>Email</th>
-                                                        <th>Password</th>
-                                                        <th>Tạo ngày</th>
-                                                        <th>Comment</th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr v-for="user in Users" :key="user.User_id">
-                                                        <td></td>
-                                                        <td>{{ user.User_id }}</td>
-                                                        <td>{{ user.userName }}</td>
-                                                        <td>{{ user.email }}</td>
-                                                        <td>{{ user.Password }}</td>
-                                                        <td>{{ user.created_at }}</td>
-                                                        <td><a href="#comment" style="font-size:14px">Xem comment</a>
-                                                        </td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i
-                                                                    class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" @click.prevent="deleteUser(user.User_id)" data-action="delete"><i
-                                                                    class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div id="comic">
-                    <div class="topmain" style="display: flex; align-items: center; justify-content: space-between;">
-                        <h2 class="header"><span class="icon"></span>Comic</h2>
-                        <a href="/" title="Trang chủ"> <i class="fa-solid fa-house"></i></a>
-                    </div>
-                    <div class="container-fluid">
-                        <div class="row scroll-main">
-                            <div class="col-md-12">
-                                <div class="monitor">
-                                    <div class="clearfix">
-                                        <div class="row">
-                                            <table>
-                                                <thead>
-                                                    <tr>
-                                                        <th>ID</th>
-                                                        <th>Tên truyện</th>
-                                                        <th class="main-descr">Description</th>
-                                                        <th>Thể loại</th>
-                                                        <th>Chapter</th>
-                                                        <th>Ảnh nổi bật</th>
-                                                        <th>Ngày tạo</th>
-                                                        <th>View</th>
-                                                        <th>Status</th>
-                                                        <th>Tác giả</th>
-                                                        <th>Feature</th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr v-for="comic in Comics" data-comicid="1">
-                                                        <td>{{ comic.Comic_id }}</td>
-                                                        <td>{{ comic.Name }}</td>
-                                                        <td class="descr">{{ comic.Descripsion }}</td>
-                                                        <td>Action</td>
-                                                        <td><a href="#chapter">123</a> </td>
-                                                        <td><img v-bind:src="comic.Img_feature" alt=""></td>
-                                                        <td>{{ comic.Date }}</td>
-                                                        <td>{{ comic.View }}</td>
-                                                        <td>{{ comic.Status }}</td>
-                                                        <td>{{ comic.author_id }}</td>
-                                                        <td>Feature</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i
-                                                                    class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i
-                                                                    class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div id="category">
-                    <div class="topmain" style="display: flex; align-items: center; justify-content: space-between;">
-                        <h2 class="header"><span class="icon"></span>category</h2>
-                        <a href="/" title="Trang chủ"> <i class="fa-solid fa-house"></i></a>
-                    </div>
-                    <div class="container">
-                        <div class="row scroll-main">
-                            <div class="col-md-12">
-                                <div class="monitor">
-                                    <div class="clearfix">
-                                        <div class="row">
-                                            <table>
-                                                <thead>
-                                                    <tr>
-                                                        <th></th>
-                                                        <th>ID</th>
-                                                        <th>Thể loại</th>
-                                                        <th>Comic-id</th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr data-comicid="1">
-                                                        <td></td>
-                                                        <td>1</td>
-                                                        <td>action</td>
-                                                        <td>2</td>
-                                                        <td>
-                                                            <button type="button" data-action="edit"><i
-                                                                    class="fa-regular fa-pen-to-square"></i></button>
-                                                            <button type="button" data-action="delete"><i
-                                                                    class="fa-solid fa-ban"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div id="author">
-                    <div class="topmain" style="display: flex; align-items: center; justify-content: space-between;">
-                        <h2 class="header"><span class="icon"></span>Tác giả</h2>
-                        <a href="/" title="Trang chủ"> <i class="fa-solid fa-house"></i></a>
-                    </div>
-
-                </div>
-                <div id="chapter">
-                    <div class="topmain" style="display: flex; align-items: center; justify-content: space-between;">
-                        <h2 class="header"><span class="icon"></span>chapter</h2>
-                        <a href="/" title="Trang chủ"> <i class="fa-solid fa-house"></i></a>
-                    </div>
-
-                </div>
-                <div id="comment">
-                    <div class="topmain" style="display: flex; align-items: center; justify-content: space-between;">
-                        <h2 class="header"><span class="icon"></span>comment</h2>
-                        <a href="/" title="Trang chủ"> <i class="fa-solid fa-house"></i></a>
-                    </div>
 
                 </div>
             </div>
@@ -244,34 +50,8 @@ import axios from 'axios';
 export default {
     name: 'Module15',
     data() {
-        return {
-            query: null,
-            Comics: [],
-            Users: []
-        }
-    },
-    created() {
-        axios.get('api/dataComic').then(
-            res => {
-                this.Comics = res.data;
-            }
-        ).catch(function (error) {
-            console.log(error);
-        })
-        axios.get('api/datauser').then(
-            res => {
-                this.Users = res.data;
-            }
-        )
-    },
-    methods: {
-        deleteUser(id) {
-            let uri = `api/dashboard#user/delete/${id}`;
-            this.axios.delete(uri).then(response => {
-                this.Users.splice(this.Users.indexOf(id), 1);
-            });
-        }
     }
+
 }
 </script>
 <style>
@@ -284,14 +64,14 @@ body {
 }
 
 .admin-panel {
-    width: 90%;
-    margin: 20px auto;
+    width: 100%;
+    margin: 0px auto;
 }
 
 /*slidebar*/
 .slidebar {
     width: 15%;
-    min-height: 690px;
+    min-height: 500px;
     float: left;
     border-right: 1px solid rgb(235, 235, 235);
     background-color: rgb(247, 247, 247);
@@ -333,9 +113,6 @@ body {
 
 /*main*/
 .main {
-    float: left;
-    width: 85%;
-    height: 690px;
     background-color: rgb(255, 255, 255);
     position: relative;
     font-family: helvetica, verdana, sans-serif;
@@ -351,10 +128,6 @@ body {
 
 .mainContent>div {
     width: 100%;
-
-    position: absolute;
-    display: none;
-    border: 1px solid rgb(235, 235, 235);
     transition: opacity 200ms linear;
 }
 
@@ -381,34 +154,7 @@ body {
     margin-right: 30px;
 }
 
-/*logo*/
-.dashboard.logo a {
-    width: 88px;
-    height: 88px;
-    display: inline-block;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    margin: -45px 0 0 -45px;
-    border: 1px solid rgb(200, 200, 200);
-    border-radius: 50%;
-    background-color: rgb(214, 214, 214);
-}
 
-.dashboard.logo a:before {
-    content: "A";
-    width: 70px;
-    height: 70px;
-    font: 50px/70px helvetica, verdana, sans-serif;
-    text-align: center;
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    border-radius: 35px;
-    border: 1px solid rgb(210, 210, 210);
-    display: inline-block;
-    background: linear-gradient(top, rgb(255, 255, 255), rgb(245, 245, 245));
-}
 
 /* .monitor {
     margin-left: 30px;
@@ -504,20 +250,6 @@ tr:not(:last-of-type) {
 
 .main-descr {
     width: 20%;
-}
-
-.descr {
-    display: -webkit-box;
-    height: calc(16px*1.3*3.4);
-    font-size: 16px;
-    line-height: 1.3;
-    -webkit-line-clamp: 3;
-    /* số dòng hiển thị */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-top: 30px;
-    margin-right: 0;
 }
 
 .scroll-main {
