@@ -25,6 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/', [ComicController::class, 'index']);
 Route::get('/hot', [ComicController::class, 'ComicHot']);
 // Route::get('/category', [ComicController::class, 'Category']);
+Route::post('/getfollow', [ComicController::class, 'getfollow']);
 Route::get('/datauser', [UserController::class, 'index']);
 Route::get('/getdetailtruyen/{id}', [ComicController::class, 'getComicbyID']);
 Route::get('/getdetailtacgia/{id}', [AuthorController::class, 'getAuthorbyID']);
@@ -33,6 +34,9 @@ Route::get('/tangview/{id}', [ComicController::class, 'Upview']);
 Route::get('/gettopnam', [ComicController::class, 'TopNam']);
 Route::get('/gettophot', [ComicController::class, 'TopHot']);
 Route::post('/kiemtra', [AuthController::class, 'login']);
+Route::post('/addfollow', [ComicController::class, 'addfollow']);
+Route::post('/delfollow', [ComicController::class, 'delfollow']);
+Route::post('/checkfollow', [ComicController::class, 'checkfollow']);
 Route::post('/createuser', [AuthController::class, 'register']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('user', [\App\Http\Controllers\AuthController::class, 'user']);

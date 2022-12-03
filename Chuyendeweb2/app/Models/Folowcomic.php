@@ -9,10 +9,10 @@ class Folowcomic extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'Folow-comic';
+    protected $table = 'folow-comic';
 
     protected $fillable = [
-        'user_id',
+        'User_id',
         'Comic_id'
     ];
 }
