@@ -4,6 +4,7 @@ use App\Http\Controllers\ComicController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -53,6 +54,10 @@ Route::group(['prefix' => 'category'], function () {
     Route::get('edit/{id}', [CategoryController::class, 'edit']);
     Route::post('update/{id}', [CategoryController::class, 'update']);
     Route::delete('delete/{id}', [CategoryController::class, 'delete']);
+});
+Route::get('comments', [CommentController::class, 'index']);
+Route::group(['prefix' => 'comment'], function () {
+    Route::delete('delete/{id}', [CommentController::class, 'delete']);
 });
 // Route::get('/dataComic', [ComicController::class, 'index']);
 // Route::get('/datauser', [DangkyController::class, 'index']);

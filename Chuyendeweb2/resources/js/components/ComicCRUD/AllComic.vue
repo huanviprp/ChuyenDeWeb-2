@@ -69,7 +69,7 @@ export default {
                     let i = this.Comics.map(item => item.id).indexOf(id); // find index of your object
                     // this.comics.splice(i, 1);
                     this.check = true;
-                    window.location.href = "/";
+                    window.location.href = "/allcomic";
                 });
         }
     }
