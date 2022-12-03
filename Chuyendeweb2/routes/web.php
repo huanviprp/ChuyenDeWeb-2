@@ -55,12 +55,17 @@ Route::get('/follow', function () {
 Route::get('/category', function () {
     return view('category');
 });
+Route::get('/readComic', function () {
+    return view('readComic');
+});
+Route::post('/resultsearch', [ComicController::class,'search']);
 Route::get('/resultsearch', function () {
     return view('resultsearch');
 });
 Route::get('/', function () {
     return view('home');
 });
+
 // Route::get('{any}', function () {
 //     return view('app');
 // })->where('any', '.*');

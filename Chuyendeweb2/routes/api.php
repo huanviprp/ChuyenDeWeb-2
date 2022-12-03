@@ -8,6 +8,7 @@ use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\PageImgController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::get('/', [ComicController::class, 'index']);
 Route::get('/hot', [ComicController::class, 'ComicHot']);
-// Route::get('/category', [ComicController::class, 'Category']);
+Route::get('/category', [ComicController::class, 'Category']);
 Route::post('/getfollow', [ComicController::class, 'getfollow']);
 Route::get('/datauser', [UserController::class, 'index']);
 Route::get('/getdetailtruyen/{id}', [ComicController::class, 'getComicbyID']);
@@ -45,6 +46,10 @@ Route::get('/gettopcommentid', [CommentController::class, 'getNewestCommentId'])
 Route::post('/getcomment', [CommentController::class, 'getComment']);
 Route::post('/postcomment', [CommentController::class, 'postComment']);
 Route::post('/getusercomment', [CommentController::class, 'getCommentUser']);
+Route::get('/getcomicbyid/{id}', [ComicController::class, 'getComicbyID']);
+Route::get('/getpagebychapid/{id}', [PageImgController::class, 'getPageByChapterID']);
+
+
 
 
 Route::middleware('auth:sanctum')->group(function () {
