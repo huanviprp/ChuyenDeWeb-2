@@ -8,7 +8,7 @@ import axios from 'axios';
 import router from './router';
 import login from './components/module13.vue';
 import register from './components/module14.vue';
-import VueCookies from 'vue-cookies';
+// import VueCookies from 'vue-cookies';
 import follow from './components/module16.vue';
 import header from './components/module1.vue';
 import nav from './components/module2.vue';
@@ -30,7 +30,7 @@ const app10 = createApp(footer)
 app.config.globalProperties.$axios = axios
 
 app.use(router);
-app.use(VueCookies);
+// app.use(VueCookies);
 app2.use(router);
 
 router.isReady().then(() => {
