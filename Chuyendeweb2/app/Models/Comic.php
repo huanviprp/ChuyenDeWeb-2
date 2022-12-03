@@ -11,6 +11,7 @@ class Comic extends Model
     public $timestamps = false;
     protected $table = 'comic';
     protected $primaryKey = 'Comic_id';
+    
     protected $fillable = [
         // 'id',
         'Name',

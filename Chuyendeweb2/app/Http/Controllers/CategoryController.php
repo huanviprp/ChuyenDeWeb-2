@@ -9,6 +9,7 @@ use Validator;
 
 class CategoryController extends Controller
 {
+    
     public function index()
     {
         $categorys = Category::all()->sortByDesc('Category_id')->toArray();

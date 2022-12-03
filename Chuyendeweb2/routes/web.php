@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DangkyController;
 use App\Http\Controllers\UserController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('{any}', function(){
     return view('app');
 })->where('any','.*');
+
 // Route::resource('register', 'DangkyController');
 // Route::post('/register', [DangkyController::class, 'store']);
 // Route::get('/register/loginUser', [DangkyController::class, 'loginUser']);

@@ -11,6 +11,9 @@ class Category extends Model
     public $timestamps = false;
     protected $table = 'category';
     protected $primaryKey = 'Category_id';
+    public function comic(){
+        return $this->hasMany('App\Models\Comic', 'Category_id', 'Comic_id' );
+    }
     protected $fillable = [ 
         'Category_id',
         'Category'

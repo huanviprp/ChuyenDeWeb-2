@@ -11,6 +11,9 @@ class Author extends Model
     public $timestamps = false;
     protected $table = 'author';
     protected $primaryKey = 'Author_id';
+    public function comic(){
+        return $this->hasMany('App\Models\Comic', 'author_id', 'Comic_id');
+    }
     protected $fillable = [ 
         'Author_id',
         'Author_name',

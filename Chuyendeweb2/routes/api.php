@@ -33,7 +33,6 @@ Route::group(['prefix' => 'comic'], function () {
 });
 
 
-
 Route::get('users', [UserController::class, 'index']);
 Route::group(['prefix' => 'user'], function () {
     Route::post('add', [UserController::class, 'add']);
