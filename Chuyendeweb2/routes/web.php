@@ -25,7 +25,7 @@ Route::get('/module12', function () {
 Route::get('/module13', function () {
     return view('module13');
 });
-Route::get('/module14', function () {
+Route::get('/register', function () {
 
     return view('module14');
 });
@@ -33,6 +33,7 @@ Route::get('/dashboard', function () {
 
     return view('dashboard');
 });
+
 Route::get('/detail/{id}', function () {
     return view('detail');
 });

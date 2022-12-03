@@ -1,40 +1,40 @@
 <template>
-    <div class="container container-module7">
-        <div class="header-title" :class="[isActive ? 'show' : 'hidden']">
+    <div class="container container-module7" v-if="Comics && Comics.length">
+        <div class="header-title" :class="[isActive ? 'show' : 'hidden']" v-for="Comic of Comics" :key="Comic.Comic_id">
             <div class="col-12 title-container">
                 <div class="title1">
-                    <h2>Truyen One</h2>
+                    <h2>{{ Comic.Name }}</h2>
                 </div>
-                <div class="title2">[Cập nhật lúc : 23/7/2022 13:00]</div>
+                <div class="title2">[Cập nhật lúc : {{ Comic.Date }}]</div>
             </div>
             <div class="row title-info-containter">
                 <div class="col-6 image-container">
-                    <img src="//st.ntcdntempv3.com/data/comics/147/dung-si-nam.jpg" alt="" class="image-feature" />
+                    <img v-bind:src="Comic.Img_feature" alt="" class="image-feature" />
                 </div>
                 <div class="col-6 info-container">
                     <div class="row info">
                         <div class="col-4 info-tag">
                             <i class="fa-solid fa-user tag-icon"></i> Tác Giả :
                         </div>
-                        <div class="col-8">Nguyễn Văn a</div>
+                        <div class="col-8">{{ Authors[0].Username }}</div>
                     </div>
                     <div class="row info">
                         <div class="col-4 info-tag">
                             <i class="fa-solid fa-signal tag-icon"></i>Tình Trạng :
                         </div>
-                        <div class="col-8">Đang tiến hành</div>
+                        <div class="col-8">{{ Comic.Status }}</div>
                     </div>
                     <div class="row info">
                         <div class="col-4 info-tag">
                             <i class="fa-sharp fa-solid fa-tags tag-icon"></i>Thể loại :
                         </div>
-                        <div class="col-8">Phiêu lưu - Hành Động</div>
+                        <div class="col-8">{{ Categories[0].Category }}</div>
                     </div>
                     <div class="row info">
                         <div class="col-4 info-tag">
                             <i class="fa-solid fa-eye tag-icon"></i>Lượt xem :
                         </div>
-                        <div class="col-8">13.298</div>
+                        <div class="col-8">{{ Comic.View }}</div>
                     </div>
                     <a class="follow btn">
                         <i class="fa-solid fa-heart tag-icon heart"></i>Theo Dõi
@@ -45,41 +45,9 @@
                 <div class="col-12 des"></div>
                 <h3 class="des-title">Tóm tắt</h3>
                 <p class="des-content" :class="[isActive ? 'show' : 'hidden']">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-                    possimus maxime eius aperiam numquam impedit hic, et atque alias sed
-                    rerum, dolor culpa quasi odio! Possimus excepturi odit quidem
-                    reprehenderit delectus recusandae officia labore voluptatum asperiores
-                    sed quasi itaque quae officiis atque cupiditate, iste, quo, optio
-                    similique dolorum pariatur accusantium laudantium nemo! Porro, ad
-                    placeat cumque repellat dolor officiis a impedit nam molestiae?
-                    Similique deleniti quo, est ullam commodi blanditiis ipsa, nesciunt
-                    modi quibusdam repellat, ex rerum consectetur recusandae. Quisquam
-                    pariatur modi ducimus eveniet ab minus, quas vitae maxime reiciendis
-                    facilis delectus ipsa praesentium libero blanditiis fugit itaque,
-                    nulla provident aspernatur harum officiis repudiandae tempore, quae
-                    esse. Maiores qui nulla similique nesciunt. Totam quam ipsam, delectus
-                    esse consequatur eveniet illum vitae ut harum, perferendis facere eos
-                    maiores ipsa sunt aspernatur vero ratione, asperiores repellendus quo
-                    enim aut dignissimos laborum incidunt pariatur? Atque delectus eveniet
-                    nemo eum sit unde ex temporibus reprehenderit accusantium placeat
-                    tempore, hic vero iure quaerat dolores nobis perspiciatis expedita
-                    nesciunt blanditiis. Sed perspiciatis atque illum, eaque a doloribus
-                    nemo alias enim voluptatum, consequuntur, rem reiciendis
-                    exercitationem. Voluptate officiis quasi officia iusto, dignissimos
-                    quos alias cum deserunt delectus, consectetur veniam! Sapiente soluta
-                    minus, accusamus consequatur dolores corporis quo fugit nihil deleniti
-                    error ut dolore esse, facilis ab quae, dolor laboriosam iusto? Eos
-                    quis assumenda iusto voluptate, suscipit magni ad nam commodi facilis
-                    vitae maxime hic dolorem rerum dolorum nesciunt ea exercitationem
-                    distinctio iure dolor, laudantium libero tempora. Magni sed aliquam
-                    suscipit, fugiat non accusamus nisi possimus voluptatibus tenetur
-                    doloremque delectus dolore sint ea saepe quisquam voluptates eum. Sit
-                    voluptates sequi quo ullam dolores eum doloribus repudiandae saepe ex
-                    libero vitae, facere neque debitis numquam rerum ratione commodi atque
-                    rem reprehenderit dicta dolor omnis molestiae esse. Nisi molestias ab
-                    ea repellendus incidunt nam maiores iure ratione nostrum rem. Sed?
+                    {{ Comic.Descripsion }}
                 </p>
-                <p class="see-more" @click="toggleClass">Xem Thêm</p>
+                <p class="see-more" @click="toggleClass">Xem Them</p>
 
             </div>
         </div>
@@ -87,23 +55,61 @@
 </template>
   
 <script>
-import router from '../router';
+
 import axios from 'axios';
+let params = new URLSearchParams(location.search);
 export default {
     data() {
         return {
             isActive: false,
-            Comic: [],
-            // id: this.$router.query,
+            Comics: [],
+            Authors: [],
+            Categories: [],
+            id: this.$route.params.id
         };
     },
     created() {
 
-        axios.get('api/getdetailtruyen/').then(
+
+
+
+        axios.get('http://127.0.0.1:8000/api/getdetailtruyen/' + this.id).then(
             res => {
                 this.Comics = res.data;
+                axios.get('http://127.0.0.1:8000/api/getdetailtheloai/' + this.Comics[0].Category_id).then(
+                    res => {
+                        this.Categories = res.data;
+                        console.log(this.Categories);
+                    }
+                );
+                console.log(this.Comics);
+                axios.get('http://127.0.0.1:8000/api/getdetailtacgia/' + this.Comics[0].author_id).then(
+                    res => {
+                        this.Authors = res.data;
+                        console.log(this.Authors);
+                    }
+                )
+                axios.get('http://127.0.0.1:8000/api/getdetailtacgia/' + this.Comics[0].author_id).then(
+                    res => {
+                        this.Authors = res.data;
+                        console.log(this.Authors);
+                    }
+                )
+                axios.get('http://127.0.0.1:8000/api/tangview/' + this.id).then(
+                    res => {
+
+                        console.log(this.Comics[0].View);
+                    }
+                )
+
+
+
             }
         )
+
+
+
+
     },
     methods: {
         toggleClass: function () {

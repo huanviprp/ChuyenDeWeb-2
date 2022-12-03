@@ -1,31 +1,39 @@
 <template>
     <div class="container">
+        <div v-if="error !== null">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+            <strong>{{ error }}</strong>
+        </div>
         <div class="offset-md-3 col-md-6 login-detail">
             <h1 class="login-title">ĐĂNG NHẬP</h1>
             <div class="login-form">
-                <form action="" method="post">
+                <form autocomplete="off" @submit.prevent="handleSubmit">
+                    <div class="alert alert-danger" v-if="error">
+                        <p>Có lỗi đâu đó, không thể login!</p>
+                    </div>
+
                     <div class="form-group">
-                        <label for="">UserName/Email:</label>
+                        <label for="">Email:</label>
                         <div class="input-email">
-                            <input type="email" class="form-control email" name="email" placeholder="Email" autofocus=""
-                                required>
+                            <input type="email" class="form-control email" v-model="email" name="email"
+                                placeholder="Email" autofocus="" required>
                             <i class="fas fa-envelope" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="">Mật khẩu:</label>
                         <div class="input-password">
-                            <input type="password" class="form-control password" name="password" placeholder="Password"
-                                required>
+                            <input type="password" class="form-control password" v-model="password" name="password"
+                                placeholder="Password" required>
                             <i class="fas fa-lock" aria-hidden="true"></i>
                         </div>
                     </div>
                     <div class="dangky text-right mb-2">
-                        <a href="/register">Đăng ký mới</a>
+                        <router-link to="/register">Đăng ký mới</router-link>
                     </div>
 
                     <div class="login-button mb-2">
-                        <input type="submit" class="btn btn-warning" value="Đăng nhập">
+                        <button type="submit" class="btn btn-warning">Đăng nhập</button>
                     </div>
                 </form>
             </div>
@@ -45,9 +53,66 @@
     </div>
 </template>
 <script>
-
+import axios from 'axios';
 export default {
+    name: 'Module13',
+    data() {
+        return {
 
+            email: "",
+            password: "",
+            error: null,
+        }
+    },
+
+    methods: {
+        handleSubmit(e) {
+            e.preventDefault()
+            if (this.password.length > 0) {
+                axios.get('/sanctum/csrf-cookie').then(response => {
+                    axios.post('/api/kiemtra', {
+
+                        email: this.email,
+                        password: this.password
+                    })
+                        .then(response => {
+
+                            if (response.data) {
+                                // router.go('/dashboard');
+                                window.location.href = '/';
+
+
+                            } else {
+                                this.error = response.data.message
+                            }
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                })
+            }
+        }
+        // onSubmit() {
+        //     axios.post("/dangky/loginUser", this.user).then((response) => {
+        //         var data = response.data.success;
+        //         if (data > 0) {
+        //             this.check_a = true;
+        //             this.check_b = false;
+        //         }
+        //         else {
+        //             this.check_a = false;
+        //             this.check_b = true;
+        //         }
+
+        //     });
+        // }
+    },
+    beforeRouteEnter(to, from, next) {
+        if (window.Laravel.isLoggedin) {
+            return next('dashboard');
+        }
+        next();
+    }
 }
 
 </script>
@@ -123,7 +188,6 @@ label {
 }
 
 .login-google {
-    width: 100%;
     background: rgb(218, 64, 13);
     background: linear-gradient(90deg, rgba(218, 64, 13, 1) 0%, rgba(237, 11, 0, 1) 3%, rgba(255, 63, 0, 0.8606793059020483) 100%);
     color: white;
@@ -141,11 +205,13 @@ label {
     left: 13px;
     transition: .4s;
 }
-.login-facebook:hover{
+
+.login-facebook:hover {
     transition: .2s;
     color: black;
     font-weight: 600;
 }
+
 .login-google:hover {
     background: rgb(205, 8, 0);
     background: linear-gradient(328deg, rgba(205, 8, 0, 1) 2%, rgba(213, 9, 0, 1) 42%, rgba(199, 50, 0, 0.8606793059020483) 100%);

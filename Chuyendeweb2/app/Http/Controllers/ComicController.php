@@ -35,4 +35,28 @@ class ComicController extends Controller
         $dataName = Comic::where('Name', 'LIKE', "%$search%")->get();
         return $dataName;
     }
+
+    public function Upview($id)
+    {
+
+
+
+        $currentviewarr = Comic::select('View')->where('Comic_id', $id)->first();
+        // $currentview = json_decode($currentviewarr);
+        $comic = Comic::where('Comic_id', $id)->first();
+        $comic->View =  $currentviewarr['View'] + 1;
+        $comic->save();
+    }
+    public function TopNam()
+    {
+
+        return  Comic::orderBy('View', 'desc')->limit(5)->get(); // gets the whole row
+
+    }
+    public function TopHot()
+    {
+
+        return  Comic::where('feature', 1)->orderBy('View', 'desc')->limit(5)->get(); // gets the whole row
+
+    }
 }

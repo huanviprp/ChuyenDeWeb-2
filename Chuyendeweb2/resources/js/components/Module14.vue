@@ -3,12 +3,21 @@
         <div class="offset-md-3 col-md-6 signout-detail">
             <h1 class="signout-title">ĐĂNG KÝ</h1>
             <div class="signout-form">
-                <form action="" method="post">
+                <form autocomplete="off" @submit.prevent="handleSubmit">
                     <div class="form-group">
-                        <label for="">UserName/Email:</label>
+                        <label for="">UserName:</label>
                         <div class="input-email">
-                            <input type="email" class="form-control email" name="email"
-                                placeholder="Nhập Username hoặc Email" autofocus="" required oninvalid="this.setCustomValidity('Enter User Name Here')" oninput="this.setCustomValidity('')">
+                            <input type="name" class="form-control email" name="name" placeholder="Nhập Username "
+                                autofocus="" v-model="name">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email:</label>
+                        <div class="input-email">
+                            <input type="email" class="form-control email" name="email" placeholder="Nhập Email"
+                                autofocus="" required oninvalid="this.setCustomValidity('Enter Email Here')"
+                                oninput="this.setCustomValidity('')" v-model="email">
                             <i class="fas fa-envelope" aria-hidden="true"></i>
                         </div>
                     </div>
@@ -16,7 +25,7 @@
                         <label for="">Mật khẩu:</label>
                         <div class="input-password">
                             <input type="password" class="form-control password" name="password" placeholder="Password"
-                                required>
+                                required v-model="password">
                             <i class="fas fa-lock" aria-hidden="true"></i>
                         </div>
                     </div>
@@ -24,7 +33,7 @@
                         <label for="">Nhập lại mật khẩu:</label>
                         <div class="input-password">
                             <input type="password" class="form-control password" name="password"
-                                placeholder="Nhập lại Password" required>
+                                placeholder="Nhập lại Password" required v-model="password">
                             <i class="fas fa-lock" aria-hidden="true"></i>
                         </div>
                         <div class="dangnhap text-right my-3">
@@ -47,8 +56,43 @@
 export default {
     data() {
         return {
+            name: "",
+            email: "",
+            password: ""
         }
     },
+    created() {
+
+    },
+    methods: {
+        handleSubmit(e) {
+            e.preventDefault()
+            console.log(this.name);
+            console.log(this.email);
+            console.log(this.password);
+            axios.post('/api/createuser', {
+                name: this.name,
+                email: this.email,
+                password: this.password
+
+
+            })
+                .then(response => {
+
+                    if (response.data) {
+                        // router.go('/dashboard');
+                        // window.location.href = '/';
+                        console.log(response.data);
+
+                    } else {
+                        this.error = response.data.message
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+    }
 }
 </script>
 <style>

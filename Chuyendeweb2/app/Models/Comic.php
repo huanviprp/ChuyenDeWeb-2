@@ -10,7 +10,7 @@ class Comic extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'comic';
-
+    protected $primaryKey = 'Comic_id';
     protected $fillable = [
         'Comic_id',
         'Name',

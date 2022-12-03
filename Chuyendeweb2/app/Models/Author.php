@@ -9,11 +9,11 @@ class Author extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'Author';
+    protected $table = 'author';
 
     protected $fillable = [
-        'Author_id',
-        'Author_name',
+        'Author-id',
+        'Author-name',
         'Gender'
     ];
 }

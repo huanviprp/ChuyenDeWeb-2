@@ -9,11 +9,11 @@ class Category extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'Category';
+    protected $table = 'category';
 
     protected $fillable = [
         'Category_id',
-        'Category',
-        'Comic_id'
+        'Category'
+
     ];
 }
