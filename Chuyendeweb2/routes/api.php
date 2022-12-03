@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,15 @@ Route::post('/kiemtra', [AuthController::class, 'login']);
 Route::post('/addfollow', [ComicController::class, 'addfollow']);
 Route::post('/delfollow', [ComicController::class, 'delfollow']);
 Route::post('/checkfollow', [ComicController::class, 'checkfollow']);
+Route::get('/getchapter/{id}', [ComicController::class, 'getchapter']);
 Route::post('/createuser', [AuthController::class, 'register']);
+
+Route::get('/gettopcommentid', [CommentController::class, 'getNewestCommentId']);
+Route::post('/getcomment', [CommentController::class, 'getComment']);
+Route::post('/postcomment', [CommentController::class, 'postComment']);
+Route::post('/getusercomment', [CommentController::class, 'getCommentUser']);
+
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('user', [\App\Http\Controllers\AuthController::class, 'user']);
     Route::get('logout', [\App\Http\Controllers\AuthController::class, 'logout']);

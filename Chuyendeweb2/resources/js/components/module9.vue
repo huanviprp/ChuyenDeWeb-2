@@ -2,15 +2,15 @@
     <div class="container module9-top">
         <div class="comment-container">
             <h3 class="comment-title">Bình Luận</h3>
-            <form action="" method="post" class="comment-form">
-                <input type="text" name="comment" id="comment" class="comment-area" />
+            <form class="comment-form" autocomplete="off" @submit="handleSubmit">
+                <input type="text" name="comment" id="comment" class="comment-area" v-model="content" />
                 <input type="submit" value="Đăng" class="submit-comment" />
             </form>
             <div class="comment-show">
                 <!-- Contenedor Principal -->
                 <div class="comments-container">
                     <ul id="comments-list" class="comments-list">
-                        <li>
+                        <li v-for=" (  Comment, index) in Comments[1]" :key="index">
                             <div class="comment-main-level">
                                 <!-- Avatar -->
                                 <div class="comment-avatar">
@@ -21,65 +21,19 @@
                                 <div class="comment-box">
                                     <div class="comment-head">
                                         <h6 class="comment-name">
-                                            <a href="http://creaticode.com/blog">Lorena Rojero</a>
+                                            <a>{{
+                                                    Comment.Content
+                                            }}</a>
                                         </h6>
-                                        <span>hace 10 minutos</span>
-                                        <i class="fa fa-reply"></i>
-                                        <i class="fa fa-heart"></i>
+
+
                                     </div>
                                     <div class="comment-content">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                        Velit omnis animi et iure laudantium vitae, praesentium
-                                        optio, sapiente distinctio illo?
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="comment-main-level">
-                                <!-- Avatar -->
-                                <div class="comment-avatar">
-                                    <img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg"
-                                        alt="" />
-                                </div>
-                                <!-- Contenedor del Comentario -->
-                                <div class="comment-box">
-                                    <div class="comment-head">
-                                        <h6 class="comment-name">
-                                            <a href="http://creaticode.com/blog">Lorena Rojero</a>
-                                        </h6>
-                                        <span>hace 10 minutos</span>
-                                        <i class="fa fa-reply"></i>
-                                        <i class="fa fa-heart"></i>
-                                    </div>
-                                    <div class="comment-content">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Iusto, nemo tenetur? Pariatur esse fugit ad impedit, error
-                                        similique aliquam distinctio accusamus mollitia dolorem
-                                        quasi dignissimos explicabo modi, ea cum officia voluptate
-                                        corporis consequuntur! Perferendis, quibusdam? Aperiam,
-                                        soluta! Id incidunt voluptatum error asperiores veritatis
-                                        expedita perferendis iste nostrum quaerat. Eveniet odio
-                                        optio saepe et, architecto ad possimus praesentium! Magni,
-                                        possimus amet. Nulla, earum culpa. Ratione quaerat
-                                        necessitatibus repellat illo reprehenderit hic culpa? Vero
-                                        nostrum ea, itaque illum, consequatur, exercitationem odio
-                                        magnam similique provident minima veniam? Perspiciatis autem
-                                        itaque rem. Dolorem animi consectetur facere soluta nesciunt
-                                        quia. Vero earum fuga corrupti voluptatum quia autem vitae
-                                        tempora modi. Modi ipsa adipisci ipsum? Odio esse non magni,
-                                        quod qui, rem aliquid expedita reiciendis labore sapiente
-                                        velit dolores accusantium ea hic delectus? Minima dolor quae
-                                        excepturi! Necessitatibus, sequi provident, officiis amet
-                                        adipisci veniam quos placeat cum animi nulla natus incidunt
-                                        odit dicta veritatis repudiandae ut sit assumenda unde quam
-                                        sed architecto suscipit a numquam! In expedita labore cum
-                                        odio praesentium beatae exercitationem magnam alias, omnis
-                                        nesciunt, repudiandae aperiam est, mollitia facilis. Optio
-                                        velit nesciunt aliquam, ex placeat, neque nostrum, veniam
-                                        asperiores delectus accusantium doloremque eius at. In
-                                        similique, qui iste amet eveniet repellat. Iure, dolore.
-                                    </div>
-                                </div>
-                            </div>
+
                         </li>
                     </ul>
                 </div>
@@ -89,13 +43,109 @@
 </template>
   
 <script>
-export default {};
+import axios from 'axios';
+export default {
+    data() {
+        return {
+
+
+            Comments: [],
+            comicid: '',
+            userid: '',
+            Comics: [],
+            content: '',
+
+            id: this.$route.params.id,
+        };
+    },
+
+    created() {
+
+
+
+
+        axios.get('http://127.0.0.1:8000/api/getdetailtruyen/' + this.id).then(
+            res => {
+                this.Comics = res.data;
+                axios.get('http://127.0.0.1:8000/api/user').then(
+                    res => {
+                        if (res) {
+                            this.User = res.data;
+                            axios.post('http://127.0.0.1:8000/api/getcomment', {
+                                userid: this.User['id'],
+                                comicid: this.Comics[0].Comic_id
+
+                            }).then(res => {
+                                this.Comments = res.data;
+                                console.log(this.Comments);
+                            });
+
+
+
+                        }
+                        else {
+
+                        }
+                    }
+                )
+
+
+
+            }
+        )
+
+
+
+    },
+
+    methods: {
+        showBlock(number, e) {
+
+        },
+        handleSubmit(e) {
+
+
+            axios.post('/api/postcomment', {
+
+                userid: this.User['id'],
+                comicid: this.Comics[0].Comic_id,
+                content: this.content
+
+            })
+                .then(response => {
+
+                    if (response.data) {
+                        // router.go('/dashboard');
+
+                        //or in file components
+                        axios.post('http://127.0.0.1:8000/api/getcomment', {
+                            userid: this.User['id'],
+                            comicid: this.Comics[0].Comic_id
+
+                        }).then(res => {
+                            this.Comments = res.data;
+                            console.log(this.Comments);
+                        });
+
+                    } else {
+                        this.error = response.data.message
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+
+
+    },
+};
 </script>
   
 <style>
-.module9-top{
-    padding:0;
+.module9-top {
+    padding: 0;
 }
+
 .submit-comment {
     padding: 4px 25px;
     margin-top: 20px;
@@ -125,10 +175,11 @@ export default {};
 
 .comment-form {
     margin-left: 20px;
+    padding-bottom: 10px;
 }
 
 .comment-area {
-    width: 55rem;
+    width: 58rem;
     height: 8rem;
 }
 

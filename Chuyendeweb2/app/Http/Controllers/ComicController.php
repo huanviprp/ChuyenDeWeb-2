@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Comic;
 use App\Models\Category;
 use App\Models\Folowcomic;
+use App\Models\Chapter;
 
 class ComicController extends Controller
 {
@@ -98,5 +99,10 @@ class ComicController extends Controller
         } else {
             return "no";
         }
+    }
+
+    public function getchapter($id)
+    {
+        return Chapter::where('Comic_id', $id)->get();
     }
 }

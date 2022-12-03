@@ -8,7 +8,7 @@
             <a v-bind:href="'/detail/' + Comic.Comic_id"><img class="img-comic" v-bind:src="Comic.Img_feature"></a>
             <div class=" infor-comic">
                 <ul>
-                    <li><i class="fa fa-eye" aria-hidden="true"></i>123</li>
+                    <li><i class="fa fa-eye" aria-hidden="true"></i>{{ Comic.View }}</li>
                     <li><i class="fa fa-comment" aria-hidden="true"></i> 123</li>
                     <li><i class="fa fa-heart" aria-hidden="true"></i> 123</li>
                 </ul>

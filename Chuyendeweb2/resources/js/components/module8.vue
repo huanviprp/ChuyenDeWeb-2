@@ -13,118 +13,21 @@
                 </div>
 
                 <div class="scrollbox" tabindex="0" id="style-3">
-                    <div class="scrollbox-content">
+                    <div class="scrollbox-content" v-for=" (  Chapter, index) in Chapters" :key="index">
                         <div class="row chapter-name">
                             <div class="col-8 chapter-container">
                                 <div class="chapter-name">
-                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
+                                    <a v-bind:href="'/detail/ten-truyen-chapter/' + Chapter.Chapter_id">{{
+                                            Chapter.Chapter_name
+                                    }}</a>
                                 </div>
                             </div>
                             <div class="col-4 date-chapter-container">
                                 <div class="ngaydang">17/09/2022 18:38</div>
                             </div>
                         </div>
-                        <div class="row chapter-name">
-                            <div class="col-8 chapter-container">
-                                <div class="chapter-name">
-                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
-                                </div>
-                            </div>
-                            <div class="col-4 date-chapter-container">
-                                <div class="ngaydang">17/09/2022 18:38</div>
-                            </div>
-                        </div>
-                        <div class="row chapter-name">
-                            <div class="col-8 chapter-container">
-                                <div class="chapter-name">
-                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
-                                </div>
-                            </div>
-                            <div class="col-4 date-chapter-container">
-                                <div class="ngaydang">17/09/2022 18:38</div>
-                            </div>
-                        </div>
-                        <div class="row chapter-name">
-                            <div class="col-8 chapter-container">
-                                <div class="chapter-name">
-                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
-                                </div>
-                            </div>
-                            <div class="col-4 date-chapter-container">
-                                <div class="ngaydang">17/09/2022 18:38</div>
-                            </div>
-                        </div>
-                        <div class="row chapter-name">
-                            <div class="col-8 chapter-container">
-                                <div class="chapter-name">
-                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
-                                </div>
-                            </div>
-                            <div class="col-4 date-chapter-container">
-                                <div class="ngaydang">17/09/2022 18:38</div>
-                            </div>
-                        </div>
-                        <div class="row chapter-name">
-                            <div class="col-8 chapter-container">
-                                <div class="chapter-name">
-                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
-                                </div>
-                            </div>
-                            <div class="col-4 date-chapter-container">
-                                <div class="ngaydang">17/09/2022 18:38</div>
-                            </div>
-                        </div>
-                        <div class="row chapter-name">
-                            <div class="col-8 chapter-container">
-                                <div class="chapter-name">
-                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
-                                </div>
-                            </div>
-                            <div class="col-4 date-chapter-container">
-                                <div class="ngaydang">17/09/2022 18:38</div>
-                            </div>
-                        </div>
-                        <div class="row chapter-name">
-                            <div class="col-8 chapter-container">
-                                <div class="chapter-name">
-                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
-                                </div>
-                            </div>
-                            <div class="col-4 date-chapter-container">
-                                <div class="ngaydang">17/09/2022 18:38</div>
-                            </div>
-                        </div>
-                        <div class="row chapter-name">
-                            <div class="col-8 chapter-container">
-                                <div class="chapter-name">
-                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
-                                </div>
-                            </div>
-                            <div class="col-4 date-chapter-container">
-                                <div class="ngaydang">17/09/2022 18:38</div>
-                            </div>
-                        </div>
-                        <div class="row chapter-name">
-                            <div class="col-8 chapter-container">
-                                <div class="chapter-name">
-                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
-                                </div>
-                            </div>
-                            <div class="col-4 date-chapter-container">
-                                <div class="ngaydang">17/09/2022 18:38</div>
-                            </div>
-                        </div>
-                        <div class="row chapter-name">
-                            <div class="col-8 chapter-container">
-                                <div class="chapter-name">
-                                    <a href="detail/ten-truyen-chapter">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a>
-                                </div>
-                            </div>
-                            <div class="col-4 date-chapter-container">
-                                <div class="ngaydang">17/09/2022 18:38</div>
-                            </div>
-                        </div>
-                        
+
+
                     </div>
                 </div>
             </div>
@@ -133,18 +36,51 @@
 </template>
   
 <script>
-export default {};
+
+import axios from 'axios';
+let params = new URLSearchParams(location.search);
+export default {
+    data() {
+        return {
+
+            Comics: [],
+            Chapters: [],
+            id: this.$route.params.id,
+
+        };
+    },
+    created() {
+
+
+        axios.get('http://127.0.0.1:8000/api/getchapter/' + this.id).then(
+            res => {
+                this.Chapters = res.data;
+                console.log(this.Chapters);
+
+            }
+        )
+
+
+    },
+
+};
 </script>
+  
+
+
   
 <style>
 * {
     font-family: Tahoma, sans-serif, Helvetica, Arial;
 }
-.module8-top{
+
+.module8-top {
     padding: 0;
 }
+
 .chapter-name {
     margin-left: 0px;
+    text-align: center;
 }
 
 .scrollbox {

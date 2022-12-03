@@ -15898,16 +15898,12 @@ var params = new URLSearchParams(location.search);
       _this.Comics = res.data;
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/getdetailtheloai/' + _this.Comics[0].Category_id).then(function (res) {
         _this.Categories = res.data;
-        console.log(_this.Categories);
       });
       console.log(_this.Comics);
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/getdetailtacgia/' + _this.Comics[0].author_id).then(function (res) {
         _this.Authors = res.data;
-        console.log(_this.Authors);
       });
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/tangview/' + _this.id).then(function (res) {
-        console.log(_this.Comics[0].Comic_id);
-      });
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/tangview/' + _this.id).then(function (res) {});
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/user').then(function (res) {
         if (res) {
           _this.User = res.data;
@@ -15968,7 +15964,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+var params = new URLSearchParams(location.search);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      Comics: [],
+      Chapters: [],
+      id: this.$route.params.id
+    };
+  },
+  created: function created() {
+    var _this = this;
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/getchapter/' + this.id).then(function (res) {
+      _this.Chapters = res.data;
+      console.log(_this.Chapters);
+    });
+  }
+});
 
 /***/ }),
 
@@ -15983,7 +15998,67 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      Comments: [],
+      comicid: '',
+      userid: '',
+      Comics: [],
+      content: '',
+      id: this.$route.params.id
+    };
+  },
+  created: function created() {
+    var _this = this;
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/getdetailtruyen/' + this.id).then(function (res) {
+      _this.Comics = res.data;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/user').then(function (res) {
+        if (res) {
+          _this.User = res.data;
+          axios__WEBPACK_IMPORTED_MODULE_0___default().post('http://127.0.0.1:8000/api/getcomment', {
+            userid: _this.User['id'],
+            comicid: _this.Comics[0].Comic_id
+          }).then(function (res) {
+            _this.Comments = res.data;
+            console.log(_this.Comments);
+          });
+        } else {}
+      });
+    });
+  },
+  methods: {
+    showBlock: function showBlock(number, e) {},
+    handleSubmit: function handleSubmit(e) {
+      var _this2 = this;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/postcomment', {
+        userid: this.User['id'],
+        comicid: this.Comics[0].Comic_id,
+        content: this.content
+      }).then(function (response) {
+        if (response.data) {
+          // router.go('/dashboard');
+
+          //or in file components
+          axios__WEBPACK_IMPORTED_MODULE_0___default().post('http://127.0.0.1:8000/api/getcomment', {
+            userid: _this2.User['id'],
+            comicid: _this2.Comics[0].Comic_id
+          }).then(function (res) {
+            _this2.Comments = res.data;
+            console.log(_this2.Comments);
+          });
+        } else {
+          _this2.error = response.data.message;
+        }
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -16814,23 +16889,26 @@ var _hoisted_2 = {
 };
 var _hoisted_3 = ["href"];
 var _hoisted_4 = ["src"];
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_5 = {
   "class": "infor-comic"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+};
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fa fa-eye",
   "aria-hidden": "true"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("123")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+}, null, -1 /* HOISTED */);
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fa fa-comment",
   "aria-hidden": "true"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" 123")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" 123")], -1 /* HOISTED */);
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fa fa-heart",
   "aria-hidden": "true"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" 123")])])], -1 /* HOISTED */);
-var _hoisted_6 = {
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" 123")], -1 /* HOISTED */);
+var _hoisted_9 = {
   "class": "new-chapter"
 };
-var _hoisted_7 = ["href"];
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_10 = ["href"];
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: ""
 }, "Chapter 3")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: ""
@@ -16848,10 +16926,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
       "class": "img-comic",
       src: Comic.Img_feature
-    }, null, 8 /* PROPS */, _hoisted_4)], 8 /* PROPS */, _hoisted_3), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    }, null, 8 /* PROPS */, _hoisted_4)], 8 /* PROPS */, _hoisted_3), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Comic.View), 1 /* TEXT */)]), _hoisted_7, _hoisted_8])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
       "class": "name-comic",
       href: '/detail/' + Comic.Comic_id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Comic.Name), 1 /* TEXT */)], 8 /* PROPS */, _hoisted_7), _hoisted_8])]);
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Comic.Name), 1 /* TEXT */)], 8 /* PROPS */, _hoisted_10), _hoisted_11])]);
   }), 128 /* KEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64 /* STABLE_FRAGMENT */);
 }
 
@@ -16973,43 +17051,6 @@ var _hoisted_29 = {
 var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fa-solid fa-eye"
 }, null, -1 /* HOISTED */);
-var _hoisted_31 = {
-  key: 2,
-  id: "thang",
-  "class": "tab-container"
-};
-var _hoisted_32 = {
-  key: 0,
-  "class": "tab-content 1"
-};
-var _hoisted_33 = {
-  "class": "col-1 rank"
-};
-var _hoisted_34 = {
-  "class": "col-11 rank-content"
-};
-var _hoisted_35 = {
-  "class": "row"
-};
-var _hoisted_36 = {
-  "class": "col-3"
-};
-var _hoisted_37 = ["href"];
-var _hoisted_38 = ["src"];
-var _hoisted_39 = {
-  "class": "col-9 rank-info"
-};
-var _hoisted_40 = ["href"];
-var _hoisted_41 = {
-  "class": "chapter"
-};
-var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Chap 1 ");
-var _hoisted_43 = {
-  "class": "icon-eyes"
-};
-var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fa-solid fa-eye"
-}, null, -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -17024,13 +17065,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.showBlock(2, $event);
     }),
     id: "tabtuan"
-  }, " Top Hot ", 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["tablinks", [$data.b3Active ? 'active' : 'notacitve']]),
-    onClick: _cache[2] || (_cache[2] = function ($event) {
-      return $options.showBlock(3, $event);
-    }),
-    id: "tabthang"
-  }, " Top Năm ", 2 /* CLASS */)]), $data.currentBlock == 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [$data.Comics && $data.Comics.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.Comics, function (Comic, index) {
+  }, " Top Hot ", 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button class=\"tablinks\" :class=\"[b3Active ? 'active' : 'notacitve']\" @click=\"showBlock(3, $event)\"\r\n            id=\"tabthang\">\r\n            Top Follow\r\n        </button> ")]), $data.currentBlock == 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [$data.Comics && $data.Comics.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.Comics, function (Comic, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       "class": "row",
       key: Comic.Comic_id
@@ -17058,21 +17093,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       href: '/detail/' + Comic.Comic_id,
       "class": "name"
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Comic.Name), 9 /* TEXT, PROPS */, _hoisted_26), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [_hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_29, [_hoisted_30, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Comic.View), 1 /* TEXT */)])])])])])]);
-  }), 128 /* KEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_31, [$data.Comics && $data.Comics.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_32, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.Comics, function (Comic) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-      "class": "row",
-      key: Comic.Comic_id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.Rank++), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_34, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_35, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-      href: '/detail/' + Comic.Comic_id
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-      src: Comic.Img_feature,
-      alt: "",
-      "class": "rank-img"
-    }, null, 8 /* PROPS */, _hoisted_38)], 8 /* PROPS */, _hoisted_37)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-      href: '/detail/' + Comic.Comic_id,
-      "class": "name"
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Comic.Name), 9 /* TEXT, PROPS */, _hoisted_40), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_41, [_hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_43, [_hoisted_44, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Comic.View), 1 /* TEXT */)])])])])])]);
-  }), 128 /* KEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]))], 64 /* STABLE_FRAGMENT */);
+  }), 128 /* KEYED_FRAGMENT */))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div id=\"thang\" class=\"tab-container\" v-else>\r\n        <div class=\"tab-content 1\" v-if=\"Comics && Comics.length\">\r\n            <div class=\"row\" v-for=\"(Comic, index) in ComicsHot\" :key=\"Comic.Comic_id\">\r\n                <div class=\"col-1 rank\">{{ index + 1 }}</div>\r\n                <div class=\"col-11 rank-content\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-3\">\r\n                            <a v-bind:href=\"'/detail/' + Comic.Comic_id\">\r\n                                <img v-bind:src=\"Comic.Img_feature\" alt=\"\" class=\"rank-img\" /></a>\r\n                        </div>\r\n\r\n                        <div class=\"col-9 rank-info\">\r\n                            <a v-bind:href=\"'/detail/' + Comic.Comic_id\" class=\"name\">{{ Comic.Name }}</a>\r\n                            <div class=\"chapter\">\r\n                                Chap 1\r\n                                <span class=\"icon-eyes\"><i class=\"fa-solid fa-eye\"></i> {{ Comic.View }}</span>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div> ")], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -17208,10 +17229,46 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "container module8-top"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"chapter-list-container\"><h3 class=\"chapter-list-title chapter-list\">Danh Sách Chương</h3><div class=\"all-chapter-container\"><div class=\"row\"><div class=\"col-8\"><div class=\"title-chapter\">Tên Chương</div></div><div class=\"col-4\"><div class=\"title-chapter\">Ngày Đăng</div></div></div><div class=\"scrollbox\" tabindex=\"0\" id=\"style-3\"><div class=\"scrollbox-content\"><div class=\"row chapter-name\"><div class=\"col-8 chapter-container\"><div class=\"chapter-name\"><a href=\"detail/ten-truyen-chapter\">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a></div></div><div class=\"col-4 date-chapter-container\"><div class=\"ngaydang\">17/09/2022 18:38</div></div></div><div class=\"row chapter-name\"><div class=\"col-8 chapter-container\"><div class=\"chapter-name\"><a href=\"detail/ten-truyen-chapter\">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a></div></div><div class=\"col-4 date-chapter-container\"><div class=\"ngaydang\">17/09/2022 18:38</div></div></div><div class=\"row chapter-name\"><div class=\"col-8 chapter-container\"><div class=\"chapter-name\"><a href=\"detail/ten-truyen-chapter\">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a></div></div><div class=\"col-4 date-chapter-container\"><div class=\"ngaydang\">17/09/2022 18:38</div></div></div><div class=\"row chapter-name\"><div class=\"col-8 chapter-container\"><div class=\"chapter-name\"><a href=\"detail/ten-truyen-chapter\">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a></div></div><div class=\"col-4 date-chapter-container\"><div class=\"ngaydang\">17/09/2022 18:38</div></div></div><div class=\"row chapter-name\"><div class=\"col-8 chapter-container\"><div class=\"chapter-name\"><a href=\"detail/ten-truyen-chapter\">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a></div></div><div class=\"col-4 date-chapter-container\"><div class=\"ngaydang\">17/09/2022 18:38</div></div></div><div class=\"row chapter-name\"><div class=\"col-8 chapter-container\"><div class=\"chapter-name\"><a href=\"detail/ten-truyen-chapter\">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a></div></div><div class=\"col-4 date-chapter-container\"><div class=\"ngaydang\">17/09/2022 18:38</div></div></div><div class=\"row chapter-name\"><div class=\"col-8 chapter-container\"><div class=\"chapter-name\"><a href=\"detail/ten-truyen-chapter\">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a></div></div><div class=\"col-4 date-chapter-container\"><div class=\"ngaydang\">17/09/2022 18:38</div></div></div><div class=\"row chapter-name\"><div class=\"col-8 chapter-container\"><div class=\"chapter-name\"><a href=\"detail/ten-truyen-chapter\">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a></div></div><div class=\"col-4 date-chapter-container\"><div class=\"ngaydang\">17/09/2022 18:38</div></div></div><div class=\"row chapter-name\"><div class=\"col-8 chapter-container\"><div class=\"chapter-name\"><a href=\"detail/ten-truyen-chapter\">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a></div></div><div class=\"col-4 date-chapter-container\"><div class=\"ngaydang\">17/09/2022 18:38</div></div></div><div class=\"row chapter-name\"><div class=\"col-8 chapter-container\"><div class=\"chapter-name\"><a href=\"detail/ten-truyen-chapter\">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a></div></div><div class=\"col-4 date-chapter-container\"><div class=\"ngaydang\">17/09/2022 18:38</div></div></div><div class=\"row chapter-name\"><div class=\"col-8 chapter-container\"><div class=\"chapter-name\"><a href=\"detail/ten-truyen-chapter\">Chương 31 - Nhập Phẩm Lần Nữa, Nho Đạo Thập Phẩm (1)</a></div></div><div class=\"col-4 date-chapter-container\"><div class=\"ngaydang\">17/09/2022 18:38</div></div></div></div></div></div></div>", 1);
-var _hoisted_3 = [_hoisted_2];
+var _hoisted_2 = {
+  "class": "chapter-list-container"
+};
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+  "class": "chapter-list-title chapter-list"
+}, "Danh Sách Chương", -1 /* HOISTED */);
+var _hoisted_4 = {
+  "class": "all-chapter-container"
+};
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row\"><div class=\"col-8\"><div class=\"title-chapter\">Tên Chương</div></div><div class=\"col-4\"><div class=\"title-chapter\">Ngày Đăng</div></div></div>", 1);
+var _hoisted_6 = {
+  "class": "scrollbox",
+  tabindex: "0",
+  id: "style-3"
+};
+var _hoisted_7 = {
+  "class": "row chapter-name"
+};
+var _hoisted_8 = {
+  "class": "col-8 chapter-container"
+};
+var _hoisted_9 = {
+  "class": "chapter-name"
+};
+var _hoisted_10 = ["href"];
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-4 date-chapter-container"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "ngaydang"
+}, "17/09/2022 18:38")], -1 /* HOISTED */);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.Chapters, function (Chapter, index) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+      "class": "scrollbox-content",
+      key: index
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+      href: '/detail/ten-truyen-chapter/' + Chapter.Chapter_id
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Chapter.Chapter_name), 9 /* TEXT, PROPS */, _hoisted_10)])]), _hoisted_11])]);
+  }), 128 /* KEYED_FRAGMENT */))])])])]);
 }
 
 /***/ }),
@@ -17232,76 +17289,69 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "container module9-top"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_2 = {
   "class": "comment-container"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+};
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
   "class": "comment-title"
-}, "Bình Luận"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-  action: "",
-  method: "post",
-  "class": "comment-form"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "text",
-  name: "comment",
-  id: "comment",
-  "class": "comment-area"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+}, "Bình Luận", -1 /* HOISTED */);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
   type: "submit",
   value: "Đăng",
   "class": "submit-comment"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, null, -1 /* HOISTED */);
+var _hoisted_5 = {
   "class": "comment-show"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Contenedor Principal "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_6 = {
   "class": "comments-container"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+};
+var _hoisted_7 = {
   id: "comments-list",
   "class": "comments-list"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_8 = {
   "class": "comment-main-level"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Avatar "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "comment-avatar"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   src: "http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg",
   alt: ""
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Contenedor del Comentario "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+})], -1 /* HOISTED */);
+var _hoisted_10 = {
   "class": "comment-box"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_11 = {
   "class": "comment-head"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", {
+};
+var _hoisted_12 = {
   "class": "comment-name"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "http://creaticode.com/blog"
-}, "Lorena Rojero")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "hace 10 minutos"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fa fa-reply"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fa fa-heart"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "comment-content"
-}, " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo? ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "comment-main-level"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Avatar "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "comment-avatar"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg",
-  alt: ""
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Contenedor del Comentario "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "comment-box"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "comment-head"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", {
-  "class": "comment-name"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "http://creaticode.com/blog"
-}, "Lorena Rojero")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "hace 10 minutos"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fa fa-reply"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fa fa-heart"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "comment-content"
-}, " Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, nemo tenetur? Pariatur esse fugit ad impedit, error similique aliquam distinctio accusamus mollitia dolorem quasi dignissimos explicabo modi, ea cum officia voluptate corporis consequuntur! Perferendis, quibusdam? Aperiam, soluta! Id incidunt voluptatum error asperiores veritatis expedita perferendis iste nostrum quaerat. Eveniet odio optio saepe et, architecto ad possimus praesentium! Magni, possimus amet. Nulla, earum culpa. Ratione quaerat necessitatibus repellat illo reprehenderit hic culpa? Vero nostrum ea, itaque illum, consequatur, exercitationem odio magnam similique provident minima veniam? Perspiciatis autem itaque rem. Dolorem animi consectetur facere soluta nesciunt quia. Vero earum fuga corrupti voluptatum quia autem vitae tempora modi. Modi ipsa adipisci ipsum? Odio esse non magni, quod qui, rem aliquid expedita reiciendis labore sapiente velit dolores accusantium ea hic delectus? Minima dolor quae excepturi! Necessitatibus, sequi provident, officiis amet adipisci veniam quos placeat cum animi nulla natus incidunt odit dicta veritatis repudiandae ut sit assumenda unde quam sed architecto suscipit a numquam! In expedita labore cum odio praesentium beatae exercitationem magnam alias, omnis nesciunt, repudiandae aperiam est, mollitia facilis. Optio velit nesciunt aliquam, ex placeat, neque nostrum, veniam asperiores delectus accusantium doloremque eius at. In similique, qui iste amet eveniet repellat. Iure, dolore. ")])])])])])])], -1 /* HOISTED */);
-var _hoisted_3 = [_hoisted_2];
+}, null, -1 /* HOISTED */);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    "class": "comment-form",
+    autocomplete: "off",
+    onSubmit: _cache[1] || (_cache[1] = function () {
+      return $options.handleSubmit && $options.handleSubmit.apply($options, arguments);
+    })
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    name: "comment",
+    id: "comment",
+    "class": "comment-area",
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $data.content = $event;
+    })
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.content]]), _hoisted_4], 32 /* HYDRATE_EVENTS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Contenedor Principal "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_7, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.Comments[1], function (Comment, index) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
+      key: index
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Avatar "), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Contenedor del Comentario "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Comment.Content), 1 /* TEXT */)])]), _hoisted_13])])]);
+  }), 128 /* KEYED_FRAGMENT */))])])])])]);
 }
 
 /***/ }),
@@ -17834,7 +17884,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n* {\r\n    padding: 0;\n}\n#module6 {\r\n    position: sticky;\r\n    top: 0;\n}\n.icon-eyes {\r\n    margin-left: 36px;\n}\nh3.top-rank {\r\n    color: #de6e98;\r\n    font-weight: bolder;\n}\n.rank {\r\n    padding-top: 25px;\n}\n.tab-content {\r\n    border-bottom: 1px rgb(148, 145, 145) solid;\r\n    padding-bottom: 10px;\r\n    padding-top: 10px;\n}\n.name {\r\n    font-weight: 600;\r\n    text-decoration: none;\r\n    color: black;\n}\n.chapter {\r\n    margin-top: 20px;\n}\n.rank-img {\r\n    width: 50px;\n}\n.tab-container {\r\n    background-color: #dedede;\n}\nbody {\r\n    font-family: Arial;\n}\r\n\r\n/* Style the tab */\n.tab {\r\n    overflow: hidden;\r\n    border: 1px solid #ccc;\r\n    background-color: #f1f1f1;\n}\r\n\r\n/* Style the buttons inside the tab */\n.tab button {\r\n    background-color: inherit;\r\n    float: left;\r\n    border: none;\r\n    outline: none;\r\n    cursor: pointer;\r\n    padding: 20px 14px;\r\n    transition: 0.3s;\r\n    font-size: 17px;\n}\r\n\r\n/* Change background color of buttons on hover */\n.tab button:hover {\r\n    background-color: #ddd;\n}\r\n\r\n/* Create an active/current tablink class */\n.tab button.active {\r\n    background-color: #ccc;\n}\r\n\r\n/* Style the tab content */\n.tab-container {\r\n    /* display: none; */\r\n    padding: 6px 12px;\r\n    border: 4px solid #ccc;\r\n    border-top: none;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n* {\r\n    padding: 0;\n}\n#module6 {\r\n    position: sticky;\r\n    top: 0;\n}\n.icon-eyes {\r\n    margin-left: 36px;\n}\nh3.top-rank {\r\n    color: #de6e98;\r\n    font-weight: bolder;\n}\n.rank {\r\n    padding-top: 25px;\n}\n.tab-content {\r\n    border-bottom: 1px rgb(148, 145, 145) solid;\r\n    padding-bottom: 10px;\r\n    padding-top: 10px;\n}\n.name {\r\n    font-weight: 600;\r\n    text-decoration: none;\r\n    color: black;\n}\n.chapter {\r\n    margin-top: 20px;\n}\n.rank-img {\r\n    width: 50px;\n}\n.tab-container {\r\n    background-color: #dedede;\n}\nbody {\r\n    font-family: Arial;\n}\r\n\r\n/* Style the tab */\n.tab {\r\n    overflow: hidden;\r\n    border: 1px solid #ccc;\r\n    background-color: #f1f1f1;\n}\r\n\r\n/* Style the buttons inside the tab */\n.tab button {\r\n    background-color: inherit;\r\n    float: left;\r\n    border: none;\r\n    outline: none;\r\n    cursor: pointer;\r\n    padding: 20px 43px;\r\n    transition: 0.3s;\r\n    font-size: 17px;\n}\r\n\r\n/* Change background color of buttons on hover */\n.tab button:hover {\r\n    background-color: #ddd;\n}\r\n\r\n/* Create an active/current tablink class */\n.tab button.active {\r\n    background-color: #ccc;\n}\r\n\r\n/* Style the tab content */\n.tab-container {\r\n    /* display: none; */\r\n    padding: 6px 12px;\r\n    border: 4px solid #ccc;\r\n    border-top: none;\n}\n.rank-content {\r\n    margin-bottom: 20px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17882,7 +17932,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n* {\r\n    font-family: Tahoma, sans-serif, Helvetica, Arial;\n}\n.module8-top{\r\n    padding: 0;\n}\n.chapter-name {\r\n    margin-left: 0px;\n}\n.scrollbox {\r\n    height: 9rem;\r\n    overflow: auto;\r\n    visibility: hidden;\r\n\r\n    font-size: 17px;\r\n    overflow-x: hidden;\r\n    line-height: 40px;\n}\n.scrollbox-content,\r\n.scrollbox:hover,\r\n.scrollbox:focus {\r\n    visibility: visible;\n}\n.chapter-list-container {\r\n    background-color: #dedede;\r\n    margin-top: -20px;\n}\n.chapter-list {\r\n    margin-left: 20px;\n}\n.chapter-list-title {\r\n    color: #de6e98;\r\n    font-weight: bold;\r\n\r\n    margin-right: 20px;\n}\n.title-chapter {\r\n    text-align: center;\r\n    font-size: 20px;\r\n    font-weight: bold;\n}\n.ngaydang {\r\n    text-align: center;\n}\n.chapter-name a {\r\n    text-decoration: none;\r\n    color: rgb(41, 146, 41);\n}\n.all-chapter-container {\r\n    margin: 0px 20px;\r\n    border: 2px solid #de6e98;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n* {\r\n    font-family: Tahoma, sans-serif, Helvetica, Arial;\n}\n.module8-top {\r\n    padding: 0;\n}\n.chapter-name {\r\n    margin-left: 0px;\r\n    text-align: center;\n}\n.scrollbox {\r\n    height: 9rem;\r\n    overflow: auto;\r\n    visibility: hidden;\r\n\r\n    font-size: 17px;\r\n    overflow-x: hidden;\r\n    line-height: 40px;\n}\n.scrollbox-content,\r\n.scrollbox:hover,\r\n.scrollbox:focus {\r\n    visibility: visible;\n}\n.chapter-list-container {\r\n    background-color: #dedede;\r\n    margin-top: -20px;\n}\n.chapter-list {\r\n    margin-left: 20px;\n}\n.chapter-list-title {\r\n    color: #de6e98;\r\n    font-weight: bold;\r\n\r\n    margin-right: 20px;\n}\n.title-chapter {\r\n    text-align: center;\r\n    font-size: 20px;\r\n    font-weight: bold;\n}\n.ngaydang {\r\n    text-align: center;\n}\n.chapter-name a {\r\n    text-decoration: none;\r\n    color: rgb(41, 146, 41);\n}\n.all-chapter-container {\r\n    margin: 0px 20px;\r\n    border: 2px solid #de6e98;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17906,7 +17956,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.module9-top{\r\n    padding:0;\n}\n.submit-comment {\r\n    padding: 4px 25px;\r\n    margin-top: 20px;\r\n    margin-left: 789px;\r\n    background-color: rgb(41, 146, 41);\r\n    color: white;\r\n    border: none;\r\n    border-radius: 4px;\n}\n.submit-comment:hover {\r\n    background-color: rgb(1 86 1);\r\n    color: white;\n}\n.comment-container {\r\n    background-color: #dedede;\n}\n.comment-title {\r\n    color: #de6e98;\r\n\r\n    font-weight: bold;\r\n    margin-left: 20px;\r\n    padding-top: 20px;\n}\n.comment-form {\r\n    margin-left: 20px;\n}\n.comment-area {\r\n    width: 55rem;\r\n    height: 8rem;\n}\n.comment-main-level {\r\n    margin-bottom: 25px;\r\n    width: 55rem;\n}\n.comments-container {\r\n    margin: 0px 20px;\r\n    width: 768px;\n}\n.comments-container h1 {\r\n    font-size: 36px;\r\n    color: #283035;\r\n    font-weight: 400;\n}\n.comments-container h1 a {\r\n    font-size: 18px;\r\n    font-weight: 700;\n}\n.comments-list {\r\n    margin-top: 30px;\r\n    position: relative;\n}\r\n\r\n/**\r\n   *Line\r\n   -----------------------*/\r\n/* .comments-list:before {\r\n    content: \"\";\r\n    width: 2px;\r\n    height: 100%;\r\n    background: #c7cacb;\r\n    position: absolute;\r\n    left: 32px;\r\n    top: 0;\r\n  } */\n.comments-list:after {\r\n    content: \"\";\r\n    position: absolute;\r\n    background: #c7cacb;\r\n    bottom: 0;\r\n    left: 27px;\r\n    width: 7px;\r\n    height: 7px;\r\n    border: 3px solid #dee1e3;\r\n    border-radius: 50%;\n}\n.reply-list:before,\r\n.reply-list:after {\r\n    display: none;\n}\n.reply-list li:before {\r\n    content: \"\";\r\n    width: 60px;\r\n    height: 2px;\r\n    background: #c7cacb;\r\n    position: absolute;\r\n    top: 25px;\r\n    left: -55px;\n}\n.comments-list li {\r\n    margin-bottom: 15px;\r\n    display: block;\r\n    position: relative;\n}\n.comments-list li:after {\r\n    content: \"\";\r\n    display: block;\r\n    clear: both;\r\n    height: 0;\r\n    width: 0;\n}\n.reply-list {\r\n    padding-left: 88px;\r\n    clear: both;\r\n    margin-top: 15px;\n}\r\n\r\n/**\r\n   * Avatar\r\n   ---------------------------*/\n.comments-list .comment-avatar {\r\n    margin-right: 20px;\r\n    width: 87px;\r\n    height: 87px;\r\n    position: relative;\r\n    z-index: 99;\r\n    float: left;\r\n    border: 3px solid #fff;\r\n    border-radius: 4px;\r\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);\r\n    overflow: hidden;\n}\n.comments-list .comment-avatar img {\r\n    width: 100%;\r\n    height: 100%;\n}\n.reply-list .comment-avatar {\r\n    width: 50px;\r\n    height: 50px;\n}\n.comment-main-level:after {\r\n    content: \"\";\r\n    width: 0;\r\n    height: 0;\r\n    display: block;\r\n    clear: both;\n}\r\n\r\n/**\r\n   * Caja del Comentario\r\n   ---------------------------*/\n.comments-list .comment-box {\r\n    width: 48rem;\r\n    float: left;\r\n    position: relative;\r\n    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);\n}\n.comments-list .comment-box:before,\r\n.comments-list .comment-box:after {\r\n    content: \"\";\r\n    height: 0;\r\n    width: 0;\r\n    position: absolute;\r\n    display: block;\r\n    border-width: 10px 12px 10px 0;\r\n    border-style: solid;\r\n    border-color: transparent #fcfcfc;\r\n    top: 8px;\r\n    left: -11px;\n}\n.comments-list .comment-box:before {\r\n    border-width: 11px 13px 11px 0;\r\n    border-color: transparent rgba(0, 0, 0, 0.05);\r\n    left: -12px;\n}\n.reply-list .comment-box {\r\n    width: 610px;\n}\n.comment-box .comment-head {\r\n    background: #fcfcfc;\r\n    padding: 10px 12px;\r\n    border-bottom: 1px solid #e5e5e5;\r\n    overflow: hidden;\r\n    border-radius: 4px 4px 0 0;\n}\n.comment-box .comment-head i {\r\n    float: right;\r\n    margin-left: 14px;\r\n    position: relative;\r\n    top: 2px;\r\n    color: #a6a6a6;\r\n    cursor: pointer;\r\n    transition: color 0.3s ease;\n}\n.comment-box .comment-head i:hover {\r\n    color: #03658c;\n}\n.comment-box .comment-name {\r\n    color: #283035;\r\n    font-size: 14px;\r\n    font-weight: 700;\r\n    float: left;\r\n    margin-right: 10px;\n}\n.comment-box .comment-name a {\r\n    color: #283035;\n}\n.comment-box .comment-head span {\r\n    float: left;\r\n    color: #999;\r\n    font-size: 13px;\r\n    position: relative;\r\n    top: 1px;\n}\n.comment-box .comment-content {\r\n    background: #fff;\r\n    padding: 12px;\r\n    font-size: 15px;\r\n    color: #595959;\r\n    border-radius: 0 0 4px 4px;\n}\n.comment-box .comment-name.by-author,\r\n.comment-box .comment-name.by-author a {\r\n    color: #03658c;\n}\n.comment-box .comment-name.by-author:after {\r\n    content: \"autor\";\r\n    background: #03658c;\r\n    color: #fff;\r\n    font-size: 12px;\r\n    padding: 3px 5px;\r\n    font-weight: 700;\r\n    margin-left: 10px;\r\n    border-radius: 3px;\n}\r\n\r\n/** =====================\r\n   * Responsive\r\n   ========================*/\n@media only screen and (max-width: 766px) {\n.comments-container {\r\n        width: 480px;\n}\n.comments-list .comment-box {\r\n        width: 390px;\n}\n.reply-list .comment-box {\r\n        width: 320px;\n}\n}\n#comments-list {\r\n    padding-left: 0;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.module9-top {\r\n    padding: 0;\n}\n.submit-comment {\r\n    padding: 4px 25px;\r\n    margin-top: 20px;\r\n    margin-left: 789px;\r\n    background-color: rgb(41, 146, 41);\r\n    color: white;\r\n    border: none;\r\n    border-radius: 4px;\n}\n.submit-comment:hover {\r\n    background-color: rgb(1 86 1);\r\n    color: white;\n}\n.comment-container {\r\n    background-color: #dedede;\n}\n.comment-title {\r\n    color: #de6e98;\r\n\r\n    font-weight: bold;\r\n    margin-left: 20px;\r\n    padding-top: 20px;\n}\n.comment-form {\r\n    margin-left: 20px;\r\n    padding-bottom: 10px;\n}\n.comment-area {\r\n    width: 58rem;\r\n    height: 8rem;\n}\n.comment-main-level {\r\n    margin-bottom: 25px;\r\n    width: 55rem;\n}\n.comments-container {\r\n    margin: 0px 20px;\r\n    width: 768px;\n}\n.comments-container h1 {\r\n    font-size: 36px;\r\n    color: #283035;\r\n    font-weight: 400;\n}\n.comments-container h1 a {\r\n    font-size: 18px;\r\n    font-weight: 700;\n}\n.comments-list {\r\n    margin-top: 30px;\r\n    position: relative;\n}\r\n\r\n/**\r\n   *Line\r\n   -----------------------*/\r\n/* .comments-list:before {\r\n    content: \"\";\r\n    width: 2px;\r\n    height: 100%;\r\n    background: #c7cacb;\r\n    position: absolute;\r\n    left: 32px;\r\n    top: 0;\r\n  } */\n.comments-list:after {\r\n    content: \"\";\r\n    position: absolute;\r\n    background: #c7cacb;\r\n    bottom: 0;\r\n    left: 27px;\r\n    width: 7px;\r\n    height: 7px;\r\n    border: 3px solid #dee1e3;\r\n    border-radius: 50%;\n}\n.reply-list:before,\r\n.reply-list:after {\r\n    display: none;\n}\n.reply-list li:before {\r\n    content: \"\";\r\n    width: 60px;\r\n    height: 2px;\r\n    background: #c7cacb;\r\n    position: absolute;\r\n    top: 25px;\r\n    left: -55px;\n}\n.comments-list li {\r\n    margin-bottom: 15px;\r\n    display: block;\r\n    position: relative;\n}\n.comments-list li:after {\r\n    content: \"\";\r\n    display: block;\r\n    clear: both;\r\n    height: 0;\r\n    width: 0;\n}\n.reply-list {\r\n    padding-left: 88px;\r\n    clear: both;\r\n    margin-top: 15px;\n}\r\n\r\n/**\r\n   * Avatar\r\n   ---------------------------*/\n.comments-list .comment-avatar {\r\n    margin-right: 20px;\r\n    width: 87px;\r\n    height: 87px;\r\n    position: relative;\r\n    z-index: 99;\r\n    float: left;\r\n    border: 3px solid #fff;\r\n    border-radius: 4px;\r\n    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);\r\n    overflow: hidden;\n}\n.comments-list .comment-avatar img {\r\n    width: 100%;\r\n    height: 100%;\n}\n.reply-list .comment-avatar {\r\n    width: 50px;\r\n    height: 50px;\n}\n.comment-main-level:after {\r\n    content: \"\";\r\n    width: 0;\r\n    height: 0;\r\n    display: block;\r\n    clear: both;\n}\r\n\r\n/**\r\n   * Caja del Comentario\r\n   ---------------------------*/\n.comments-list .comment-box {\r\n    width: 48rem;\r\n    float: left;\r\n    position: relative;\r\n    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);\n}\n.comments-list .comment-box:before,\r\n.comments-list .comment-box:after {\r\n    content: \"\";\r\n    height: 0;\r\n    width: 0;\r\n    position: absolute;\r\n    display: block;\r\n    border-width: 10px 12px 10px 0;\r\n    border-style: solid;\r\n    border-color: transparent #fcfcfc;\r\n    top: 8px;\r\n    left: -11px;\n}\n.comments-list .comment-box:before {\r\n    border-width: 11px 13px 11px 0;\r\n    border-color: transparent rgba(0, 0, 0, 0.05);\r\n    left: -12px;\n}\n.reply-list .comment-box {\r\n    width: 610px;\n}\n.comment-box .comment-head {\r\n    background: #fcfcfc;\r\n    padding: 10px 12px;\r\n    border-bottom: 1px solid #e5e5e5;\r\n    overflow: hidden;\r\n    border-radius: 4px 4px 0 0;\n}\n.comment-box .comment-head i {\r\n    float: right;\r\n    margin-left: 14px;\r\n    position: relative;\r\n    top: 2px;\r\n    color: #a6a6a6;\r\n    cursor: pointer;\r\n    transition: color 0.3s ease;\n}\n.comment-box .comment-head i:hover {\r\n    color: #03658c;\n}\n.comment-box .comment-name {\r\n    color: #283035;\r\n    font-size: 14px;\r\n    font-weight: 700;\r\n    float: left;\r\n    margin-right: 10px;\n}\n.comment-box .comment-name a {\r\n    color: #283035;\n}\n.comment-box .comment-head span {\r\n    float: left;\r\n    color: #999;\r\n    font-size: 13px;\r\n    position: relative;\r\n    top: 1px;\n}\n.comment-box .comment-content {\r\n    background: #fff;\r\n    padding: 12px;\r\n    font-size: 15px;\r\n    color: #595959;\r\n    border-radius: 0 0 4px 4px;\n}\n.comment-box .comment-name.by-author,\r\n.comment-box .comment-name.by-author a {\r\n    color: #03658c;\n}\n.comment-box .comment-name.by-author:after {\r\n    content: \"autor\";\r\n    background: #03658c;\r\n    color: #fff;\r\n    font-size: 12px;\r\n    padding: 3px 5px;\r\n    font-weight: 700;\r\n    margin-left: 10px;\r\n    border-radius: 3px;\n}\r\n\r\n/** =====================\r\n   * Responsive\r\n   ========================*/\n@media only screen and (max-width: 766px) {\n.comments-container {\r\n        width: 480px;\n}\n.comments-list .comment-box {\r\n        width: 390px;\n}\n.reply-list .comment-box {\r\n        width: 320px;\n}\n}\n#comments-list {\r\n    padding-left: 0;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

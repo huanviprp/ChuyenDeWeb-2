@@ -86,21 +86,21 @@ export default {
                 axios.get('http://127.0.0.1:8000/api/getdetailtheloai/' + this.Comics[0].Category_id).then(
                     res => {
                         this.Categories = res.data;
-                        console.log(this.Categories);
+
                     }
                 );
                 console.log(this.Comics);
                 axios.get('http://127.0.0.1:8000/api/getdetailtacgia/' + this.Comics[0].author_id).then(
                     res => {
                         this.Authors = res.data;
-                        console.log(this.Authors);
+
                     }
                 )
 
                 axios.get('http://127.0.0.1:8000/api/tangview/' + this.id).then(
                     res => {
 
-                        console.log(this.Comics[0].Comic_id);
+
                     }
                 )
 

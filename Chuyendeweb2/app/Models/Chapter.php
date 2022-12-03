@@ -9,7 +9,7 @@ class Chapter extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'Chapter';
+    protected $table = 'chapter';
 
     protected $fillable = [
         'Chapter_id',

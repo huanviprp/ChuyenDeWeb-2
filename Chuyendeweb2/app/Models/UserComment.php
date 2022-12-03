@@ -9,11 +9,11 @@ class UserComment extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'User-Comment';
+    protected $table = 'user-comment';
 
     protected $fillable = [
         'User_id',
-        'Comment_id',
-        'Gender'
+        'Comment_id'
+
     ];
 }
