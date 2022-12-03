@@ -14,6 +14,7 @@ import EditAuthor from '../components/AuthorCRUD/EditAuthor.vue';
 import AllCategory from '../components/CategoryCRUD/AllCategory.vue';
 import AddCategory from '../components/CategoryCRUD/AddCategory.vue';
 import EditCategory from '../components/CategoryCRUD/EditCategory.vue';
+import AllComment from '../components/CommentDelete/AllComment.vue';
 export const routes = [
     {
         name: 'dashboard',
@@ -83,7 +84,13 @@ export const routes = [
         name: 'editcategory',
         path: '/editcategory/:id',
         component: EditCategory
-    }
+    },
+    //Delete Comment
+    {
+        name: 'allcomment',
+        path: '/allcomment',
+        component: AllComment
+    },
 ];
    
   const router = createRouter({
