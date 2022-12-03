@@ -19259,6 +19259,8 @@ var app9 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_components_module6_vu
 var app10 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_components_module5_vue__WEBPACK_IMPORTED_MODULE_13__["default"]);
 var app11 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
 app.config.globalProperties.$axios = (axios__WEBPACK_IMPORTED_MODULE_5___default());
+// app11.config.globalProperties.$axios = axios
+
 app11.use(_router__WEBPACK_IMPORTED_MODULE_6__["default"]);
 app.use(_router__WEBPACK_IMPORTED_MODULE_6__["default"]);
 // app.use(VueCookies);
@@ -19276,6 +19278,7 @@ app7.mount('#module1');
 app8.mount('#module2');
 app9.mount('#module6');
 app10.mount('#module5');
+app11.mount('#app');
 
 /***/ }),
 

@@ -30,6 +30,7 @@ const app9 = createApp(rank)
 const app10 = createApp(footer)
 const app11 = createApp(App)
 app.config.globalProperties.$axios = axios
+// app11.config.globalProperties.$axios = axios
 
 app11.use(router);
 app.use(router);
@@ -50,3 +51,4 @@ app7.mount('#module1');
 app8.mount('#module2');
 app9.mount('#module6');
 app10.mount('#module5');
+app11.mount('#app');
