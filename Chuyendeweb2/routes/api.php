@@ -40,6 +40,7 @@ Route::post('/delfollow', [ComicController::class, 'delfollow']);
 Route::post('/checkfollow', [ComicController::class, 'checkfollow']);
 Route::get('/getchapter/{id}', [ComicController::class, 'getchapter']);
 Route::post('/createuser', [AuthController::class, 'register']);
+Route::get('/getchapterlimit', [ComicController::class, 'getchapterlimit3']);
 
 Route::get('/gettopcommentid', [CommentController::class, 'getNewestCommentId']);
 Route::post('/getcomment', [CommentController::class, 'getComment']);

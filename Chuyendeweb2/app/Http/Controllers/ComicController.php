@@ -105,4 +105,10 @@ class ComicController extends Controller
     {
         return Chapter::where('Comic_id', $id)->get();
     }
+
+    public function getchapterlimit3()
+    {
+        // return Chapter::orderBy('Chapter_name', 'desc')->limit(3)->get();
+        return Chapter::all();
+    }
 }
