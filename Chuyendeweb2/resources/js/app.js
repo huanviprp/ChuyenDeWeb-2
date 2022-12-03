@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 require('./bootstrap');
 // import {createRouter, createWebHistory} from 'vue-router'
 import Homepage from './pages/Homepage.vue';
+import App from './App.vue'
 import Detailcomic from './pages/Detailcomic.vue';
 import ReadComic from './pages/Inf-comic.vue';
 import axios from 'axios';
@@ -27,8 +28,10 @@ const app7 = createApp(header)
 const app8 = createApp(nav)
 const app9 = createApp(rank)
 const app10 = createApp(footer)
+const app11 = createApp(App)
 app.config.globalProperties.$axios = axios
 
+app11.use(router);
 app.use(router);
 // app.use(VueCookies);
 app2.use(router);
