@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
 use Illuminate\Http\Request;
-
+use App\Http\Resources\UserCollection;
 class DangkyController extends Controller
 {
     /**
@@ -13,7 +14,7 @@ class DangkyController extends Controller
      */
     public function index()
     {
-        //Lấy danh sách user trong database đổ về vue để xử lý ra template
+        //
         $lists = User::all();
         return response()->json($lists);
     }
@@ -36,36 +37,35 @@ class DangkyController extends Controller
      */
     public function store(Request $request)
     {
-        //Thêm 1 thành viên mới
         $user = new User;
-        $user->name = $request->name;
+        $user->userName = $request->userName;
         $user->email = $request->email;
-        $user->password = hash('md5', $request->pass);
+        $user->password = hash('md5', $request->Password);
+        $user->role_id = 2;
         $user->save();
     }
-    // login
-    public function loginUser(Request $request)
-    {
+    public function loginUser(Request $request){
         $email = $request->email; //lấy email của phương thức post vuejs gửi qua
-        $pass = $request->pass;  //lấy pass của phương thức post vuejs gửi qua
-
+        $pass = $request->Password;  //lấy pass của phương thức post vuejs gửi qua
+  
         //kiểm tra email và pass trong CSDL
-        $data = User::where('email', '=', $email)->where('password', '=', hash('md5', $pass))->get();
-
-        if (count($data) > 0) {
-            if ($data[0]->email == $email && $data[0]->pass = hash("md5", $pass)) {
-                //return response()->json($data[0]->email);
-
-                //nếu đúng trả về 1
-                return response()->json(array("success" => 1));
-            }
-        } else {
-
-            //nếu sai trả về 0
-            return response()->json(array("success" => 0));
-        }
-    }
-
+        $data = User::where('email','=',$email)->where('password','=',hash('md5',$pass))->get();
+                  
+         if(count($data)>0){
+             if($data[0]->email==$email && $data[0]->pass=hash("md5",$pass)){
+                 //return response()->json($data[0]->email);
+  
+                 //nếu đúng trả về 1
+                 return response()->json(array("success"=>1));
+             }
+         }else{
+  
+             //nếu sai trả về 0
+             return response()->json(array("success"=>0));
+         }
+          
+     }
+ 
     /**
      * Display the specified resource.
      *
@@ -73,9 +73,7 @@ class DangkyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
-    }
+    { }
 
     /**
      * Show the form for editing the specified resource.
@@ -109,5 +107,13 @@ class DangkyController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function delete($User_id)
+    {
+      $user = User::find($User_id);
+
+      $user->delete();
+
+      return response()->json('successfully deleted');
     }
 }

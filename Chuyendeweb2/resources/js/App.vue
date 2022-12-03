@@ -1,59 +1,26 @@
 <template>
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-      <div class="navbar-nav me-auto mb-2 mb-lg-0" v-if="isLoggedIn">
-        <router-link to="/dashboard">Dashboard</router-link>
-        <a class="nav-item nav-link" @click="logout">LogOut</a>
-      </div>
-      <div class="navbar-nav me-auto mb-2 mb-lg-0" v-else>
-        <router-link to="/">Home</router-link>
-        <router-link to="/login">Login</router-link>
-        <router-link to="/register">Register</router-link>
-        <router-link to="/dashboard">Dashboard</router-link>
-      </div>
-  </div>
-</nav>
-
-
-
-    <router-view></router-view>
+            <div class="collapse navbar-collapse">
+                <div class="navbar-nav">
+                    <router-link to="/dashboard" class="nav-item nav-link">Home</router-link>
+                    <router-link to="/alluser" class="nav-item nav-link">User</router-link>
+                    <router-link to="/allcomic" class="nav-item nav-link">Comic</router-link>
+                    <router-link to="/allchapter" class="nav-item nav-link">Chapter</router-link>
+                    <router-link to="/allcategory" class="nav-item nav-link">Thể loại</router-link>
+                    <router-link to="/allauthor" class="nav-item nav-link">Tác giả</router-link>
+                    <router-link to="/allcomment" class="nav-item nav-link">Comment</router-link>
+                </div>
+            </div>
+        </nav>
+        <br/>
+        <router-view></router-view>
+    </div>
 </template>
 <script>
-export default {
-    name:"App",
-    data() {
-        return {
-            isLoggedIn: false,
-        }
-    },
-    created() {
-        if(window.Laravel.isLoggedin){
-            this.isLoggedIn = true
-        }
-    },
-    methods: {
-        logout(e){
-            e.preventDefault();
-            this.$axios.get ('/sanctum/csrf-cookie').then(response => {
-                this.$axios.post('/logout').then(response =>{
-                    if(response.data.success){
-                        window.location.href = "/"
-                    }else{
-                        console.log(response);
-                    }
-                })
-                .catch(function(error){
-                    console.log(error);
-                });
-            })
-        }
-    },
-}
+    export default {
+        name:"App"
+    }
 </script>
 <style>
-    
 </style>
