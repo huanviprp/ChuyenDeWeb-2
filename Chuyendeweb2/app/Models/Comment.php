@@ -10,10 +10,13 @@ class Comment extends Model
     use HasFactory;
     public $timestamps = false;
     protected $table = 'comment';
-
+    protected $primaryKey = 'Comment_id';
+    public function comic()
+    {
+        return $this->hasMany('App\Models\Comic', 'Comment_id', 'Name');
+    }
     protected $fillable = [
         'Comment_id',
-        'Comic_id',
         'Content'
     ];
 }

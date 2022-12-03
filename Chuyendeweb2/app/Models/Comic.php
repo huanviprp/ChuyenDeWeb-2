@@ -11,15 +11,17 @@ class Comic extends Model
     public $timestamps = false;
     protected $table = 'comic';
     protected $primaryKey = 'Comic_id';
+
     protected $fillable = [
-        'Comic_id',
+        // 'id',
         'Name',
-        'Description',
+        'Descripsion',
         'Img_feature',
         'Date',
         'View',
         'Status',
         'author_id',
-        'feature'
+        'feature',
+        'Category_id'
     ];
 }
