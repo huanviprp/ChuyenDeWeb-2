@@ -21,42 +21,42 @@
                         <h2 class="header"><span class="icon"></span>Dashboard</h2>
                         <a href="/" title="Trang chủ"> <i class="fa-solid fa-house"></i></a>
                     </div>
-                    <div class="container">
-                        <div class="row ">
-                            <div class="col-md-12">
-                                <div class="monitor">
-                                    <div class="clearfix">
-                                        <div class="row">
-                                            <div class="col-md-4 db-user">
-                                                <a href="#user"><i class="fa-solid fa-user"></i><br>User</a>
-                                            </div>
-                                            <div class="col-md-4 db-comic">
-                                                <a href="#comic"><i class="fa-solid fa-book"></i><br>comic</a>
-                                            </div>
-                                            <div class="col-md-4 db-category">
-                                                <a href="#category"><i class="fa-solid fa-bars"></i><br>category</a>
-                                            </div>
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div class="monitor">
+                                <div class="clearfix">
+                                    <div class="row">
+                                        <div class="col-md-4 db-user">
+                                            <a href="#user"><i class="fa-solid fa-user"></i><br>User</a>
+                                        </div>
+                                        <div class="col-md-4 db-comic">
+                                            <a href="#comic"><i class="fa-solid fa-book"></i><br>comic</a>
+                                        </div>
+                                        <div class="col-md-4 db-category">
+                                            <a href="#category"><i class="fa-solid fa-bars"></i><br>category</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="monitor">
-                                    <div class="clearfix">
-                                        <div class="row">
-                                            <div class="col-md-6 db-author">
-                                                <a href="#author"><i class="fa-solid fa-user-pen"></i><br>Tác giả</a>
-                                            </div>
-                                            <div class="col-md-6 db-comment">
-                                                <a href="#comment"><i class="fa-solid fa-comment"></i><br>Bình luận</a>
-                                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="monitor">
+                                <div class="clearfix">
+                                    <div class="row">
+                                        <div class="col-md-6 db-author">
+                                            <a href="#author"><i class="fa-solid fa-user-pen"></i><br>Tác giả</a>
+                                        </div>
+                                        <div class="col-md-6 db-comment">
+                                            <a href="#comment"><i class="fa-solid fa-comment"></i><br>Bình luận</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div>
 
 
