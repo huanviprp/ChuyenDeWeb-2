@@ -36,8 +36,10 @@
                         </div>
                         <div class="col-8">{{ Comic.View }}</div>
                     </div>
-                    <a class="follow btn">
-                        <i class="fa-solid fa-heart tag-icon heart"></i>Theo Dõi
+                    <a class="follow btn" :class="[b1Active ? 'factive' : 'fnotacitve']" @click="Follow">
+                        <i class="fa-solid fa-heart tag-icon heart"></i>{{
+                                button
+                        }}
                     </a>
                 </div>
             </div>
@@ -47,7 +49,7 @@
                 <p class="des-content" :class="[isActive ? 'show' : 'hidden']">
                     {{ Comic.Descripsion }}
                 </p>
-                <p class="see-more" @click="toggleClass">Xem Them</p>
+                <!-- <p class="see-more" @click="toggleClass">Xem Them</p> -->
 
             </div>
         </div>
@@ -65,7 +67,12 @@ export default {
             Comics: [],
             Authors: [],
             Categories: [],
-            id: this.$route.params.id
+            id: this.$route.params.id,
+            User: [],
+            comicid: '',
+            userid: '',
+            button: "Theo Dõi",
+            b1Active: false
         };
     },
     created() {
@@ -79,26 +86,48 @@ export default {
                 axios.get('http://127.0.0.1:8000/api/getdetailtheloai/' + this.Comics[0].Category_id).then(
                     res => {
                         this.Categories = res.data;
-                        console.log(this.Categories);
+
                     }
                 );
                 console.log(this.Comics);
                 axios.get('http://127.0.0.1:8000/api/getdetailtacgia/' + this.Comics[0].author_id).then(
                     res => {
                         this.Authors = res.data;
-                        console.log(this.Authors);
+
                     }
                 )
-                axios.get('http://127.0.0.1:8000/api/getdetailtacgia/' + this.Comics[0].author_id).then(
-                    res => {
-                        this.Authors = res.data;
-                        console.log(this.Authors);
-                    }
-                )
+
                 axios.get('http://127.0.0.1:8000/api/tangview/' + this.id).then(
                     res => {
 
-                        console.log(this.Comics[0].View);
+
+                    }
+                )
+
+                axios.get('http://127.0.0.1:8000/api/user').then(
+                    res => {
+                        if (res) {
+                            this.User = res.data;
+                            axios.post('http://127.0.0.1:8000/api/checkfollow', {
+                                userid: this.User['id'],
+                                comicid: this.Comics[0].Comic_id
+
+                            }).then(res => {
+
+                                if (res.data == 'yes') {
+                                    this.button = "Đã Theo Dõi";
+                                    this.b1Active = true;
+
+                                }
+                                else {
+                                    this.b1Active = false;
+                                }
+                            });
+
+                        }
+                        else {
+
+                        }
                     }
                 )
 
@@ -110,17 +139,47 @@ export default {
 
 
 
+
+
+
     },
     methods: {
         toggleClass: function () {
             this.isActive = !this.isActive;
             // some code to filter users
         },
+        Follow: function () {
+            if (this.button == "Theo Dõi") {
+                axios.post('http://127.0.0.1:8000/api/addfollow', {
+                    userid: this.User['id'],
+                    comicid: this.Comics[0].Comic_id
+
+                }).then(res => {
+                    this.b1Active = true;
+                    this.button = "Bỏ Theo Dõi";
+                })
+            }
+            else {
+                axios.post('http://127.0.0.1:8000/api/delfollow', {
+                    userid: this.User['id'],
+                    comicid: this.Comics[0].Comic_id
+
+                }).then(res => {
+                    this.b1Active = false;
+                    this.button = "Theo Dõi";
+                })
+            }
+
+        },
     },
 };
 </script>
   
 <style>
+.factive {
+    background-color: #f01264 !important;
+}
+
 #Breadcrumb {
     padding-left: 15px;
     height: 45px;
@@ -227,7 +286,7 @@ export default {
 }
 
 .follow {
-    width: 130px;
+    width: 150px;
     height: 40px;
     background-color: rgb(41, 146, 41);
     color: white;

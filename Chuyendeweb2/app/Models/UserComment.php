@@ -5,14 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Folowcomic extends Model
+class UserComment extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $table = 'Folow-comic';
+    protected $table = 'user-comment';
 
     protected $fillable = [
-        'user_id',
-        'Comic_id'
+        'User_id',
+        'Comment_id'
+
     ];
 }

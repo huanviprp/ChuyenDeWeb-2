@@ -9,7 +9,11 @@ import router from './router';
 import login from './components/module13.vue';
 import register from './components/module14.vue';
 import VueCookies from 'vue-cookies';
-
+import follow from './components/module16.vue';
+import header from './components/module1.vue';
+import nav from './components/module2.vue';
+import rank from './components/module6.vue';
+import footer from './components/module5.vue';
 
 
 const app = createApp(Homepage)
@@ -18,6 +22,11 @@ const app3 = createApp(ReadComic)
 const app4 = createApp(login)
 
 const app5 = createApp(register)
+const app6 = createApp(follow)
+const app7 = createApp(header)
+const app8 = createApp(nav)
+const app9 = createApp(rank)
+const app10 = createApp(footer)
 app.config.globalProperties.$axios = axios
 
 app.use(router);
@@ -33,3 +42,8 @@ app.mount('#homepage');
 app3.mount('#readComic');
 app4.mount('#module13');
 app5.mount('#module14');
+app6.mount('#module16');
+app7.mount('#module1');
+app8.mount('#module2');
+app9.mount('#module6');
+app10.mount('#module5');

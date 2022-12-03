@@ -9,10 +9,10 @@
             id="tabtuan">
             Top Hot
         </button>
-        <button class="tablinks" :class="[b3Active ? 'active' : 'notacitve']" @click="showBlock(3, $event)"
+        <!-- <button class="tablinks" :class="[b3Active ? 'active' : 'notacitve']" @click="showBlock(3, $event)"
             id="tabthang">
-            Top Năm
-        </button>
+            Top Follow
+        </button> -->
     </div>
 
     <div id="ngay" class="tab-container" v-if="currentBlock == 1">
@@ -65,10 +65,10 @@
 
     </div>
 
-    <div id="thang" class="tab-container" v-else>
+    <!-- <div id="thang" class="tab-container" v-else>
         <div class="tab-content 1" v-if="Comics && Comics.length">
-            <div class="row" v-for="Comic of Comics" :key="Comic.Comic_id">
-                <div class="col-1 rank">{{ Rank++ }}</div>
+            <div class="row" v-for="(Comic, index) in ComicsHot" :key="Comic.Comic_id">
+                <div class="col-1 rank">{{ index + 1 }}</div>
                 <div class="col-11 rank-content">
                     <div class="row">
                         <div class="col-3">
@@ -87,7 +87,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </template>
   
 <script>
@@ -211,7 +211,7 @@ body {
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 20px 14px;
+    padding: 20px 43px;
     transition: 0.3s;
     font-size: 17px;
 }
@@ -232,5 +232,9 @@ body {
     padding: 6px 12px;
     border: 4px solid #ccc;
     border-top: none;
+}
+
+.rank-content {
+    margin-bottom: 20px;
 }
 </style>
