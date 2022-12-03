@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ComicController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +40,20 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('edit/{id}', [UserController::class, 'edit']);
     Route::post('update/{id}', [UserController::class, 'update']);
     Route::delete('delete/{id}', [UserController::class, 'delete']);
+});
+Route::get('authors', [AuthorController::class, 'index']);
+Route::group(['prefix' => 'author'], function () {
+    Route::post('add', [AuthorController::class, 'add']);
+    Route::get('edit/{id}', [AuthorController::class, 'edit']);
+    Route::post('update/{id}', [AuthorController::class, 'update']);
+    Route::delete('delete/{id}', [AuthorController::class, 'delete']);
+});
+Route::get('categorys', [CategoryController::class, 'index']);
+Route::group(['prefix' => 'category'], function () {
+    Route::post('add', [CategoryController::class, 'add']);
+    Route::get('edit/{id}', [CategoryController::class, 'edit']);
+    Route::post('update/{id}', [CategoryController::class, 'update']);
+    Route::delete('delete/{id}', [CategoryController::class, 'delete']);
 });
 // Route::get('/dataComic', [ComicController::class, 'index']);
 // Route::get('/datauser', [DangkyController::class, 'index']);
