@@ -31,20 +31,25 @@
   
 <script>
 import axios from 'axios';
+
 export default {
     data() {
         return {
             Comics: [],
             User: [],
             comicid: '',
-            userid: ''
+            userid: '',
+            check: 'out'
         }
     },
     created() {
+
         axios.get('http://127.0.0.1:8000/api/user').then(
             res => {
                 if (res) {
+                    this.check = 'in';
                     this.User = res.data;
+
                     axios.post('http://127.0.0.1:8000/api/getfollow', {
                         userid: this.User['id']
                     }).then(res => {
@@ -57,7 +62,11 @@ export default {
 
                 }
             }
-        )
+        );
+        if (this.check == "out") {
+            alert('Bạn cần đăng nhập để xem được danh sách yêu thích');
+            window.location.replace("/");
+        }
     },
 }
 </script>

@@ -2,88 +2,51 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Category;
+use Validator;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function index()
+    {
+        $categorys = Category::all()->sortByDesc('Category_id')->toArray();
+        return array_reverse($categorys);
+    }
+    public function add(Request $request)
+    {
+        $category = new Category([
+            'Category_id' => $request->input('Category_id'),
+            'Category' => $request->input('Category'),
+        ]);
+        $category->save();
+        return response()->json('The category successfully added');
+    }
+    // edit post
+    public function edit($id)
+    {
+        $category = Category::find($id);
+
+        return response()->json($category);
+    }
+    // update post
+    public function update($id, Request $request)
+    {
+        $category = Category::find($id);
+        $category->update($request->all());
+        return response()->json('The category successfully updated');
+    }
+    // delete post
+    public function delete($id)
+    {
+        $category = Category::find($id);
+        $category->delete();
+        return response()->json('The category successfully deleted');
+    }
     function getCategorybyID($id)
     {
         return Category::where('Category_id', $id)->get();
-    }
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\DangkyController;
+use App\Http\Controllers\UserController;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ComicController;
@@ -64,3 +67,7 @@ Route::get('/', function () {
 // Route::get('{any}', function () {
 //     return view('app');
 // })->where('any', '.*');
+
+Route::get('{any}', function () {
+    return view('app');
+})->where('any', '.*');
