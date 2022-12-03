@@ -1,34 +1,26 @@
 import {createRouter, createWebHistory} from 'vue-router'
 
 
-import Home from '../components/Home.vue';
-import Module13 from '../components/Module13.vue';
-import Module14 from '../components/Module14.vue';
-import Module15 from '../components/Module15.vue';
-
-
+import AllComic from '../components/ComicCRUD/AllComic.vue';
+import AddComic from '../components/ComicCRUD/AddComic.vue';
+import EditComic from '../components/ComicCRUD/EditComic.vue';
 export const routes = [
     {
         name: 'home',
         path: '/',
-        component: Home
+        component: AllComic
     },
     {
-      name:'register',
-      path:'/register',
-      component:Module14
+        name: 'add',
+        path: '/add',
+        component: AddComic
     },
     {
-      name:'login',
-      path:'/login',
-      component:Module13
-    },
-    {
-      name:'dashboard',
-      path:'/dashboard',
-      component:Module15
+        name: 'edit',
+        path: '/edit/:id',
+        component: EditComic
     }
-  ];
+];
    
   const router = createRouter({
     history: createWebHistory(),

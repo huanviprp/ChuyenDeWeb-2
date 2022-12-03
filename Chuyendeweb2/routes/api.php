@@ -23,7 +23,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::post('/login', [UserController::class, 'login']);
 // Route::post('register', [UserController::class, 'register']);
 // Route::post('logout', [UserController::class, 'logout'])->middleware('auth:sanctum');
-Route::delete('/delete/{User_id}', [DangkyController::class, 'delete']);
-
-Route::get('/dataComic', [ComicController::class, 'index']);
-Route::get('/datauser', [DangkyController::class, 'index']);
+Route::get('comics', [ComicController::class, 'index']);
+Route::group(['prefix' => 'comic'], function () {
+    Route::post('add', [ComicController::class, 'add']);
+    Route::get('edit/{id}', [ComicController::class, 'edit']);
+    Route::post('update/{id}', [ComicController::class, 'update']);
+    Route::delete('delete/{id}', [ComicController::class, 'delete']);
+});
+// Route::get('/dataComic', [ComicController::class, 'index']);
+// Route::get('/datauser', [DangkyController::class, 'index']);
