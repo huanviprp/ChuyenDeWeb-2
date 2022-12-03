@@ -15665,13 +15665,15 @@ __webpack_require__.r(__webpack_exports__);
       Comics: [],
       User: [],
       comicid: '',
-      userid: ''
+      userid: '',
+      check: 'out'
     };
   },
   created: function created() {
     var _this = this;
     axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/api/user').then(function (res) {
       if (res) {
+        _this.check = 'in';
         _this.User = res.data;
         axios__WEBPACK_IMPORTED_MODULE_0___default().post('http://127.0.0.1:8000/api/getfollow', {
           userid: _this.User['id']
@@ -15681,6 +15683,10 @@ __webpack_require__.r(__webpack_exports__);
         });
       } else {}
     });
+    if (this.check == "out") {
+      alert('Bạn cần đăng nhập để xem được danh sách yêu thích');
+      window.location.replace("/");
+    }
   }
 });
 
