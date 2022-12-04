@@ -11,14 +11,14 @@ class AuthorController extends Controller
 {
     public function index()
     {
-        $authors = Author::all()->sortByDesc('Author_id')->toArray();
+        $authors = Author::all()->sortByDesc('Author-id')->toArray();
         return array_reverse($authors);
     }
     public function add(Request $request)
     {
         $author = new Author([
-            'Author_id' => $request->input('Author_id'),
-            'Author_name' => $request->input('Author_name'),
+            'Author-id' => $request->input('Author_id'),
+            'Author-name' => $request->input('Author_name'),
             'Gender' => $request->input('Gender'),
         ]);
         $author->save();
@@ -47,6 +47,6 @@ class AuthorController extends Controller
     }
     function getAuthorbyID($id)
     {
-        return Author::where('Author-id', $id)->get();
+        return Author::where('Author_id', $id)->get();
     }
 }

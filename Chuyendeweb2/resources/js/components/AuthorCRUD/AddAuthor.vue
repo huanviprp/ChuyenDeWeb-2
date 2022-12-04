@@ -16,7 +16,7 @@
                         <label>Giới tính</label>
                         <input type="text" class="form-control" v-model="author.Gender">
                     </div>
-                    
+
                     <button type="submit" class="btn btn-primary">Add Author</button>
                 </form>
             </div>

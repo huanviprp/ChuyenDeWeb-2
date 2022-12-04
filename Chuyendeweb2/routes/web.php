@@ -32,10 +32,10 @@ Route::get('/register', function () {
 
     return view('module14');
 });
-Route::get('/dashboard', function () {
+// Route::get('/dashboard', function () {
 
-    return view('dashboard');
-});
+//     return view('dashboard');
+// });
 
 Route::get('/detail/{id}', function () {
     return view('detail');
@@ -58,7 +58,7 @@ Route::get('/category', function () {
 Route::get('/readComic', function () {
     return view('readComic');
 });
-Route::post('/resultsearch', [ComicController::class,'search']);
+Route::post('/resultsearch', [ComicController::class, 'search']);
 Route::get('/resultsearch', function () {
     return view('resultsearch');
 });

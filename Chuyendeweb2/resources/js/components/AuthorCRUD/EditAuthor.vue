@@ -1,9 +1,9 @@
 <template>
     <div class="container-fluid dashboard">
-        <h3 class="text-center">Edit Author</h3>
+        <h3 class="text-center">Add Author</h3>
         <div class="row">
-            <div class="col-md-12">
-                <form @submit.prevent="updateAuthor">
+            <div class="col-md-6">
+                <form @submit.prevent="addAuthor">
                     <!-- <div class="form-group">
                         <label>id</label>
                         <input type="text" class="form-control" v-model="comic.id">
@@ -16,7 +16,8 @@
                         <label>Giới tính</label>
                         <input type="text" class="form-control" v-model="author.Gender">
                     </div>
-                    <button type="submit" class="btn btn-primary">Update Author</button>
+
+                    <button type="submit" class="btn btn-primary">Add Author</button>
                 </form>
             </div>
         </div>
@@ -25,32 +26,34 @@
 <script>
 import axios from 'axios';
 export default {
-    name: "Edit",
+    name: "AddAuthor",
     data() {
         return {
             author: {}
         }
     },
-    created() {
-        axios
-            .get(`http://127.0.0.1:8000/api/author/edit/${this.$route.params.id}`)
-            .then((response) => {
-                this.author = response.data;
-                // console.log(response.data);
-                // console.log(this.$route.params.id);
-            });
-    },
     methods: {
-        updateAuthor() {
+        addAuthor() {
             axios
-                .post(`http://127.0.0.1:8000/api/author/update/${this.$route.params.id}`, this.author)
-                .then((response) => {
-                    // console.log(response)
-                    this.$router.push({ name: 'allauthor' });
-                });
+                .post('api/author/add', this.author)
+                .then(response => (
+                    this.$router.push({ name: 'allauthor' })
+                    // console.log(response.data)
+                ))
+                .catch(error => console.log(error))
+                .finally(() => this.loading = false)
         }
     }
 }
 </script>
 <style>
+.dashboard {
+    background-color: rgb(247, 247, 247);
+    padding-right: 130px;
+    padding-left: 130px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 600px;
+    overflow-x: auto;
+}
 </style>

@@ -1,7 +1,8 @@
 <template>
     <div class="container-fluid dashboard">
         <h3 class="text-center">All Author</h3><br />
-        <button class="btn btn-success"><a style="text-decoration: none; color: white; margin-bottom: 20px;" href="/addauthor">Thêm mới Author</a></button>
+        <button class="btn btn-success"><a style="text-decoration: none; color: white; margin-bottom: 20px;"
+                href="/addauthor">Thêm mới Author</a></button>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -17,7 +18,8 @@
                     <td>{{ author.Author_name }}</td>
                     <td>{{ author.Gender }}</td>
                     <div class="btn" role="">
-                        <router-link :to="{ name: 'editauthor', params: { id: author.Author_id } }" class="btn btn-primary">Edit
+                        <router-link :to="{ name: 'editauthor', params: { id: author.Author_id } }"
+                            class="btn btn-primary">Edit
                         </router-link>
                         <button class="btn btn-danger" @click="deleteAuthor(author.Author_id)">Delete</button>
                         <label class="label label-success check-value" v-if="check">Xóa thành công truyện
@@ -43,6 +45,8 @@ export default {
             .get('http://127.0.0.1:8000/api/authors')
             .then(response => {
                 this.Authors = response.data;
+                console.log(this.Authors);
+
             });
     },
     methods: {

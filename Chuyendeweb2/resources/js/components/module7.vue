@@ -16,7 +16,7 @@
                         <div class="col-4 info-tag">
                             <i class="fa-solid fa-user tag-icon"></i> Tác Giả :
                         </div>
-                        <div class="col-8">{{ Authors[0].Username }}</div>
+                        <div class="col-8">{{ Authors[0].Author_name }}</div>
                     </div>
                     <div class="row info">
                         <div class="col-4 info-tag">
@@ -86,13 +86,14 @@ export default {
                 axios.get('http://127.0.0.1:8000/api/getdetailtheloai/' + this.Comics[0].Category_id).then(
                     res => {
                         this.Categories = res.data;
-
                     }
                 );
-                console.log(this.Comics);
+
                 axios.get('http://127.0.0.1:8000/api/getdetailtacgia/' + this.Comics[0].author_id).then(
                     res => {
                         this.Authors = res.data;
+
+
 
                     }
                 )
@@ -135,6 +136,7 @@ export default {
 
             }
         )
+        console.log(this.Authors);
 
 
 
