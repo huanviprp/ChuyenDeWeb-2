@@ -1,8 +1,8 @@
+import { createRouter, createWebHistory } from 'vue-router'
 // import Module10 from './components/Module10.vue';
 // import Module11 from './components/Module11.vue';
 
 import detail from '../pages/Detailcomic.vue';
-import { createRouter, createWebHistory } from 'vue-router'
 import Module15 from '../components/Module15.vue';
 import AllComic from '../components/ComicCRUD/AllComic.vue';
 import AddComic from '../components/ComicCRUD/AddComic.vue';

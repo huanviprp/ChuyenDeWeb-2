@@ -18,9 +18,9 @@ use App\Http\Controllers\ComicController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
 Route::get('/module12', function () {
     return view('module12');
@@ -49,9 +49,6 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
-Route::get('/dashboard', function () {
-    return view('admin/dashboard');
-});
 Route::get('/follow', function () {
     return view('wishlist');
 });
@@ -64,10 +61,10 @@ Route::get('/resultsearch', function () {
 Route::get('/', function () {
     return view('home');
 });
-// Route::get('{any}', function () {
-//     return view('app');
-// })->where('any', '.*');
-
 Route::get('{any}', function () {
     return view('app');
 })->where('any', '.*');
+
+// Route::get('{any}', function () {
+//     return view('app');
+// })->where('any', '.*');
