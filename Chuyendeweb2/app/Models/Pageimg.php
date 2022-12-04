@@ -12,9 +12,9 @@ class Pageimg extends Model
     protected $table = 'Page-img';
 
     protected $fillable = [
-        'Page_id',
-        'Chapter_id',
-        'img',
+        'Page-id',
+        'Chapter-id',
+        'Img',
         'Page_number'
     ];
 }

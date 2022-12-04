@@ -21,7 +21,7 @@
                     <li v-for=" (  Chapter, j) in Chapters" :key="j">
                         <a v-if="(Chapter.Comic_id == Comic.Comic_id)"
                             v-bind:href="'/detail/ten-truyen-chapter/' + Chapter.Chapter_id">{{
-        Chapter.Chapter_name
+                            Chapter.Chapter_name
                             }}</a>
                     </li>
                 </ul>
@@ -46,6 +46,12 @@ export default {
         axios.get('api/').then(
             res => {
                 this.Comics = res.data;
+                axios.get('http://127.0.0.1:8000/api/get3chapter/' + this.Comics[0].Comic_id).then(
+                    res => {
+                        this.Chapter = res.data;
+
+                    }
+                );
                 axios.get('http://127.0.0.1:8000/api/getchapterlimit').then(
                     res => {
                         this.Chapters = res.data;

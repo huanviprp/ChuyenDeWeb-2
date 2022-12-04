@@ -130,6 +130,9 @@ export default {
     padding: 20px;
 }
 
+.product-info a{
+    text-decoration: none;
+}
 .product-category {
     padding: 0 10vw;
     font-size: 30px;
@@ -213,6 +216,7 @@ export default {
     opacity: 0.5;
     text-transform: capitalize;
     margin: 5px 0;
+    color:black;
 }
 
 .pre-btn,

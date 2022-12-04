@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    {{-- <div class="readComic">
+    <!-- {{-- <div class="readComic">
         <div id="module1"></div>
         <div id="module2"></div>
         <div class="container">
@@ -33,7 +33,7 @@
             <div id="module9"></div>
         </div>
         <div id="module5"></div>
-    </div> --}}
+    </div> --}} -->
     <div class="readComic" id="readComic"></div>
     <script src="{{ mix('js/app.js') }}"></script>
 

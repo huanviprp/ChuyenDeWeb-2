@@ -13,7 +13,7 @@ class ComicController extends Controller
     //Comic
     public function index()
     {
-        return Comic::all();
+        return Comic::orderBy('Date', 'DESC')->get();
     }
     public function ComicHot()
     {
