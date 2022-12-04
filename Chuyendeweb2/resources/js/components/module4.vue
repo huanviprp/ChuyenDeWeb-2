@@ -16,9 +16,7 @@
             <div class="new-chapter">
                 <a class="name-comic" v-bind:href="'/detail/' + Comic.Comic_id"><b>{{ Comic.Name }}</b></a>
                 <ul>
-                    <li><a href="">Chapter 3</a></li>
-                    <li><a href="">Chapter 2</a></li>
-                    <li><a href="">Chapter 1</a></li>
+                    <li v-for="chapter in Chapter" v-bind:key="chapter.Chapter_id"><a href="">{{chapter.Chapter_name}}</a></li>
                 </ul>
             </div>
         </div>
@@ -30,13 +28,20 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            Comics: []
+            Comics: [],
+            Chapter:[]
         }
     },
     created() {
         axios.get('api/').then(
             res => {
                 this.Comics = res.data;
+                axios.get('http://127.0.0.1:8000/api/get3chapter/' + this.Comics[0].Comic_id).then(
+                    res => {
+                        this.Chapter = res.data;
+
+                    }
+                );
             }
         )
     },

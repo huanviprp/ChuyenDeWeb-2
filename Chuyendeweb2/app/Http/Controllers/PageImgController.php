@@ -15,4 +15,9 @@ class PageImgController extends Controller
     {
         return Pageimg::where('Chapter-id', $id)->get();
     }
+
+    public function getPageByChapterIDChapternumber($idchapterNumber)
+    {
+        return Pageimg::where('Chapter_number', $idchapterNumber)->get();
+    }
 }

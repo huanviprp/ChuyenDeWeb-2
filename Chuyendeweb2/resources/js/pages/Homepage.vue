@@ -19,7 +19,11 @@
                     </div>
                     <div class="col-md-3 login">
                         <form action="/login" method="get">
-                            <button class="btn btn-success" type="submit">Đăng Nhập</button>
+                            <button class="btn btn-success" type="submit"
+                            v-bind:class="{ 'btn-danger': clicked, 'btn-primary': !clicked }" v-on:click="logout"> {{
+                            
+                                    button
+                            }}</button>
                         </form>
                     </div>
                 </div>
@@ -142,7 +146,9 @@
             <Module3></Module3>
             <div class="row">
                 <div class="col-md-9">
+                    <!-- start module4 in here -->
                     <Module4></Module4>
+                    <!-- end module 4 -->
                 </div>
                 <div class="col-md-3">
                     <Module6></Module6>
@@ -172,10 +178,19 @@ export default {
             showProductByCtgID: false,
             Comics: [],
             Categories:[],
-            product: []
+            product: [],
+            clicked: false,
+            button: "Đăng Nhập",
         }
     },
     methods: {
+        logout() {
+            axios.get('http://127.0.0.1:8000/api/logout').then(
+                res => {
+
+                }
+            )
+        },
         searchComic(){
             // fetch('/api/search')
             // .then(res => res.json())
@@ -218,6 +233,17 @@ export default {
                 this.Categories = res.data;
             }
         )
+        axios.get('http://127.0.0.1:8000/api/user').then(
+            res => {
+                if (res) {
+                    this.button = "Đăng Xuất";
+                }
+                else {
+
+                }
+            }
+        )
+        console.log(this.button);
     }
 }
 </script>

@@ -48,6 +48,10 @@ Route::post('/postcomment', [CommentController::class, 'postComment']);
 Route::post('/getusercomment', [CommentController::class, 'getCommentUser']);
 Route::get('/getcomicbyid/{id}', [ComicController::class, 'getComicbyID']);
 Route::get('/getpagebychapid/{id}', [PageImgController::class, 'getPageByChapterID']);
+Route::get('/getpagebychapnumber/{id}', [PageImgController::class, 'getPageByChapterIDChapternumber']);
+Route::get('/get3chapter/{id}', [ComicController::class, 'get3chapter']);
+Route::get('/getchaptername/{id}', [ComicController::class, 'getchapterName']);
+
 
 
 

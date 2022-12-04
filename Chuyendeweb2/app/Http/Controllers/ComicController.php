@@ -13,7 +13,7 @@ class ComicController extends Controller
     //Comic
     public function index()
     {
-        return Comic::all();
+        return Comic::orderBy('Date', 'DESC')->get();
     }
     public function ComicHot()
     {
@@ -104,5 +104,14 @@ class ComicController extends Controller
     public function getchapter($id)
     {
         return Chapter::where('Comic_id', $id)->get();
+    }
+    public function getchapterName($id)
+    {
+        return Chapter::where('Chapter_name', $id)->get();
+    }
+
+    public function get3chapter($id)
+    {
+        return Chapter::where('Comic_id', $id)->orderBy('Chapter_name','desc')->limit(3)->get();
     }
 }
