@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-    </div>
+    </div>  
     <div class="list">
         <div class="container">
             <div class="row">
@@ -58,6 +58,9 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li v-for="Category in Categories" v-bind:key="Category.Category_id"><a class="dropdown-item" href="#" @click.prevent="showComicByCatgID(Category.Category_id)">{{ Category.Category}}</a></li>
+                                    </ul>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li v-for="Category in Categories" v-bind:key="Category.Category_id"><a class="dropdown-item" v-bind:href="'/category?'+ Category.Category">{{ Category.Category}}</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -441,23 +444,6 @@ export default {
         }
     },
     methods: {
-        getIdChapter($id){
-            this.ArrayIDChap[this.PhanTu] = $id;
-            this.PhanTu++;
-            
-            console.log("phantu:" + this.PhanTu );
-        },
-        next: function () {
-            this.a = this.ArrayIDChap[this.p];
-            axios.get('http://127.0.0.1:8000/api/getpagebychapid/'+ this.a).then(
-            res => {
-                this.PageImg = res.data;
-            })
-            this.p++;
-        },
-        pre: function () {
-            this.Chapters.unshift(this.Chapters.pop())
-        },
         showImgChapterName($id,$name){
             this.showIMGName = true;
             console.log($id);

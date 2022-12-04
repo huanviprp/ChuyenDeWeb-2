@@ -4,19 +4,26 @@
                     aria-hidden="true"></i></b></p>
     </h3>
     <div class="row comic-new" v-if="Comics && Comics.length">
-        <div class="col-md-3 comic" v-for="Comic of Comics" :key="Comic.Comic_id">
+        <div class="col-md-3 comic" v-for="(Comic, index) in Comics" :key="index">
             <a v-bind:href="'/detail/' + Comic.Comic_id"><img class="img-comic" v-bind:src="Comic.Img_feature"></a>
             <div class=" infor-comic">
                 <ul>
                     <li><i class="fa fa-eye" aria-hidden="true"></i>{{ Comic.View }}</li>
-                    <li><i class="fa fa-comment" aria-hidden="true"></i> 123</li>
-                    <li><i class="fa fa-heart" aria-hidden="true"></i> 123</li>
+
+                    <li v-if="(Comic.feature == 1)"><i class="fa fa-fire" style="color:red" aria-hidden="true"></i> Hot
+                    </li>
                 </ul>
             </div>
             <div class="new-chapter">
                 <a class="name-comic" v-bind:href="'/detail/' + Comic.Comic_id"><b>{{ Comic.Name }}</b></a>
                 <ul>
-                    <li v-for="chapter in Chapter" v-bind:key="chapter.Chapter_id"><a href="">{{chapter.Chapter_name}}</a></li>
+
+                    <li v-for=" (  Chapter, j) in Chapters" :key="j">
+                        <a v-if="(Chapter.Comic_id == Comic.Comic_id)"
+                            v-bind:href="'/detail/ten-truyen-chapter/' + Chapter.Chapter_id">{{
+                            Chapter.Chapter_name
+                            }}</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -25,11 +32,14 @@
   
 <script>
 import axios from 'axios';
+
 export default {
     data() {
         return {
             Comics: [],
-            Chapter:[]
+            Chapters: [],
+            id: this.$route.params.id,
+
         }
     },
     created() {
@@ -42,8 +52,16 @@ export default {
 
                     }
                 );
+                axios.get('http://127.0.0.1:8000/api/getchapterlimit').then(
+                    res => {
+                        this.Chapters = res.data;
+                        console.log(this.Chapters);
+
+                    }
+                )
             }
         )
+
     },
 }
 </script>

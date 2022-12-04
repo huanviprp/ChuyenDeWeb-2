@@ -41,18 +41,17 @@
                         </div>
                         <div class="login-button mb-2">
                             <input type="submit" class="btn btn-warning" value="Đăng Ký">
+                            <label class="label label-success check-value" v-if="check">Đăng ký thành công</label><br />
                         </div>
                     </div>
                 </form>
             </div>
-
-
-
         </div>
 
     </div>
 </template>
 <script>
+import axios from 'axios';
 export default {
     data() {
         return {
@@ -121,6 +120,7 @@ label {
     border: 1px solid rgba(255, 255, 219, 0.18);
 }
 
+.input-username,
 .input-email,
 .input-password {
     color: #212529;
@@ -132,6 +132,7 @@ label {
     position: relative;
 }
 
+.input-username i,
 .input-email i,
 .input-password i {
     position: absolute;
@@ -141,6 +142,7 @@ label {
     color: #aaa;
 }
 
+.input-username input,
 .input-email input,
 .input-password input {
     border-radius: 4px;
@@ -170,12 +172,14 @@ label {
     color: white;
 }
 
+.input-username>input:focus,
 .input-email>input:focus,
 .input-pass>input:focus {
     border-color: #1e90ff;
     box-shadow: 0 0 8px 0 #1e90ff;
 }
 
+.input-username>input:focus+i,
 .input-email>input:focus+i,
 .input-password>input:focus+i {
     color: #1e90ff;
@@ -188,5 +192,19 @@ label {
     background: linear-gradient(328deg, rgba(205, 8, 0, 1) 2%, rgba(213, 9, 0, 1) 42%, rgba(199, 50, 0, 0.8606793059020483) 100%);
     transition: .2s;
     color: white;
+}
+
+.check-value {
+    position: absolute;
+    width: 45%;
+    text-align: center;
+    top: 18px;
+    right: 34px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    transition: .3s;
+    background-color: rgb(9, 199, 9);
 }
 </style>
